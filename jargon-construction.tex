@@ -1,0 +1,244 @@
+There are some standard methods of jargonification that became established quite early (i.e., before 1970), spreading from such sources as
+the Tech Model Railroad Club, the PDP-1 SPACEWAR hackers, and John McCarthy's original crew of LISPers. These include verb doubling,
+soundalike slang, the `--P' convention, overgeneralization, spoken inarticulations, and anthropomorphization. Each is discussed below. We
+also cover the standard comparitives for design quality.
+
+Of these six, verb doubling, overgeneralization, anthropomorphization, and (especially) spoken inarticulatinos have become quite general;
+but soundalike slang is still alrgely confined to MIT and other large universities, and the `--P' convention is found only where LISPers
+flourish.
+
+\begin{itemize}
+	\item\citeentry{Verb Doubling}: Doubling a verb may change its semantics
+	\item\citeentry{Soundalike Slang}: Punning jargon
+	\item\citeentry{The `--P' convention}: A LISPy way to form questions
+	\item\citeentry{Overgeneralization}: Standard abuses of grammar
+	\item\citeentry{Spoken Inarticulations}: Sighing and $<$*sigh$>$ing
+	\item\citeentry{Anthropomorphization}: Homunculi, daemons, and confused programs
+	\item\citeentry{Comparatives}: Standard comparatives for design quality
+\end{itemize}
+
+
+\section*{Verb Doubling}\label{Verb-Doubling}
+	A standard construction in English is to double a verb and use it as an exclamation, such as ``Bang, bang!'' or ``Quack, quack!''. Most
+	of these are names for noises. Hackers also double verbs as a concise, sometimes sarcastic comment on what the implied subject does.
+	Also, a doubled verb is often used to terminate a conversation, in the process remarking on the current state of affairs or what the
+	speaker intends to do next. Typical examples involve \citeentry{win}, \citeentry{lose}, \citeentry{hack}, \citeentry{flame},
+	\citeentry{barf}, \citeentry{chomp}:
+
+	\begin{quote}
+		``The disk heads just crashed.'' ``Lose, lose.''\\
+		``Mostly he talked about his latest crock. Flame, flame.''\\
+		``Boy, what a bagbiter! Chomp, chomp!''
+	\end{quote}
+
+	Some verb-doubled constructions have special meanings not immediately obvious from the verb. These have their own listings in the
+	lexicon.
+
+	The \citeentry{Usenet} culture has one tripling convention unrelated to this: the names of `joke' topic groups often have a tripled
+	last element. The first and paradigmatic example was alt.swedish.chef.bork.bork.bork (a \worktitle{Muppet Show} reference); other
+	infamous examples have included:
+
+	\begin{quote}
+		alt.french.captain.borg.borg.borg\\
+		alt.wesley.crusher.die.die.die\\
+		comp.unix.internals.system.calls.brk.brk.brk\\
+		sci.physics.edward.teller.boom.boom.boom\\
+		alt.sadistic.dentists.drill.drill.drill
+	\end{quote}
+
+
+\section*{Soundalike Slang}\label{Soundalike-Slang}
+
+	Hackers will often make rhymes or puns in order to convert an ordinary word or phrase into something more interesting. It is considered
+	particularly \citeentry{flavorful} if the phrase is bent so as to include some other jargon word; thus the computer hobbyist magazine
+	\worktitle{Dr. Dobb's Journal} is almost always referred to among hackers as `Dr. Frob's Journal' or simply `Dr. Frob's'. Terms of
+	this kind that have been in fairly wide use include names for newspapers:
+
+	\begin{quote}
+		Boston Herald $\Rightarrow$ Horrid (or Harried)\\
+		Boston Globe $\Rightarrow$ Boston Glob\\
+		Houston (or San Francisco) Chronicle $\Rightarrow$ the Crocknicle (or the Comical)\\
+		New York Times $\Rightarrow$ New York Slime\\
+		Wall Street Journal $\Rightarrow$ Wall Street Urinal
+	\end{quote}
+
+	However, terms like these are often made up on the spur of the moment, Standard examples include:
+
+	\begin{quote}
+		Data General $\Rightarrow$ Dirty Genitals\\
+		IBM 360 $\Rightarrow$ IBM Three-Sickly\\
+		Government Property -- Do Not Duplicate (on keys) $\Rightarrow$ Government Duplicity -- Do Not Propagate\\
+		for historical reasons $\Rightarrow$ for hysterical raisins\\
+		Margaret Jacks Hall (the CS building at Stanford) $\Rightarrow$ Marginal Hacks Hall\\
+		Microsoft $\Rightarrow$ Microsloth\\
+		Internet Explorer $\Rightarrow$ Internet Exploiter
+	\end{quote}
+
+	This is not really similar to the Cockney rhyming slang it has been compared to in the past, because Cockney substitutions are opaque
+	whereas hacker punning jargon is intentionally transparent.
+
+
+\section*{The `--P' convention}\label{The-P-convention}
+
+	Turning a word into a question by appending the syllable `P'; from the LISP convention of appending the letter `P' to denote a
+	predicate (a boolean-valued function). The question should expect a yes/no answer, though it needn't. (See \citeentry{T} and
+	\citeentry{NIL}.)
+
+	At dinnertime:
+
+	\begin{quote}
+		Q: ``Foodp?''
+
+		A: ``Yeah, I'm pretty hungry.'' or ``T!''
+	\end{quote}
+
+	At any time:
+
+	\begin{quote}
+		Q: ``State-of-the-world-P?''
+
+		A: (Straight) ``I'm about to go home.''
+
+		A: (Humorous) ``Yes, the world has a state.''
+	\end{quote}
+
+	On the phone to Florida:
+
+	\begin{quote}
+		Q: ``State-p Florida?''
+
+		A: ``Been reading JARGON.TXT again, eh?''
+	\end{quote}
+
+	[One of the best of these is a \citeentry{Gosperism}. Once, when we were at a chinese restaurant, Bill Gosper wanted to know whether
+	someone would like to share with him a two-person-sized bowl of soul. His inquiry was: ``Split-p soup?'' -- GLS]
+
+
+\section*{Overgeneralization}\label{Overgeneralization}
+
+	A very conspicuous feature of jargon is the frequency with which techspeak items such as names of program tools, command language
+	primitives, and even assembler opcodes are applied to contexts outside of computing wherever hackers find amusing analogies to them.
+	Thus (to cite one of the best-known examples) Unix hackers often \citeentry{grep} for things rather than searching for them. Many of
+	the lexicon entries are generalizations of exactly this kind.
+
+	Hackers often enjoy overgeneralization on the grammatical level as well. Many hackers love to take various words and add the wrong
+	endings to them to make nouns and verbs, often by extending a standard rule to nonuniform cases (or vice verse). For example, because
+
+	\begin{quote}
+		porous $\Rightarrow$ porosity\\
+		generous $\Rightarrow$ generosity
+	\end{quote}
+
+	hackers happily generalize:
+
+	\begin{quote}
+		mysterious $\Rightarrow$ mysteriosity\\
+		ferrous $\Rightarrow$ ferrosity\\
+		obvious $\Rightarrow$ obviosity\\
+		dubious $\Rightarrow$ dubiosity
+	\end{quote}
+
+	Another class of common construction uses the suffix `--itude' to abstract a quality from just about any adjective or noun. This usage
+	arises especially in cases where mainstream English would perform the same abstraction through `--iness' or `--ingness'. Thus:
+
+	\begin{quote}
+		win $\Rightarrow$ winnitude (a common exclamation)\\
+		loss $\Rightarrow$ lossitude\\
+		cruft $\Rightarrow$ cruftitude\\
+		lame $\Rightarrow$ lamitude
+	\end{quote}
+
+	Some hackers cheerfully reverse this transformation; they argue, for example, that the horizontal degree lines on a globe ought to be
+	called `lats' -- after all, they're measuring latitude!
+
+	Also, note that all nouns can be verbed. E.g.: ``All nouns can be verbed'', ``I'll mouse it up'',  ``Hang on while I clipboard it
+	over'', ``I'm grepping the files''. English as a whole is already heading in this direction (towards pure-positional grammar like
+	Chinese); hackers are simply a bit ahead of the curve.
+
+	The suffix ``--full'' can also be applied in generalized and fanciful ways, as in ``As soon as you have more than one cachefull of
+	data, the system starts thrashing,'' or ``As soon as I have more than one headfull of ideas, I start writign it all down.'' A common
+	use is a ``screenfull'' meaning the amount of text that will fit in one screen, usually in text mode when you have no choice as to
+	character size. Another common form is ``bufferfull''.
+
+	However, hackers avoid the unimaginative verb-making techniques characteristic of marketroids, bean-counters, and the Pentagon: a
+	hacker would never, for example, `productize', `prioritize', or `securitize' things. Hackers have a strong aversino to bureaucratic
+	bafflegab and regard those who use it with contempt. The terms for `free software' are an example -- `free software' is the original,
+	most hackish term, and those who use it are a significant minority. It calls to mind freedom, and most who use it also use copyleft
+	licenses, such as the GNU General Public License. ESR coined the term `open-source' in order to appeal to businesses, and those who use
+	it are a majority of hackers and hacker-friendly (or at least hacker-saturated) businesses. The GNU GPL is popular here as well, but
+	copycenter licenses are gaining in popularity. Then businesses coined the bureaucratic buzzword `crowdsourcing', in reference to
+	outsourcing, and this is rare amongst hackers, at least when talking of software.
+
+	Similarly, all verbs can be nouned. This is only a slight overgeneralization in modern English; in hackish, however, it is good form to
+	mark them in some standard nonstandard way. Thus:
+
+	\begin{quote}
+		win $\Rightarrow$ winnitude, winnage\\
+		disgust $\Rightarrow$ disgustitude\\
+		hack $\Rightarrow$ hackification
+	\end{quote}
+
+	Further, note the prevalence of certain kinds of nonstandard plural forms. Some of these go back quite a ways: the TMRC Dictionary
+	includes an entry which implies that the plural of `mouse' is \citeentry{meeces}, and notes that the defined plural of `caboose' is
+	`cabeese'. This latter has apparently been standard (or at least a standard joke) among railfans (railroad enthusiasts) for many years.
+
+	On a similarly Anglo-Saxon note, almost anything ending in `x' may form plurals in `--xen' (see \citeentry{VAXen} and
+	\citeentry{boxen} in the main text). Even words ending in phonetic /k/ alone are sometimes treated this way; e.g., `soxen' for a bunch
+	of socks. Other funny plurals are `frobbotzim' for the plural of `frobbozz' (see \citeentry{frobnitz}) and `Unices' and `Twenices'
+	(rather than `Unixes' and `Twenexes'; see \citeentry{Unix}, \citeentry{TWENEX} in main text). But note that `Unixen' and `Twenexen' are
+	never used; it has been suggested that this is because `--ix' and `--ex' are Latin singular endings that attract a Latinate plural.
+	Finally, it has been suggested to general approval that the plural of `mongoose' ought to be `polygoose'.
+
+	The pattern here, as with other hackish grammatical quirks, is generalization of an inflectional rule that in English is either an
+	import or a fossil (such as the Hebrew plural ending `--im', or the Anglo-Saxon plural suffix `--en') to cases where it isn't normally
+	considered to apply.
+
+	This is not `poor grammar' (which is itself a somewhat barmy idea), as hackers are generally quite well aware of what they are doing
+	when they distort the language. It is grammatical creativity, a form of playfulness. It is done not to impress but to amuse, and never
+	at the expense of clarity.
+
+
+\section*{Spoken Inarticulations}\label{Spoken-Inarticulations}
+
+	Words such as `mumble', `sigh', and `groan' are spoken in places where their referent might more naturally be used. It has been
+	suggested that this usage derives from the impossibility of representing such noises on a comm link or in electronic mail, MUDs, and
+	IRC channels (interestingly, the same sorts of constructions have been showing up with increasing frequency in comic strips). Another
+	expression sometimes heard is ``Complain!'', meaning ``I have a complaint!''
+
+
+\section*{Anthropomorphization}\label{Anthropomorphization}
+
+	Semantically, one rich source of jargon construction is the hackish tendency to anthropomorphize hardware and software. This isn't done
+	in a naive way; hackers don't personalize their stuff in the sense of feeling empathy with it, nor do they mystically believe that the
+	things they work on every day are `alive'. What is common is to hear hardware or software talked about as though it has homunculi
+	talking to each other inside it, with intentions and desires. Thus, one hears ``The protocol handler got confused'', or that programs
+	``are trying'' to do things, or one may say of a routine that ``its goal in life is to X''. One even hears explanations like``\dots
+	and its poor little brain couldn't understand X, and it died.'' Sometimes modelling things this way actually seems to make them easier
+	to understand, perhaps because it's instinctively natural to think of anything with a really complex behavioral repertoire as `like a
+	person' rather than `like a thing'.
+
+
+\section*{Comparatives}\label{Comparatives}
+
+	Finally, note that many words in hacker jargon have to be understood as members of sets of comparatives. This is especially true of the
+	adjectives and nouns used to describe the beauty and functional quality of code. Here is an approximately correct spectrum:
+
+	\begin{quote}
+		monstrosity brain-damage screw bug lose misfeature\\
+		crock kluge hack win feature elegance perfection
+	\end{quote}
+
+	The last is spoken of as a mythical absolute, approximated but never actually attained. Another similar scale is used for describing
+	the reliability of software:
+
+	\begin{quote}
+		broken flaky dodgy fragile brittle\\
+		solid robust bulletproof armor-plated
+	\end{quote}
+
+	Note, however, that `dodgy' is primarily Commonwealth Hackish (it is rare in the U.S.) and may change places with `flaky' for some
+	speakers.
+
+	Coinages for describing \citeentry{lossage} seem to call forth the very finest in hackish linguistic inventiveness; it has been truly
+	said that hackers have even more words for equipment failure than Yiddish has for obnoxious people.
+

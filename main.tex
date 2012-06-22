@@ -1,0 +1,172 @@
+\documentclass{book}
+
+\usepackage{url,paralist,fancyhdr,xcolor,enumitem,textcomp,verbatim,longtable,multicol}
+\usepackage{xstring/xstring}
+\usepackage[margin=1in]{geometry}
+\usepackage[titles]{tocloft}
+\usepackage[T1]{fontenc}
+
+\setlength{\cftbeforechapskip}{6pt}
+
+\newcommand*{\mainentry}[1]{%
+    \paragraph{#1}%
+    \markboth{#1}{#1}%
+    \StrSubstitute{#1}{ }{-}[\entrylabel]%
+    \StrSubstitute{\entrylabel}{`}{}[\entrylabel]%
+    \StrSubstitute{\entrylabel}{'}{}[\entrylabel]%
+    \StrSubstitute{\entrylabel}{---}{-}[\entrylabel]%
+    \label{\entrylabel}}
+\newcommand*{\citeentry}[1]{%
+    \StrSubstitute{#1}{ }{-}[\temp]%
+    \StrSubstitute{\temp}{`}{}[\temp]%
+    \StrSubstitute{\temp}{'}{}[\temp]%
+    \StrSubstitute{\temp}{---}{-}[\temp]%
+    {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{\temp}]}}
+\newcommand*{\citesense}[2]{%
+    \StrSubstitute{#1-#2}{ }{-}[\temp]%
+    {\small\sffamily\bfseries#1 (sense #2)}\superscript{\rmfamily\mdseries[\pageref{\temp}]}}
+\newcommand*{\Chapter}[2]{%
+    \StrSubstitute{#1}{ }{-}[\temp]%
+    \chapter*{#1}\label{chapter-\temp}
+    \addcontentsline{toc}{chapter}{#1\protect{\rmfamily\mdseries\\ #2}}}
+\newcommand{\inlinequote}[1]{%
+	{$\cdot$\ \small``#1''}}
+\newcommand{\superscript}[1]{{\scriptsize#1}}
+\newcommand{\worktitle}[1]{\textit{#1}}
+\newcommand{\Tilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
+
+%\citeusenet{Name, Poster}{poster@email}{YYYY}{Post subject}{alt.group.name}{googleid}{D Month}
+\newcommand{\citeusenet}[7]{%
+	\begin{flushright}{\footnotesize\rmfamily{#1 \url{<#2>}, #3: #4 \textit{#5}, \textbf{#6}, #7}}\end{flushright}}
+\newenvironment{usenet}{\begin{quote}\ttfamily}{\rmfamily\end{quote}}
+
+\definecolor{grey1}{HTML}{CCCCCC}
+\renewcommand{\labelenumi}{\colorbox{grey1}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
+
+\begin{document}
+    \title{The New Hacker's Dictionary}
+    \author{Edited by Yash Tulsyan}
+
+    \setlength{\parskip}{0pt}
+    \setlength{\parindent}{0pt}
+
+    \input preamble
+
+    \tableofcontents
+
+    \Chapter{Introduction}{The purpose and scope of this File}
+	\input introduction
+    \Chapter{A Few Terms}{Of slang, Jargon and Techspeak}
+	\input a-few-terms
+    \Chapter{Revision History}{How the File came to be}
+	\input revision-history
+
+    \part{How Jargon Works}
+    \Chapter{Jargon Construction}{How hackers invent jargon}
+	\input jargon-construction
+    \Chapter{Hacker Writing Style}{How they write}
+	\input hacker-writing-style
+    \Chapter{Email Quotes}{And the Inclusion Problem}
+	\input email-quotes
+    \Chapter{Hacker Speech Style}{How hackers talk}
+	\input hacker-speech-style
+    \Chapter{International Style}{Some notes on usage outside the U.S.}
+	\input international-style
+    \Chapter{Lamer-speak}{Crackers, Phreaks, and Lamers}
+	\input lamer-speak
+
+    \part{How to Use the Lexicon}
+    \Chapter{Pronunciation Guide}{How to read the pronunciation keys}
+	\input pronunciation-guide
+    \Chapter{Other Lexicon Conventions}{How to read lexicon entries}
+	\input other-lexicon-conventions
+    \Chapter{Format for New Entries}{How to submit new entries for the File}
+	\input format-for-new-entries
+
+    \addtocontents{toc}{\protect\vspace{6pt}}
+    \Chapter{The Jargon Lexicon}{The lexicon itself}
+
+    \pagestyle{fancy}
+    \fancyhead{}
+    \fancyfoot{}
+    \fancyhead[LE,RO]{%
+        \sffamily\bfseries\rightmark--\leftmark}
+    \fancyhead[RE]{\sffamily\thepage}
+    \fancyhead[LO]{\sffamily\thepage}
+    \renewcommand{\headrulewidth}{0.1em}
+
+    \mainentry{ad-hockery}
+
+	\Chapter{A}{}
+	\Chapter{B}{}
+	\input entries/b
+	\Chapter{C}{}
+	\input entries/c
+	\Chapter{D}{}
+	\input entries/d
+	\Chapter{E}{}
+	\input entries/e
+	\Chapter{F}{}
+	\input entries/f
+	\Chapter{G}{}
+	\input entries/g
+	\Chapter{H}{}
+	\input entries/h
+	\Chapter{I}{}
+	\input entries/i
+	\Chapter{J}{}
+	\Chapter{K}{}
+	\input entries/k
+	\Chapter{L}{}
+	\input entries/l
+	\Chapter{M}{}
+    \input entries/m
+	\Chapter{N}{}
+    \input entries/n
+	\Chapter{O}{}
+    \input entries/p
+	\Chapter{P}{}
+	\input entries/r
+	\Chapter{Q}{}
+	\Chapter{R}{}
+	\Chapter{S}{}
+	\Chapter{T}{}
+	\input entries/t
+	\Chapter{U}{}
+	\input entries/u
+	\Chapter{V}{}
+	\input entries/v
+	\Chapter{W}{}
+	\input entries/w
+	\Chapter{X}{}
+	\Chapter{Y}{}
+	\Chapter{Z}{}
+
+    \mainentry{old fart}
+
+    \mainentry{Stupids}
+
+    \mainentry{suit} n.
+
+    \begin{inparaenum}
+        \item Ugly and uncomfortable `business clothing' often worn by non-hackers. Invariably worn with a `tie', a strangulation device that partially cuts off the blood supply to the brain. It is thought that this explains much about the behavior of suit-wearers. Compare \citeentry{droid}.
+        \item A person who habitually wears suits, as distinct from a techie or hacker. See \citeentry{pointy-haired}, \citeentry{burble}, \citeentry{management}, \citeentry{Stupids}, \citeentry{SNAFU principle}, \citeentry{PHB}, and \citeentry{brain-damaged}.
+    \end{inparaenum}
+
+    \mainentry{SNAFU principle}
+
+
+    \pagestyle{plain}
+
+    \appendix
+
+    \chapter*{Appendix A}\label{Appendix-A}
+	\input appendix-a
+
+    \chapter*{Appendix B}\label{Appendix-B}
+
+    \chapter*{Appendix C}\label{Appendix-C}
+
+    \chapter*{Bibliography}\label{Bibliography}
+\end{document}
+

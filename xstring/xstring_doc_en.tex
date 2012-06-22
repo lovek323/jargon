@@ -1,0 +1,2030 @@
+% This is xtring_doc_en.tex, the english manual of xstring
+%
+% Christian Tellechea 2009
+%
+% email : unbonpetit@gmail.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%
+%     http://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bookmarks=true,bookmarksopen=true,colorlinks=true,hyperfootnotes=false,filecolor=black,linkcolor=blue,urlcolor=magenta,pdfauthor={Christian Tellechea},pdftitle={xstring},pdfsubject={package for strings of tokens},pdfkeywords={xstring,latex,string},pdfcreator={LaTeX}]{hyperref}
+\usepackage[a4paper,dvips,margin=1.9cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{color}
+\usepackage{lmodern}
+\usepackage{eurosym}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{xstring}
+\usepackage[bottom]{footmisc}
+\usepackage[french]{babel}
+\makeatletter
+\definecolor{@xs@bckgcolor}{rgb}{1,1,0.875}
+\definecolor{@xs@keywordsxstring}{rgb}{0.7,0,0}
+\definecolor{@xs@keywordslatex}{rgb}{0,0,1}
+\definecolor{@xs@arguments}{rgb}{0,0,0}
+\definecolor{@xs@comments}{rgb}{0.5,0.5,0.5}
+\definecolor{violet}{rgb}{0.66,0,0.66}
+\lstset{%
+	language=[AlLaTeX]TeX,%
+	morekeywords={numexpr,detokenize},%
+	float=hbp,%
+	basicstyle=\small\ttfamily,%
+	identifierstyle=\color{@xs@arguments},%
+	keywordstyle=\color{@xs@keywordslatex},%
+	commentstyle=\itshape\color{@xs@comments},%
+	columns=fixed,%
+	tabsize=4,%
+	frame=single,%
+	extendedchars=true,%
+	showspaces=false,%
+	showstringspaces=false,%
+	numbers=left,%
+	numberstyle=\tiny\ttfamily,%
+	breaklines=true,%
+	breakindent=3em,%
+	backgroundcolor=\color{@xs@bckgcolor},%
+	breakautoindent=true,%
+	captionpos=t,%
+	xleftmargin=1em,%
+	xrightmargin=1em,%
+	lineskip=0pt,%
+	numbersep=1em,%
+	classoffset=1,%
+	morekeywords={% les macros et commandes de xstring
+		IfSubStr,IfSubStrBefore,IfSubStrBehind,%
+		IfBeginWith,IfEndWith,%
+		IfInteger,IfDecimal,integerpart,decimalpart,%
+		IfStrEq,IfEq,IfStrEqCase,IfEqCase,%
+		StrBefore,StrBehind,StrBetween,%
+		StrSubstitute,StrDel,%
+		StrGobbleLeft,StrGobbleRight,StrRight,StrLeft,StrMid,StrChar,%
+		StrSplit,%
+		StrLen,StrCount,StrPosition,StrCompare,%
+		StrFindGroup,groupID,verbtocs,tokenize,scancs,StrExpand,StrRemoveBraces,%
+		exploregroups,noexploregroups,saveexploremode,restoreexploremode,%
+		comparenormal,comparestrict,savecomparemode,restorecomparemode,%
+		expandarg,noexpandarg,normalexpandarg,fullexpandarg,saveexpandmode,restoreexpandmode,%
+		expandingroups,noexpandingroups,%
+		setverbdelim},%
+	keywordstyle=\color{@xs@keywordsxstring},%
+	classoffset=0}
+\makeatother
+
+\newcommand\guill[1]{"#1"}
+\newcommand\argu[1]{$\langle$\textit{#1}$\rangle$}
+\newcommand\ARGU[1]{\texttt{\{}\argu{#1}\texttt{\}}}
+\newcommand\arguC[1]{\texttt{[}\argu{#1}\texttt{]}}
+\newcommand\arguCC[2]{\texttt{[}\argu{#1}{,}\argu{#2}\texttt{]}}
+\newcommand\texte[1]{\texttt{text}${}_{#1}$}
+\newcommand\etoile{$\langle$\texttt{[*]}$\rangle$}
+\newenvironment{Conditions}[1][1cm]%
+{\begin{list}%
+	{$\vartriangleright$}%
+	{\setlength{\leftmargin}{#1}
+	 \setlength{\itemsep}{0pt}
+	 \setlength{\parsep}{0pt}
+	 \setlength{\topsep}{2ptplus3ptminus2pt}
+	}}%
+{\end{list}}
+\renewcommand\th{${}^\text{th}$\xspace}
+\newcommand\US{syntax unit\xspace}
+\newcommand\USs{syntax units\xspace}
+\newcommand\Xstring{\textsf{xstring}\xspace}
+\newcommand\styleexemple{\small\vskip4pt}
+\newcommand\styleexercice{\footnotesize}
+\newcommand\verbinline{\lstinline[basicstyle=\normalsize\ttfamily]}
+\newcommand\colorise{\color{violet}}
+
+\begin{document}
+\def:{\string:}
+\setlength{\parindent}{0pt}
+\begin{titlepage}
+	\null\par\vfill
+	\begin{center}
+		\begin{minipage}{0.75\linewidth}
+			\begin{center}
+				\Huge\bfseries xstring\par\vspace{5pt}
+				\small v\xstringversion\par\vspace{25pt}
+				\normalsize User's manual
+			\end{center}
+		\end{minipage}
+	\end{center}
+	\vspace{1cm}
+	\begin{center}
+		Christian {\sc Tellechea}\par\small
+		\href{mailto:unbonpetit@gmail.com}{\nolinkurl{unbonpetit@gmail.com}}\par\vspace{5pt}
+		\xstringenglishdate
+	\end{center}
+	\vfill\hrulefill
+	\begin{center}
+		\begin{minipage}{0.85\linewidth}
+			\noindent
+			\hfill\textbf{\textit{Abstract}}\hfill{}\medskip\par
+			This package which requires $\varepsilon$-\TeX{}, provides macros manipulating strings of tokens. For a basic use, tokens can be alphanumeric chars, but the macros can also be useful for manipulating tokens, i.e. \TeX{} code. Main features are:\smallskip
+
+			\parindent1.5em
+			\begin{itemize}
+				\item[$\triangleright$] tests:
+					\begin{itemize}
+						\item does a string contains at least $n$ times an another?
+						\item does a string starts (or ends) with another? etc.
+						\item is a string an integer? A decimal?
+						\item are 2 strings equal?
+					\end{itemize}
+				\item[$\triangleright$] extractions of substrings:
+					\begin{itemize}
+						\item what is on the left (or the right) of the $n$\th occurrence of a substring;
+						\item what is between the occurrences of 2 substrings;
+						\item substring between 2 positions;
+						\item serach of a group with its identifier.
+					\end{itemize}
+				\item[$\triangleright$] substitution of all, or the $n$ first occurrences of a substring for an other substring;
+				\item[$\triangleright$] calculation of numbers:
+					\begin{itemize}
+						\item length of a string;
+						\item position of the $n$\th occurrence of a substring;
+						\item how many times a string contains a substring?
+						\item comparison of 2 strings: position of the first difference;
+						\item identifier of the group in which a macro made a cut or a search.
+					\end{itemize}
+			\end{itemize}
+			\parindent0pt
+			\medskip
+			Other macros allow to use special characters forbiden in arguments (\verb|#| and \verb|%|) and manage differences between catcodes for advanced programming purposes.
+		\end{minipage}
+	\end{center}
+	\hrulefill\vfill{}
+\end{titlepage}
+
+\tableofcontents
+
+This manual is a translation of the french manual. I apologize for my poor english but I did my best\footnote{Any email to tell me errors would be appreciated!}, and I hope that the following is comprehensible!
+\section{Presentation}
+\subsection{Description}
+This extension\footnote{This extension does not require \LaTeX{} and can be compiled with Plain $\varepsilon$-\TeX{}.} provides macros and tests operating on "strings of tokens", as other programmation languages have. They provides the usual strings operations, such as: test if a string contains another, begins or ends with another, extractions of strings, calculation of the position of a substring, of the number of occurrences, etc.\medskip
+
+A "string of tokens" is a list of tokens of any nature, except that braces must be balanced and tokens catcode 6 and 14 (usualy \verb|%| et \verb|#|) are not allowed. Apart from this, any token is allowed, in any order in the list, whatever be the resulting code.\medskip
+
+\Xstring reads the arguments of the macros \US by \US\footnote{In the \TeX{} code, a \US is a control sequence, a group between brace or a single char. See also page~\pageref{developpementarguments}.} : when \USs are \guill{simple} chars (catcode 10, 11 and 12), \Xstring logically read the argument char by char. \Xstring can also be used for programming purpose, including in arguments other tokens such as control sequences, braces and tokens with other catcodes. See chapter on reading mode and arguments expansion (page~\pageref{developpementarguments}), the command \verbinline|\verbtocs| (page~\pageref{verbtocs}) and the command \verbinline|\scancs| (page~\pageref{scancs}).\medskip
+
+As the arguments may contain any token, advanced users could have problems with catcodes leading to unexpected behaviours. These behaviours can be controlled: read page~\pageref{macrosetoilees}.\medskip
+
+Certainly, other packages exist (for example \href{http://www.ctan.org/tex-archive/macros/latex/contrib/substr/}{\nolinkurl{substr}} and \href{http://www.ctan.org/tex-archive/macros/latex/contrib/stringstrings/}{\nolinkurl{stringstrings}}), but as well as differences on features, they do not take into account occurrences so I found them too limited and difficult to use for programming.
+
+\subsection{Motivation}
+I decided to write this package of macros because I have never really found tools in \LaTeX{} suiting my needs for strings. So, over the last few months, I wrote a few macros that I occasionally or regularly used. Their numbers have increased and become a little too dispersed in directories in my computer, so I have grouped them together in this package.
+
+Thus, writing a coherent set of macros forces more discipline and leads to necessary improvements, which took most of the time I spent writing this package. This package is my first one as I recently discoverd \LaTeX{}\footnote{In november 2007, I will be a noob for a long time\ldots}, so my main motivation was to make progress in programming with \TeX, and to tackle its specific methods.
+
+\section{The macros}
+For a better understanding, let's see first the macros with the simpler arguments possible. No special catcode, no exotic token, no control sequence neither: only alphanumeric chars will be contained in the arguments.\medskip
+
+In the following chapters, all the macros will be presented this plan:
+\begin{itemize}
+	\item the syntax\footnote{The optional star, the optional argument in last position will be explained later. See page~\pageref{macrosetoilees} for starred macros and  page~\pageref{argumentoptionnel} for the optional argument.} and the value of optional arguments
+	\item a short description of the operation;
+	\item the operation under special conditions. For each conditions considered, the operation described has priority on that (those) below;
+	\item finally, several examples\footnote{For much more examples, see the test file.} are given. I tried to find them most easily comprehensible and most representative of the situations met in normal use. If a doubt is possible with spaces in the result, this one will be delimited by \guill{|}, given that an empty string is represented by \guill{||}.
+\end{itemize}\smallskip
+
+\textbf{Important}: in the following, a \argu{number} can be an integer written with numeric chars, a counter, or the result of an arithmetic operation made with the command \verbinline|\numexpr|.\smallskip
+
+All the macros of \Xstring are displayed in {\makeatletter\color{@xs@keywordsxstring}red}.
+
+\subsection{The tests}
+\subsubsection{\ttfamily\textbackslash IfSubStr}
+\verbinline|\IfSubStr|\etoile\arguC{number}\ARGU{string}\ARGU{stringA}\ARGU{true}\ARGU{false}
+\smallskip
+
+The value of the optional argument \argu{number} is 1 by default.\par\smallskip
+
+Tests if \argu{string} contains at least \argu{number} times \argu{stringA} and runs \argu{true} if so, and \argu{false} otherwise.\medskip
+
+\begin{Conditions}
+\item If \argu{number}${}\leqslant0$, runs \argu{false};
+\item If \argu{string} or \argu{stringA} is empty, runs \argu{false}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfSubStr{xstring}{tri}{true}{false}
+\IfSubStr{xstring}{a}{true}{false}
+\IfSubStr{a bc def }{c d}{true}{false}
+\IfSubStr{a bc def }{cd}{true}{false}
+\IfSubStr[2]{1a2a3a}{a}{true}{false}
+\IfSubStr[3]{1a2a3a}{a}{true}{false}
+\IfSubStr[4]{1a2a3a}{a}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfSubStr{xstring}{tri}{true}{false}\par
+	\IfSubStr{xstring}{a}{true}{false}\par
+	\IfSubStr{a bc def }{c d}{true}{false}\par
+	\IfSubStr{a bc def }{cd}{true}{false}\par
+	\IfSubStr[2]{1a2a3a}{a}{true}{false}\par
+	\IfSubStr[3]{1a2a3a}{a}{true}{false}\par
+	\IfSubStr[4]{1a2a3a}{a}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfSubStrBefore}
+\verbinline|\IfSubStrBefore|\etoile\arguCC{number1}{number2}\ARGU{string}\ARGU{stringA}\ARGU{stringB}\ARGU{true}\ARGU{false}
+\smallskip
+
+The values of the optional arguments \argu{number1} and \argu{number2} are 1 by default.\par\smallskip
+
+In \argu{string}, tests if the \argu{number1}\th occurrence of \argu{stringA} is on the left of the \argu{number2}\th occurrence of \argu{stringB}. Runs \argu{true} if so, and \argu{false} otherwise.\medskip
+
+\begin{Conditions}
+\item If one of the occurrences is not found, it runs \argu{false};
+\item If one of the arguments \argu{string}, \argu{stringA} or \argu{stringB} is empty, runs \argu{false};
+\item If one of the optional arguments is negative or zero, runs \argu{false}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfSubStrBefore{xstring}{st}{in}{true}{false}
+\IfSubStrBefore{xstring}{ri}{s}{true}{false}
+\IfSubStrBefore{LaTeX}{LaT}{TeX}{true}{false}
+\IfSubStrBefore{a bc def }{ b}{ef}{true}{false}
+\IfSubStrBefore{a bc def }{ab}{ef}{true}{false}
+\IfSubStrBefore[2,1]{b1b2b3}{b}{2}{true}{false}
+\IfSubStrBefore[3,1]{b1b2b3}{b}{2}{true}{false}
+\IfSubStrBefore[2,2]{baobab}{a}{b}{true}{false}
+\IfSubStrBefore[2,3]{baobab}{a}{b}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfSubStrBefore{xstring}{st}{in}{true}{false}\par
+	\IfSubStrBefore{xstring}{ri}{s}{true}{false}\par
+	\IfSubStrBefore{LaTeX}{LaT}{TeX}{true}{false}\par
+	\IfSubStrBefore{a bc def }{ b}{ef}{true}{false}\par
+	\IfSubStrBefore{a bc def }{ab}{ef}{true}{false}\par
+	\IfSubStrBefore[2,1]{b1b2b3}{b}{2}{true}{false}\par
+	\IfSubStrBefore[3,1]{b1b2b3}{b}{2}{true}{false}\par
+	\IfSubStrBefore[2,2]{baobab}{a}{b}{true}{false}\par
+	\IfSubStrBefore[2,3]{baobab}{a}{b}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfSubStrBehind}
+
+\verbinline|\IfSubStrBehind|\etoile\arguCC{number1}{number2}\ARGU{string}\ARGU{stringA}\ARGU{stringB}\ARGU{true}\ARGU{false}
+\smallskip
+
+The values of the optional arguments \argu{number1} and \argu{number2} are 1 by default.\par\smallskip
+
+In \argu{string}, tests if the \argu{number1}\th occurrence of \argu{stringA} is on the right of the \argu{number2}\th occurrence of \argu{stringB}. Runs \argu{true} if so, and \argu{false} otherwise.\medskip
+
+\begin{Conditions}
+\item If one of the occurrences is not found, it runs \argu{false};
+\item If one of the arguments \argu{string}, \argu{stringA} or \argu{stringB} is empty, runs \argu{false};
+\item If one of the optional arguments is negative or zero, runs \argu{false}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfSubStrBehind{xstring}{ri}{xs}{true}{false}
+\IfSubStrBehind{xstring}{s}{i}{true}{false}
+\IfSubStrBehind{LaTeX}{TeX}{LaT}{true}{false}
+\IfSubStrBehind{a bc def }{ d}{a}{true}{false}
+\IfSubStrBehind{a bc def }{cd}{a b}{true}{false}
+\IfSubStrBehind[2,1]{b1b2b3}{b}{2}{true}{false}
+\IfSubStrBehind[3,1]{b1b2b3}{b}{2}{true}{false}
+\IfSubStrBehind[2,2]{baobab}{b}{a}{true}{false}
+\IfSubStrBehind[2,3]{baobab}{b}{a}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfSubStrBehind{xstring}{ri}{xs}{true}{false}\par
+	\IfSubStrBehind{xstring}{s}{i}{true}{false}\par
+	\IfSubStrBehind{LaTeX}{TeX}{LaT}{true}{false}\par
+	\IfSubStrBehind{a bc def }{ d}{a}{true}{false}\par
+	\IfSubStrBehind{a bc def }{cd}{a b}{true}{false}\par
+	\IfSubStrBehind[2,1]{b1b2b3}{b}{2}{true}{false}\par
+	\IfSubStrBehind[3,1]{b1b2b3}{b}{2}{true}{false}\par
+	\IfSubStrBehind[2,2]{baobab}{b}{a}{true}{false}\par
+	\IfSubStrBehind[2,3]{baobab}{b}{a}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfBeginWith}
+
+\verbinline|\IfBeginWith|\etoile\ARGU{string}\ARGU{stringA}\ARGU{true}\ARGU{false}
+\smallskip
+
+Tests if \argu{string} begins with \argu{stringA}, and runs \argu{true} if so, and \argu{false} otherwise.\medskip
+
+\begin{Conditions}
+\item If \argu{string} or \argu{stringA} is empty, runs \argu{false}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfBeginWith{xstring}{xst}{true}{false}
+\IfBeginWith{LaTeX}{a}{true}{false}
+\IfBeginWith{a bc def }{a b}{true}{false}
+\IfBeginWith{a bc def }{ab}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfBeginWith{xstring}{xst}{true}{false}\par
+	\IfBeginWith{LaTeX}{a}{true}{false}\par
+	\IfBeginWith{a bc def }{a b}{true}{false}\par
+	\IfBeginWith{a bc def }{ab}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfEndWith}
+
+\verbinline|\IfEndWith|\etoile\ARGU{string}\ARGU{stringA}\ARGU{Behind}\ARGU{false}
+\smallskip
+
+Tests if \argu{string} ends with \argu{stringA}, and runs \argu{true} if so, and \argu{false} otherwise.\medskip
+
+\begin{Conditions}
+\item If \argu{string} or \argu{stringA} is empty, runs \argu{false}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfEndWith{xstring}{ring}{true}{false}
+\IfEndWith{LaTeX}{a}{true}{false}
+\IfEndWith{a bc def }{ef }{true}{false}
+\IfEndWith{a bc def }{ef}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfEndWith{xstring}{ring}{true}{false}\par
+	\IfEndWith{LaTeX}{a}{true}{false}\par
+	\IfEndWith{a bc def }{ef }{true}{false}\par
+	\IfEndWith{a bc def }{ef}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfInteger}
+
+\verbinline|\IfInteger|\ARGU{number}\ARGU{true}\ARGU{false}
+\smallskip
+
+Tests if \argu{number} is an integer (i.e whose decimal part is empty or 0), and runs \argu{true} if so, and \argu{false} otherwise.\smallskip
+
+If test is false because unexpected characters, the control sequence \verbinline|\@xs@afterinteger| contains the illegal part of \argu{number}.\medskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfInteger{13}{true}{false}
+\IfInteger{-219}{true}{false}
+\IfInteger{+9}{true}{false}
+\IfInteger{3.14}{true}{false}
+\IfInteger{8.0}{true}{false}
+\IfInteger{0}{true}{false}
+\IfInteger{49a}{true}{false}
+\IfInteger{+}{true}{false}
+\IfInteger{-}{true}{false}
+\IfInteger{0000}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfInteger{13}{true}{false}\par
+	\IfInteger{-219}{true}{false}\par
+	\IfInteger{+9}{true}{false}\par
+	\IfInteger{3.14}{true}{false}\par
+	\IfInteger{8.0}{true}{false}\par
+	\IfInteger{0}{true}{false}\par
+	\IfInteger{49a}{true}{false}\par
+	\IfInteger{+}{true}{false}\par
+	\IfInteger{-}{true}{false}\par
+	\IfInteger{0000}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfDecimal}\label{ifdecimal}
+
+\verbinline|\IfDecimal|\ARGU{number}\ARGU{true}\ARGU{false}
+\smallskip
+
+Tests if \argu{number} is a decimal, and runs \argu{true} if so, and \argu{false} otherwise.\smallskip
+
+Counters \verbinline|\integerpart| and \verbinline|\decimalpart| contain the integer part and decimal part of \argu{number}.
+
+If test is false because unexpected characters, the control sequence \verbinline|\@xs@afterdecimal| contains the illegal part of \argu{number}, whereas if test is false because decimal part is empty after decimal separator, it contains "X".\medskip
+
+\begin{Conditions}
+	\item Decimal separator can be a dot or a comma;
+	\item If what is on the right of decimal separator (if it exists) is empty, the test is false;
+	\item If what is on the left of decimal separator (if it exists) is empty, the integer part is assumed to be 0;
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfDecimal{3.14}{true}{false}
+\IfDecimal{3,14}{true}{false}
+\IfDecimal{-0.5}{true}{false}
+\IfDecimal{.7}{true}{false}
+\IfDecimal{,9}{true}{false}
+\IfDecimal{1..2}{true}{false}
+\IfDecimal{+6}{true}{false}
+\IfDecimal{-15}{true}{false}
+\IfDecimal{1.}{true}{false}
+\IfDecimal{2,}{true}{false}
+\IfDecimal{.}{true}{false}
+\IfDecimal{,}{true}{false}
+\IfDecimal{+}{true}{false}
+\IfDecimal{-}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfDecimal{3.14}{true}{false}\par
+	\IfDecimal{3,14}{true}{false}\par
+	\IfDecimal{-0.5}{true}{false}\par
+	\IfDecimal{.7}{true}{false}\par
+	\IfDecimal{,9}{true}{false}\par
+	\IfDecimal{1..2}{true}{false}\par
+	\IfDecimal{+6}{true}{false}\par
+	\IfDecimal{-15}{true}{false}\par
+	\IfDecimal{1.}{true}{false}\par
+	\IfDecimal{2,}{true}{false}\par
+	\IfDecimal{.}{true}{false}\par
+	\IfDecimal{,}{true}{false}\par
+	\IfDecimal{+}{true}{false}\par
+	\IfDecimal{-}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfStrEq}
+
+\verbinline|\IfStrEq|\etoile\ARGU{stringA}\ARGU{stringB}\ARGU{true}\ARGU{false}
+\smallskip
+
+Tests if the strings \argu{stringA} and \argu{stringB} are equal, i.e. if they contain successively the same \USs in the same order. Runs \argu{true} if so, and \argu{false} otherwise.\smallskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfStrEq{a1b2c3}{a1b2c3}{true}{false}
+\IfStrEq{abcdef}{abcd}{true}{false}
+\IfStrEq{abc}{abcdef}{true}{false}
+\IfStrEq{3,14}{3,14}{true}{false}
+\IfStrEq{12.34}{12.340}{true}{false}
+\IfStrEq{abc}{}{true}{false}
+\IfStrEq{}{abc}{true}{false}
+\IfStrEq{}{}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfStrEq{a1b2c3}{a1b2c3}{true}{false}\par
+	\IfStrEq{abcdef}{abcd}{true}{false}\par
+	\IfStrEq{abc}{abcdef}{true}{false}\par
+	\IfStrEq{3,14}{3,14}{true}{false}\par
+	\IfStrEq{12.34}{12.340}{true}{false}\par
+	\IfStrEq{abc}{}{true}{false}\par
+	\IfStrEq{}{abc}{true}{false}\par
+	\IfStrEq{}{}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfEq}
+
+\verbinline|\IfEq|\ARGU{stringA}\ARGU{stringB}\ARGU{true}\ARGU{false}
+\smallskip
+
+Tests if the strings \argu{stringA} and \argu{stringB} are equal, \emph{except} if both \argu{stringA} and \argu{stringB} contain numbers in which case the macro tests if these numbers are equal. Runs \argu{true} if so, and \argu{false} otherwise.\smallskip
+
+\begin{Conditions}
+	\item The definition of \emph{number} is given with the macro \verbinline|\IfDecimal| (see page~\pageref{ifdecimal}), and thus :
+	\item \guill{+} signs are optional;
+	\item Decimal separator can be a dot or a comma.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfEq{a1b2c3}{a1b2c3}{true}{false}
+\IfEq{abcdef}{ab}{true}{false}
+\IfEq{ab}{abcdef}{true}{false}
+\IfEq{12.34}{12,34}{true}{false}
+\IfEq{+12.34}{12.340}{true}{false}
+\IfEq{10}{+10}{true}{false}
+\IfEq{-10}{10}{true}{false}
+\IfEq{+0,5}{,5}{true}{false}
+\IfEq{1.001}{1.01}{true}{false}
+\IfEq{3*4+2}{14}{true}{false}
+\IfEq{\number\numexpr3*4+2}{14}{true}{false}
+\IfEq{0}{-0.0}{true}{false}
+\IfEq{}{}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfEq{a1b2c3}{a1b2c3}{true}{false}\par
+	\IfEq{abcdef}{ab}{true}{false}\par
+	\IfEq{ab}{abcdef}{true}{false}\par
+	\IfEq{12.34}{12,34}{true}{false}\par
+	\IfEq{+12.34}{12.340}{true}{false}\par
+	\IfEq{10}{+10}{true}{false}\par
+	\IfEq{-10}{10}{true}{false}\par
+	\IfEq{+0,5}{,5}{true}{false}\par
+	\IfEq{1.001}{1.01}{true}{false}\par
+	\IfEq{3*4+2}{14}{true}{false}\par
+	\IfEq{\number\numexpr3*4+2}{14}{true}{false}\par
+	\IfEq{0}{-0.0}{true}{false}\par
+	\IfEq{}{}{true}{false}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfStrEqCase}
+
+\begin{minipage}{\textwidth}
+	\verbinline|\IfStrEqCase|\etoile\ARGU{string}\verb|{%|\par
+	\qquad\qquad\ARGU{string1}\ARGU{code1}\verb|%|\par
+	\qquad\qquad\ARGU{string2}\ARGU{code2}\verb|%|\par
+	\qquad\qquad\verb|etc...|\par
+	\qquad\qquad\ARGU{stringN}\ARGU{codeN}\verb|}|\arguC{other cases code}
+\end{minipage}
+\smallskip
+
+Tests successively if \argu{string} is equal to \argu{string1}, \argu{string2}, etc. Comparison is made with \verbinline|\IfStrEq| (see above). If the test number $i$ is positive (the \argu{string} matches \argu{string\;$i$}), the macro runs \argu{code\;$i$} and ends. If all tests fail, the macro runs the optional \argu{other cases code}, if present.\smallskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfStrEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}
+|\IfStrEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|
+\IfStrEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[other]
+\IfStrEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[other]
+\IfStrEqCase{+3}{{1}{one}{2}{two}{3}{three}}[other]
+\IfStrEqCase{0.5}{{0}{zero}{.5}{half}{1}{one}}[other]
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfStrEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}\par
+	|\IfStrEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|\par
+	\IfStrEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[other]\par
+	\IfStrEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[other]\par
+	\IfStrEqCase{+3}{{1}{one}{2}{two}{3}{three}}[other]\par
+	\IfStrEqCase{0.5}{{0}{zero}{.5}{half}{1}{one}}[other]
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfEqCase}
+
+\begin{minipage}{\textwidth}
+	\verbinline|\IfEqCase|\etoile\ARGU{string}\verb|{%|\par
+	\qquad\qquad\ARGU{string1}\ARGU{code1}\verb|%|\par
+	\qquad\qquad\ARGU{string2}\ARGU{code2}\verb|%|\par
+	\qquad\qquad\verb|etc...|\par
+	\qquad\qquad\ARGU{stringN}\ARGU{codeN}\verb|}|\arguC{other cases code}
+\end{minipage}
+\smallskip
+
+Tests successively if \argu{string} is equal to \argu{string1}, \argu{string2}, etc. Comparison is made with \verbinline|\IEq| (see above). If the test number $i$ is positive (the \argu{string} matches \argu{string\;$i$}), the macro runs \argu{code\;$i$} and ends. If all tests fail, the macro runs the optional \argu{other cases code}, if present.\smallskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}
+|\IfEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|
+\IfEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[other]
+\IfEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[other]
+\IfEqCase{+3}{{1}{one}{2}{two}{3}{three}}[other]
+\IfEqCase{0.5}{{0}{zero}{.5}{half}{1}{one}}[other]
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}\par
+	|\IfEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|\par
+	\IfEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[other]\par
+	\IfEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[other]\par
+	\IfEqCase{+3}{{1}{one}{2}{two}{3}{three}}[other]\par
+	\IfEqCase{0.5}{{0}{zero}{.5}{half}{1}{one}}[other]
+\end{minipage}%
+
+\subsection{Extraction of substrings}
+\subsubsection{\ttfamily\textbackslash StrBefore}
+
+\verbinline|\StrBefore|\etoile\arguC{number}\ARGU{string}\ARGU{stringA}\arguC{name}
+\smallskip
+
+The value of the optional argument \argu{number} is 1 by default.\par\smallskip
+
+In \argu{string}, returns what is leftwards the \argu{number}\th occurrence of \argu{stringA}.\medskip
+
+\begin{Conditions}
+\item If \argu{string} or \argu{stringA} is empty, an empty string is returned;
+\item If \argu{number}${}<1$ then the macro behaves as if \argu{number}${}=1$;
+\item If the occurrence is not found, an empty string is returned.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrBefore{xstring}{tri}
+\StrBefore{LaTeX}{e}
+|\StrBefore{LaTeX}{p}|
+|\StrBefore{LaTeX}{L}|
+|\StrBefore{a bc def }{def}|
+|\StrBefore{a bc def }{cd}|
+\StrBefore[1]{1b2b3}{b}
+\StrBefore[2]{1b2b3}{b}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrBefore{xstring}{tri}\par
+	\StrBefore{LaTeX}{e}\par
+	|\StrBefore{LaTeX}{p}|\par
+	|\StrBefore{LaTeX}{L}|\par
+	|\StrBefore{a bc def }{def}|\par
+	|\StrBefore{a bc def }{cd}|\par
+	\StrBefore[1]{1b2b3}{b}\par
+	\StrBefore[2]{1b2b3}{b}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrBehind}
+
+\verbinline|\StrBehind|\etoile\arguC{number}\ARGU{string}\ARGU{stringA}\arguC{name}
+\smallskip
+
+The value of the optional argument \argu{number} is 1 by default.\par\smallskip
+
+In \argu{string}, returns what is rightwards the \argu{number}\th occurrence of \argu{stringA}.\medskip
+
+\begin{Conditions}
+\item If \argu{string} or \argu{stringA} is empty, an empty string is returned;
+\item If \argu{number}${}<1$ then the macro behaves as if \argu{number}${}=1$;
+\item If the occurrence is not found, an empty string is returned.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrBehind{xstring}{tri}
+\StrBehind{LaTeX}{e}
+|\StrBehind{LaTeX}{p}|
+|\StrBehind{LaTeX}{X}|
+|\StrBehind{a bc def }{bc}|
+|\StrBehind{a bc def }{cd}|
+\StrBehind[1]{1b2b3}{b}
+\StrBehind[2]{1b2b3}{b}
+|\StrBehind[3]{1b2b3}{b}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrBehind{xstring}{tri}\par
+	\StrBehind{LaTeX}{e}\par
+	|\StrBehind{LaTeX}{p}|\par
+	|\StrBehind{LaTeX}{X}|\par
+	|\StrBehind{a bc def }{bc}|\par
+	|\StrBehind{a bc def }{cd}|\par
+	\StrBehind[1]{1b2b3}{b}\par
+	\StrBehind[2]{1b2b3}{b}\par
+	|\StrBehind[3]{1b2b3}{b}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrBetween}
+
+\verbinline|\StrBetween|\etoile\arguCC{number1}{number2}\ARGU{string}\ARGU{stringA}\ARGU{stringB}\arguC{name}
+\smallskip
+
+The values of the optional arguments \argu{number1} and \argu{number2} are 1 by default.\par\smallskip
+
+In \argu{string}, returns the substring between\footnote{In a strict sense, i.e. \emph{without} the strings \argu{stringA} and \argu{stringB}} the \argu{number1}\th occurrence of \argu{stringA} and \argu{number2}\th occurrence of \argu{stringB}.\medskip
+
+\begin{Conditions}
+\item If the occurrences are not in this order ---~\argu{stringA} \emph{followed by} \argu{stringB}~--- in \argu{string}, an empty string is returned;
+\item If one of the 2 occurrences doesn't exist in \argu{string}, an empty string is returned;
+\item  If one of the optional arguments \argu{number1} ou \argu{number2} is negative or zero, an empty string is returned.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrBetween{xstring}{xs}{ng}
+|\StrBetween{xstring}{i}{n}|
+|\StrBetween{xstring}{a}{tring}|
+|\StrBetween{a bc def }{a}{d}|
+|\StrBetween{a bc def }{a }{f}|
+\StrBetween{a1b1a2b2a3b3}{a}{b}
+\StrBetween[2,3]{a1b1a2b2a3b3}{a}{b}
+\StrBetween[1,3]{a1b1a2b2a3b3}{a}{b}
+|\StrBetween[3,1]{a1b1a2b2a3b3}{a}{b}|
+\StrBetween[3,2]{abracadabra}{a}{bra}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrBetween{xstring}{xs}{ng}\par
+	|\StrBetween{xstring}{i}{n}|\par
+	|\StrBetween{xstring}{a}{tring}|\par
+	|\StrBetween{a bc def }{a}{d}|\par
+	|\StrBetween{a bc def }{a }{f}|\par
+	\StrBetween{a1b1a2b2a3b3}{a}{b}\par
+	\StrBetween[2,3]{a1b1a2b2a3b3}{a}{b}\par
+	\StrBetween[1,3]{a1b1a2b2a3b3}{a}{b}\par
+	|\StrBetween[3,1]{a1b1a2b2a3b3}{a}{b}|\par
+	\StrBetween[3,2]{abracadabra}{a}{bra}\par
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrSubstitute}
+
+\verbinline|\StrSubstitute|\arguC{number}\ARGU{string}\ARGU{stringA}\ARGU{stringB}\arguC{name}
+\smallskip
+
+The value of the optional argument \argu{number} is 0 by default.\par\smallskip
+
+In \argu{string}, substitute the \argu{number} first occurrences of \argu{stringA} for \argu{stringB}, except if \argu{number}${}=0$ in which case \emph{all} the occurrences are substituted.
+
+\begin{Conditions}
+\item If \argu{string} is empty, an empty string is returned;
+\item If \argu{stringA} is empty or doesn't exist in \argu{string}, the macro is ineffective;
+\item If \argu{number} is greater than the number of occurrences of \argu{stringA}, then all the occurrences are substituted;
+\item If \argu{number}${}<0$ the macro behaves as if \argu{number}${}=0$;
+\item If \argu{stringB} is empty, the occurrences of \argu{stringA}, if they exist, are deleted.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrSubstitute{xstring}{i}{a}
+\StrSubstitute{abracadabra}{a}{o}
+\StrSubstitute{abracadabra}{br}{TeX}
+\StrSubstitute{LaTeX}{m}{n}
+\StrSubstitute{a bc def }{ }{M}
+\StrSubstitute{a bc def }{ab}{AB}
+\StrSubstitute[1]{a1a2a3}{a}{B}
+\StrSubstitute[2]{a1a2a3}{a}{B}
+\StrSubstitute[3]{a1a2a3}{a}{B}
+\StrSubstitute[4]{a1a2a3}{a}{B}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrSubstitute{xstring}{i}{a}\par
+	\StrSubstitute{abracadabra}{a}{o}\par
+	\StrSubstitute{abracadabra}{br}{TeX}\par
+	\StrSubstitute{LaTeX}{m}{n}\par
+	\StrSubstitute{a bc def }{ }{M}\par
+	\StrSubstitute{a bc def }{ab}{AB}\par
+	\StrSubstitute[1]{a1a2a3}{a}{B}\par
+	\StrSubstitute[2]{a1a2a3}{a}{B}\par
+	\StrSubstitute[3]{a1a2a3}{a}{B}\par
+	\StrSubstitute[4]{a1a2a3}{a}{B}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrDel}
+
+\verbinline|\StrDel|\etoile\arguC{number}\ARGU{string}\ARGU{stringA}\arguC{name}
+\smallskip
+
+The value of the optional argument \argu{number} is 0 by default.\par\smallskip
+
+Delete the \argu{number} first occurrences of \argu{stringA} in \argu{string}, except if \argu{number}${}=0$ in which case \emph{all} the occurrences are deleted.\medskip
+
+\begin{Conditions}
+\item If \argu{string} is empty, an empty string is returned;
+\item If \argu{stringA} is empty or doesn't exist in \argu{string}, the macro is ineffective;
+\item If \argu{number} greater then the number of occurrences of \argu{stringA}, then all the occurrences are deleted;
+\item If \argu{number}${}<0$ the macro behaves as if \argu{number}${}=0$;
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrDel{abracadabra}{a}
+\StrDel[1]{abracadabra}{a}
+\StrDel[4]{abracadabra}{a}
+\StrDel[9]{abracadabra}{a}
+\StrDel{a bc def }{ }
+|\StrDel{a bc def }{def}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrDel{abracadabra}{a}\par
+	\StrDel[1]{abracadabra}{a}\par
+	\StrDel[4]{abracadabra}{a}\par
+	\StrDel[9]{abracadabra}{a}\par
+	\StrDel{a bc def }{ }\par
+	|\StrDel{a bc def }{def}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrGobbleLeft}
+\verbinline|\StrGobbleLeft|\ARGU{string}\ARGU{number}\arguC{name}
+\smallskip
+
+In \argu{string}, delete the \argu{number} first characters on the left.\medskip
+
+\begin{Conditions}
+\item If \argu{string} is empty, an empty string is returned;
+\item If \argu{number}${}\leqslant0$, no character is deleted;
+\item If \argu{number}${}\geqslant{}$\argu{lengthString}, all the characters are deleted.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrGobbleLeft{xstring}{2}
+|\StrGobbleLeft{xstring}{9}|
+\StrGobbleLeft{LaTeX}{4}
+\StrGobbleLeft{LaTeX}{-2}
+|\StrGobbleLeft{a bc def }{4}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrGobbleLeft{xstring}{2}\par
+	|\StrGobbleLeft{xstring}{9}|\par
+	\StrGobbleLeft{LaTeX}{4}\par
+	\StrGobbleLeft{LaTeX}{-2}\par
+	|\StrGobbleLeft{a bc def }{4}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrLeft}
+
+\verbinline|\StrLeft|\ARGU{string}\ARGU{number}\arguC{name}
+\smallskip
+
+In \argu{string}, returns the \argu{number} first characters on the left.\medskip
+
+\begin{Conditions}
+\item If \argu{string} is empty, an empty string is returned;
+\item If \argu{number}${}\leqslant0$, no character is returned;
+\item If \argu{number}${}\geqslant{}$\argu{lengthString}, all the characters are returned.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrLeft{xstring}{2}
+\StrLeft{xstring}{9}
+\StrLeft{LaTeX}{4}
+|\StrLeft{LaTeX}{-2}|
+|\StrLeft{a bc def }{5}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrLeft{xstring}{2}\par
+	\StrLeft{xstring}{9}\par
+	\StrLeft{LaTeX}{4}\par
+	|\StrLeft{LaTeX}{-2}|\par
+	|\StrLeft{a bc def }{5}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrGobbleRight}
+
+\verbinline|\StrGobbleRight|\ARGU{string}\ARGU{number}\arguC{name}
+\smallskip
+
+In \argu{string}, delete the \argu{number} last characters on the right.\medskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrGobbleRight{xstring}{2}
+|\StrGobbleRight{xstring}{9}|
+\StrGobbleRight{LaTeX}{4}
+|\StrGobbleRight{LaTeX}{-2}|
+|\StrGobbleRight{a bc def }{4}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrGobbleRight{xstring}{2}\par
+	|\StrGobbleRight{xstring}{9}|\par
+	\StrGobbleRight{LaTeX}{4}\par
+	|\StrGobbleRight{LaTeX}{-2}|\par
+	|\StrGobbleRight{a bc def }{4}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrRight}
+
+\verbinline|\StrRight|\ARGU{string}\ARGU{number}\arguC{name}
+\smallskip
+
+In \argu{string}, returns the \argu{number} last characters on the right.\medskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrRight{xstring}{2}
+\StrRight{xstring}{9}
+\StrRight{LaTeX}{4}
+|\StrRight{LaTeX}{-2}|
+\StrRight{a bc def }{5}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrRight{xstring}{2}\par
+	\StrRight{xstring}{9}\par
+	\StrRight{LaTeX}{4}\par
+	|\StrRight{LaTeX}{-2}|\par
+	\StrRight{a bc def }{5}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrChar}
+
+\verbinline|\StrChar|\etoile\ARGU{string}\ARGU{number}\arguC{name}
+\smallskip
+
+Returns the \US at the position \argu{number} in \argu{string}.\medskip
+
+\begin{Conditions}
+\item If \argu{string} is empty, no caracter is returned;
+\item If \argu{number}${}\leqslant0$ or if \argu{number}${}>{}$\argu{lengthString}, no character is returned.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrChar{xstring}{4}
+|\StrChar{xstring}{9}|
+|\StrChar{xstring}{-5}|
+\StrChar{a bc def }{6}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrChar{xstring}{4}\par
+	|\StrChar{xstring}{9}|\par
+	|\StrChar{xstring}{-5}|\par
+	\StrChar{a bc def }{6}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrMid}
+
+\verbinline|\StrMid|\ARGU{string}\ARGU{numberA}\ARGU{numberB}\arguC{name}
+\smallskip
+
+In \argu{string}, returns the substring between\footnote{In the broad sense, i.e. that the strings characters of the \guill{border} are returned.} the positions \argu{numberA} and \argu{numberB}.\medskip
+
+\begin{Conditions}
+\item If \argu{string} is empty, an empty string is returned;
+\item If \argu{numberA}${}>{}$\argu{numberB}, an empty string is returned;
+\item If \argu{numberA}${}<1$ and \argu{numberB}${}<1$ an empty string is returned;
+\item If \argu{numberA}${}>{}$\argu{lengthString} et \argu{numberB}${}>{}$\argu{lengthString}, an empty string is returned;
+\item If \argu{numberA}${}<1$, the macro behaves as if \argu{numberA}${}=1$;
+\item If \argu{numberB}${}>{}$\argu{lengthString}, the macro behaves as if \argu{numberB}${}={}$\argu{lengthString}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrMid{xstring}{2}{5}
+\StrMid{xstring}{-4}{2}
+|\StrMid{xstring}{5}{1}|
+\StrMid{xstring}{6}{15}
+\StrMid{xstring}{3}{3}
+|\StrMid{a bc def }{2}{7}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrMid{xstring}{2}{5}\par
+	\StrMid{xstring}{-4}{2}\par
+	|\StrMid{xstring}{5}{1}|\par
+	\StrMid{xstring}{6}{15}\par
+	\StrMid{xstring}{3}{3}\par
+	|\StrMid{a bc def }{2}{7}|
+\end{minipage}%
+
+\subsection{Macros returning a number}
+\subsubsection{\ttfamily\textbackslash StrLen}
+
+\verbinline|\StrLen|\ARGU{string}\arguC{name}
+\smallskip
+
+Return the length of \argu{string}.
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrLen{xstring}
+\StrLen{A}
+\StrLen{a bc def }
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrLen{xstring}\par
+	\StrLen{A}\par
+	\StrLen{a bc def }
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrCount}
+
+\verbinline|\StrCount|\ARGU{string}\ARGU{stringA}\arguC{name}
+\smallskip
+
+Counts how many times \argu{stringA} is contained in \argu{string}.\par\medskip
+
+\begin{Conditions}
+\item If one at least of the arguments \argu{string} or \argu{stringA} is empty, the macro return 0.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrCount{abracadabra}{a}
+\StrCount{abracadabra}{bra}
+\StrCount{abracadabra}{tic}
+\StrCount{aaaaaa}{aa}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrCount{abracadabra}{a}\par
+	\StrCount{abracadabra}{bra}\par
+	\StrCount{abracadabra}{tic}\par
+	\StrCount{aaaaaa}{aa}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrPosition}
+
+\verbinline|\StrPosition|\arguC{number}\ARGU{string}\ARGU{stringA}\arguC{name}
+\smallskip
+
+The value of the optional argument \argu{number} is 1 by default.\par\smallskip
+
+In \argu{string}, returns the position of the \argu{number}\th occurrence of \argu{stringA}.\medskip
+
+\begin{Conditions}
+\item If \argu{number} is greater than the number of occurrences of \argu{stringA}, then the macro returns 0;
+\item If \argu{string} doesn't contain \argu{stringA}, then the macro returns 0.
+\end{Conditions}
+\medskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrPosition{xstring}{ring}
+\StrPosition[4]{abracadabra}{a}
+\StrPosition[2]{abracadabra}{bra}
+\StrPosition[9]{abracadabra}{a}
+\StrPosition{abracadabra}{z}
+\StrPosition{a bc def }{d}
+\StrPosition[3]{aaaaaa}{aa}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrPosition{xstring}{ring}\par
+	\StrPosition[4]{abracadabra}{a}\par
+	\StrPosition[2]{abracadabra}{bra}\par
+	\StrPosition[9]{abracadabra}{a}\par
+	\StrPosition{abracadabra}{z}\par
+	\StrPosition{a bc def }{d}\par
+	\StrPosition[3]{aaaaaa}{aa}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrCompare}
+\verbinline|\StrCompare|\etoile\ARGU{stringA}\ARGU{stringB}\arguC{name}
+\smallskip
+
+This macro has 2 tolerances: the "normal" tolerance, used by default, and the "strict" tolerance.
+\begin{itemize}
+	\item The normal tolerance is activated with \verbinline|\comparenormal|.\par
+	The macro compares characters from left to right in \argu{stringA} and \argu{stringB} until a difference appears or the end of the shortest string is reached. The position of the first difference is returned and if no difference is found, the macro return 0.
+	\item The strict tolerance is activated with \verbinline|\comparestrict|.\par
+	The macro compares the 2 strings. If they are equal, it returns 0. If not, the position of the first difference is returned.
+\end{itemize}
+\medskip
+
+It is possible to save the comparison mode with \verbinline|\savecomparemode|, then modify this comparison mode and come back to the situation when it was saved with \verbinline|\restorecomparemode|.\medskip
+
+Examples with the normal tolerance:\par\nobreak
+\begin{minipage}[t]{0.65\linewidth}
+\comparenormal
+\begin{lstlisting}
+\StrCompare{abcd}{abcd}
+\StrCompare{abcd}{abc}
+\StrCompare{abc}{abcd}
+\StrCompare{a b c}{abc}
+\StrCompare{aaa}{baaa}
+\StrCompare{abc}{xyz}
+\StrCompare{123456}{123457}
+\StrCompare{abc}{}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\comparenormal
+	\StrCompare{abcd}{abcd}\par
+	\StrCompare{abcd}{abc}\par
+	\StrCompare{abc}{abcd}\par
+	\StrCompare{a b c}{abc}\par
+	\StrCompare{aaa}{baaa}\par
+	\StrCompare{abc}{xyz}\par
+	\StrCompare{123456}{123457}\par
+	\StrCompare{abc}{}
+\end{minipage}%
+\medskip
+
+Examples with the strict tolerance:\par\nobreak
+\begin{minipage}[t]{0.65\linewidth}
+\comparestrict
+\begin{lstlisting}
+\StrCompare{abcd}{abcd}
+\StrCompare{abcd}{abc}
+\StrCompare{abc}{abcd}
+\StrCompare{a b c}{abc}
+\StrCompare{aaa}{baaa}
+\StrCompare{abc}{xyz}
+\StrCompare{123456}{123457}
+\StrCompare{abc}{}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\comparestrict
+	\StrCompare{abcd}{abcd}\par
+	\StrCompare{abcd}{abc}\par
+	\StrCompare{abc}{abcd}\par
+	\StrCompare{a b c}{abc}\par
+	\StrCompare{aaa}{baaa}\par
+	\StrCompare{abc}{xyz}\par
+	\StrCompare{123456}{123457}\par
+	\StrCompare{abc}{}
+\end{minipage}%
+
+\section{Operating modes}
+\subsection{Expansion of arguments}
+\label{devarg}
+\subsubsection{The commands {\ttfamily \textbackslash fullexpandarg}, {\ttfamily \textbackslash expandarg} and {\ttfamily \textbackslash noexpandarg}}
+The command \verbinline|\fullexpandarg| is called by default, so all the arguments are fully expanded (an \verbinline|\edef| is used) before the the macro works on them. In most of the cases, this expansion mode avoids chains of \verbinline|\expandafter| and allows lighter code.
+
+Of course, the expansion of argument can be canceled to find back the usual behaviour of \TeX{} with the comands \verbinline|\noexpandarg| or \verbinline|\normalexpandarg|.\medskip
+
+Another expansion mode can be called with \verbinline|\expandarg|. In this case, the \textbf{first token} of each argument is expanded \emph{one time} while all other tokens are left unchanged (if you want the expansion of all tokens one time, you should call the macro \verbinline|\StrExpand|, see page~\pageref{scancs}).\medskip
+
+The commands \verbinline|\fullexpandarg|, \verbinline|\noexpandarg|, \verbinline|\normalexpandarg| and \verbinline|\expandarg| can be called at any moment in the code; they behave as "switches" and they can be locally used in a group.\medskip
+
+It is possible to save the expansion mode with \verbinline|\saveexpandmode|, then modify this expansion mode and come back to the situation when it was saved with \verbinline|\restoreexpandmode|.\medskip
+
+In the following list, for every macro of the previous chapter, the arguments colored in \textcolor{violet}{purple} will possibly be expanded, according to the expansion mode:\smallskip
+
+\parindent3em
+\begin{itemize}
+	\item\verb|\IfSubStr|\etoile{\colorise\arguC{number}\ARGU{string}\ARGU{stringA}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfSubStrBefore|\etoile{\colorise\arguCC{number1}{number2}\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfSubStrBehind|\etoile{\colorise\arguCC{number1}{number2}\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfBeginWith|\etoile{\colorise\ARGU{string}\ARGU{stringA}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfEndWith|\etoile{\colorise\ARGU{string}\ARGU{stringA}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfInteger|{\colorise\ARGU{number}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfDecimal|{\colorise\ARGU{number}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfStrEq|\etoile{\colorise\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfEq|\etoile{\colorise\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfStrEqCase|\etoile{\colorise\ARGU{string}\texttt{\color{black}\{}\colorise\ARGU{string1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfStrEqCase}\etoile\ARGU{string}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{string2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{string $n$}}\ARGU{code $n$}\verb|}|\arguC{other cases code}
+	\item\verb|\IfEqCase|\etoile{\colorise\ARGU{string}\texttt{\color{black}\{}\colorise\ARGU{string1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfEqCase}\etoile\ARGU{string}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{string2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{string $n$}}\ARGU{code $n$}\verb|}|\arguC{other cases code}
+	\item\verb|\StrBefore|\etoile{\colorise\arguC{number}\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrBehind|\etoile{\colorise\arguC{number}\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrBetween|\etoile{\colorise\arguCC{number1}{number2}\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\arguC{name}
+	\item\verb|\StrSubstitute|{\colorise\arguC{number}\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\arguC{name}
+	\item\verb|\StrDel|{\colorise\arguC{number}\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrSplit|{\colorise\ARGU{string}\ARGU{number}}\ARGU{stringA}\ARGU{stringB}\qquad{\small(see macro \verb|StrSplit| page~\pageref{StrSplit})}
+	\item\verb|\StrGobbleLeft|{\colorise\ARGU{string}\ARGU{number}}\arguC{name}
+	\item\verb|\StrLeft|{\colorise\ARGU{string}\ARGU{number}}\arguC{name}
+	\item\verb|\StrGobbleRight|{\colorise\ARGU{string}\ARGU{number}}\arguC{name}
+	\item\verb|\StrRight|{\colorise\ARGU{string}\ARGU{number}}\arguC{name}
+	\item\verb|\StrChar|{\colorise\ARGU{string}\ARGU{number}}\arguC{name}
+	\item\verb|\StrMid|{\colorise\ARGU{string}\ARGU{number1}\ARGU{number2}}\arguC{name}
+	\item\verb|\StrLen|{\colorise\ARGU{string}}\arguC{name}
+	\item\verb|\StrCount|{\colorise\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrPosition|{\colorise\arguC{number}\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrCompare|{\colorise\ARGU{stringA}\ARGU{stringB}}\arguC{name}
+\end{itemize}
+\parindent0pt
+
+\subsubsection{Chars and tokens allowed in arguments}
+First of all, whatever be the current expansion mode, \textbf{tokens with catcode 6 and 14 (usually {\ttfamily\#} and {\ttfamily\%}) are forbidden in all the arguments}\footnote{Maybe, the token {\ttfamily\#} will be allowed in a future version.}.\bigskip
+
+When full expansion mode is activated with \verbinline|\fullexpandarg|, arguments are expanded with an \verbinline|\edef| before they are read by the macro. Consequently, are allowed in arguments:
+\parindent3em
+\begin{itemize}
+	\item letters (uppercase or lowercase, accented\footnote{For a reliable operation with accented letters, the \texttt{\string\fontenc} package with option \texttt{[T1]} and \texttt{\string\inputenc} with appropriated option must be loaded} or not), figures, spaces, and any other character with a catcode of 10, 11 ou 12 (punctuation signs, calculation signs, parenthesis, square bracket, etc).;
+	\item tokens with catcode 1 to 4, usually : \verb|{|\quad\verb|}|\footnote{Warning : braces \textbf{must} be balanced in arguments !}\quad\verb|$|\quad\verb|&|
+	\item tokens with catcode 7 and 8, usually : \verb|^|\quad\verb|_|
+	\item any purely expandable control sequence\footnote{i.e. this control sequence can be {\ttfamily\string\edef}ed.} or tokens with catcode 13 (active chars) whose expansion is allowed chars.
+\end{itemize}\parindent0pt
+\smallskip
+
+When arguments are not expanded with the use of \verbinline|\noexpandarg|, other tokens can be put in a string whatever be the code they make: any control sequence, even undefined, any token catcode 13. Moreover, test tokens are allowed like \verbinline|\if| or \verbinline|\ifx|, even without their \verbinline|\fi|. On the same way, a \verbinline|\csname| without its \verbinline|\endcsname| is allowed.
+
+In this example, the argument contains a \verbinline|\ifx| \emph{without} the \verbinline|\fi|: the \verbinline|\StrBetween| command extracts and dislpays what is between \verbinline|\ifx| and \verbinline|\else|:\par\medskip\nobreak
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\StrBetween{\ifx ab false \else true}{\ifx}{\else}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\StrBetween{\ifx ab false \else true}{\ifx}{\else}
+\end{minipage}
+\medskip
+
+When \verbinline|\expandarg| is used, the first token needs precaution since it is expanded one time: it must be defined. The other tokens are left unchanged like with \verbinline|\noexpandarg|.
+
+\subsection{Expansion of macros, optional argument}
+\label{argumentoptionnel}
+The macros of this package are not purely expandable, i.e. they cannot be put in the argument of an \verbinline|\edef|. Nestling macros is not possible neither.\medskip
+
+For this reason, all the macros returning a result (i.e. all excepted the tests) have an optional argument in last position. The syntax is \arguC{name}, where \argu{name} is the name of the control sequence that will receive the result of the macro: the assignment is made with an \verbinline|\edef| which make the result of the macro \argu{name} purely expandable. Of course, if an optional argument is present, the macro does not display anything.\medskip
+
+Thus, this structure not allowed, supposed to assign to \verb|\Result| the 4 chars on the left of \verb|xstring|:\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\edef\Result{\StrLeft{xstring}{4}}|\par\nobreak
+\qquad is equivalent to :\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrLeft{xstring}{4}[\Result]|\medskip
+
+And this nested structure, not allowed neither, supposed to remove the first and last char of \verb|xstring|:\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrGobbleLeft{\StrGobbleRight{xstring}{1}}{1}|\par\nobreak
+\qquad should be written like this:\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrGobbleRight{xstring}{1}[\mystring]|\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrGobbleleft{\mystring}{1}|\par
+
+\subsection{How does \Xstring read the arguments?}
+\label{developpementarguments}
+\subsubsection{Syntax unit by \US}
+The macros of \Xstring read their arguments \US par \US. In the \TeX{} code, a \US\footnote{For advanced users used to \LaTeX{} programming, a \US is what is gobbled by the macro \texttt{\string\@gobble} whose code is: {\ttfamily\string\def\string\@gobble\string#1\string{\string}}} is either:\parindent3em
+\begin{itemize}
+	\item a control sequence;
+	\item a group, i.e. what is between 2 balanced braces (usually tokens catcode 1 and 2);
+	\item a char.
+\end{itemize}
+\medskip\parindent0pt
+
+Let's see what is a \US with an example. Let's take this argument : "\verb|ab\textbf{xyz}cd|"
+
+It has 6 \USs: "\verb|a|", "\verb|b|", "\verb|\textbf|", "\verb|{xyz}|", "\verb|c|" and "\verb|d|".\medskip
+
+What will happen if, while \verbinline|\noexpandarg| is active, we ask \Xstring to find the length of this argument and find its 4\th "char"\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\StrLen{ab\textbf{xyz}cd}\par
+\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+\meaning\mychar
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\StrLen{ab\textbf{xyz}cd}\par
+	\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+	\meaning\mychar
+\end{minipage}%
+\fullexpandarg
+\medskip
+
+It is necessary to use \verbinline|\meaning| to see the real expansion of \verb|\mychar|, and not simply call \verb|\mychar| to display it, which make loose informations (braces here). We do not obtain a "char" but a \US, as expected.
+
+\subsubsection{Exploration of groups}
+By default, the command \verbinline|\noexploregroups| is called, so in the argument containing the string of tokens, \Xstring does not look into groups, and simply consider them as a \US.
+
+For specific uses, it can be necessary to look into groups: \verbinline|\exploregroups| changes the exploration mode and forces the macros to look inside groups.\medskip
+
+What does this exploration mode in the previous example? \Xstring does not count the group as a single \US but looks inside it and counts the \US found inside (\verb|x|, \verb|y| and \verb|z|), and so on if there were several nested groups:\smallskip
+
+\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\exploregroups
+\StrLen{ab\textbf{xyz}cd}\par
+\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+\meaning\mychar
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\exploregroups
+	\StrLen{ab\textbf{xyz}cd}\par
+	\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+	\meaning\mychar
+\end{minipage}%
+\fullexpandarg\noexploregroups
+\medskip
+
+Exploring the groups can be usefull for counting a substring in a string (\verbinline|\StrCount|), for the position of a substring in a string (\verbinline|\StrPosition|) or for tests, but has a severe limitation with macros returning a string: when a string is cut inside a group, \textbf{the result does not take into account what is outside this group}. This exploration mode must be used knowingly this limitation when calling macros returning a string.\smallskip
+
+Let's see what this means with an example. We want to know what is on the left of the second appearance of \verb|\a| in the argument \verb|\a1{\b1\a2}\a3|. As groups are explored, this appearance is inside this group : \verb|{\b1\a2}|. The result will be \verb|\b1|. Let's check:\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\exploregroups
+\StrBefore[2]{\a1{\b1\a2}\a3}{\a}[\mycs]
+\meaning\mycs
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\exploregroups
+	\StrBefore[2]{\a1{\b1\a2}\a3}{\a}[\mycs]
+	\meaning\mycs
+\end{minipage}%
+\medskip
+
+Exploring the groups\footnote{The file test of \Xstring has many examples underlining differences between exploration modes.} can change the behaviour of most of the macros of \Xstring, excepted these macros untouched by the exploration mode; their behaviour is the same in any case: \verbinline|\IfInteger|, \verbinline|\IfDecimal|, \verbinline|\IfStrEq|, \verbinline|\StrEq| et \verbinline|\StrCompare|.
+
+Moreover, 2 macros run in \verbinline|\noexploregroups| mode, whatever be the current mode: \verbinline|\StrBetween| et \verbinline|\StrMid|.\medskip
+
+It is possible to save the exploration mode with \verbinline|\saveexploremode|, then modify it and come back to the situation when it was saved with \verbinline|\restoreexploremode|.
+
+\subsection{Catcode and starred macros}
+\label{macrosetoilees}
+Macros of this package take the catcodes of tokens into account. To avoid unexpected behaviour (particulary with tests), you should keep in mind that tokens \emph{and their catcodes} are examined.\medskip
+
+For instance, these two arguments:\par\medskip
+\hfil\verbinline|{\string a\string b}|\qquad and\qquad\verb|{ab}|\hfil{}\par\smallskip
+do \emph{not} expand into equal strings for xstring! Because of the command \verbinline|\string|, the first expands into "\verb|ab|" with catcodes 12 while the second have characters with their natural catcodes 11. Catcodes do not match! It is necessary to be aware of this, particulary with \TeX{} commands like \verbinline|\string| whose expansions are a strings with chars catcodes 12 and 10 : \verbinline|\detokenize|, \verbinline|\meaning|, \verbinline|\jobname|, \verbinline|\fontname|, \verbinline|\romannumeral|, etc.\medskip
+
+Starred macros do not take catcodes into account. They simply convert some arguments into arguments with catcodes 10, 11 and 12, and call the non-starred macros with these modified arguments. The optional arguments are not modified and the catcodes are left unchanged.\medskip
+
+Here is an example:\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\IfStrEq{\string a\string b}{ab}{true}{false}\par
+\IfStrEq*{\string a\string b}{ab}{true}{false}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\IfStrEq{\string a\string b}{ab}{true}{false}\par
+	\IfStrEq*{\string a\string b}{ab}{true}{false}
+\end{minipage}%
+\smallskip
+
+The strings do not match because of catcode differences: the test is negative in the non-starred macro.\bigskip
+
+\textbf{Warning}: the use of a strarred macro has consequences! The arguments are \guill{detokenized}, thus, there is no more control sequences, groups, neither any special char: everything is converted into chars with "harmless" catcodes.\medskip
+
+For the macros returning a string, if the starred version is used, the result will be a string in which chars have catcodes 12 and 10 for space. For example, after a "\verbinline|\StrBefore*{a \b c d}{c}[\mytext]|", the control sequence \verb|\mytext| expands to "\verb|a|${}_{12}$\verb*| |${}_{10}$\verb|\|${}_{12}$\verb|b|${}_{12}$\verb*| |${}_{10}$".\medskip
+
+The macro with a starred version are listed below. For these macros, if starred version is used, the \textcolor{violet}{purple} arguments will be detokenized:\smallskip
+
+\parindent3em
+\begin{itemize}
+	\item\verb|\IfSubStr|\etoile\arguC{number}{\colorise\ARGU{string}\ARGU{stringA}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfSubStrBefore|\etoile\arguCC{number1}{number2}{\colorise\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfSubStrBehind|\etoile\arguCC{number1}{number2}{\colorise\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfBeginWith|\etoile{\colorise\ARGU{string}\ARGU{stringA}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfEndWith|\etoile{\colorise\ARGU{string}\ARGU{stringA}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfStrEq|\etoile{\colorise\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfEq|\etoile{\colorise\ARGU{stringA}\ARGU{stringB}}\ARGU{true}\ARGU{false}
+	\item\verb|\IfStrEqCase|\etoile{\colorise\ARGU{string}\texttt{\color{black}\{}\colorise\ARGU{string1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfStrEqCase}\etoile\ARGU{string}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{string2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{string $n$}}\ARGU{code $n$}\verb|}|\arguC{other cases code}
+	\item\verb|\IfEqCase|\etoile{\colorise\ARGU{string}\texttt{\color{black}\{}\colorise\ARGU{string1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfEqCase}\etoile\ARGU{string}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{string2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{string $n$}}\ARGU{code $n$}\verb|}|\arguC{other cases code}
+	\item\verb|\StrBefore|\etoile\arguC{number}{\colorise\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrBehind|\etoile\arguC{number}{\colorise\ARGU{string}\ARGU{stringA}}\arguC{name}
+	\item\verb|\StrBetween|\etoile\arguCC{number1}{number2}{\colorise\ARGU{string}\ARGU{stringA}\ARGU{stringB}}\arguC{name}
+	\item\verb|\StrCompare|\etoile{\colorise\ARGU{stringA}\ARGU{stringB}}\arguC{name}
+\end{itemize}
+\parindent0pt
+
+\section{Advanced macros for programming}
+Though \Xstring is able to read arguments containing \TeX{} or \LaTeX{} code, for some advanced programming needs, it can be insufficient. This chapter presents other macros able to get round some limitations.
+
+\subsection{Finding a group, macros {\ttfamily\textbackslash StrFindGroup} and {\ttfamily\textbackslash groupID}}
+When \verbinline=\exploregroups= mode is active, the macro \verbinline=\StrFindGroup= finds a group between braces with its identifier:\smallskip
+
+\verbinline|\StrFindGroup|\ARGU{argument}\ARGU{identifier}\arguC{name}\medskip
+
+When the group matching the identifier does not exist, an empty string is assigned to \argu{name}. If the group is found, this group \emph{with its braces} is assigned to \argu{name}.\smallskip
+
+This identifier characterizes the nestling position of the group. It is a list of one or several integers separated with commas. $n_1$, the first integer is the number of the group (not nestled in another) in which the sought group is. Inside this group, the second integer $n_2$ is the number of the group (not nestled in another) in which the sought group is\ldots and so on until the necessary nestling depth is reached to obtain the sougth after group.\bigskip
+
+Let's take an example with 3 levels of nestled groups. In this example, braces delimiting groups are colored in red for nestling level 1, in blue for level 2 and in green for level 3. The groups are numbered with the rule seen above:
+\begingroup
+	\def\AccO#1{\text{\color{#1}\ttfamily\{}}
+	\def\AccF#1{\text{\color{#1}\ttfamily\}}}
+	\def\texte#1{\text{\texttt{\color{black}#1}}}
+	\def\decalbrace{\vphantom{\underbrace{A}_A}}
+	\[\texte{a}{\color{red}\underbrace{\AccO{red}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{bc}\AccF{blue}}_{\color{blue}1}}\texte{d}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{efg}\AccF{blue}}_{\color{blue}2}}\AccF{red}}_{\color{red}1}}\texte{h}{\color{red}\underbrace{\AccO{red}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{ij}\AccF{blue}}_{\color{blue}1}}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{k}\AccF{blue}}_{\color{blue}2}}{\color{blue}\underbrace{\AccO{blue}\texte{l}{\color{green}\underbrace{\AccO{green}\texte{m}\AccF{green}}_{\color{green}1}}{\color{green}\underbrace{\AccO{green}\texte{no}\AccF{green}}_{\color{green}2}}\AccF{blue}}_{\color{blue}3}}\texte{p}\AccF{red}}_{\color{red}2}}\]
+\endgroup
+\smallskip
+In this example:\parindent3em
+\begin{itemize}
+	\item the group \verb={{bc}d{efg}}= has the identifier: \texttt{\color{red}1}
+	\item the group \verb={ij}= has the identifier: \texttt{{\color{red}2},\color{blue}1}
+	\item the group \verb={no}= has the identifier: \texttt{{\color{red}2},{\color{blue}3},\color{green}2}
+	\item the whole argument \verb=a{{bc}d{efg}}h{{ij}{k}{l{m}{no}}p}= has the identifier \verb=0=, only case where the integer 0 is appears in the identifier of a group.
+\end{itemize}
+\parindent0pt
+\medskip
+Here is the full example:\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\exploregroups
+\expandarg
+\def\mystring{a{{bc}d{efg}}h{{ij}{k}{l{m}{no}}p}}
+\StrFindGroup{\mystring}{1}[\mygroup]
+\meaning\mygroup\par
+\StrFindGroup{\mystring}{2,1}[\mygroup]
+\meaning\mygroup\par
+\StrFindGroup{\mystring}{2,3,2}[\mygroup]
+\meaning\mygroup\par
+\StrFindGroup{\mystring}{2,5}[\mygroup]
+\meaning\mygroup\par
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	\expandarg
+	\def\mystring{a{{bc}d{efg}}h{{ij}{k}{l{m}{no}}p}}
+	\StrFindGroup{\mystring}{1}[\mygroup]
+	\meaning\mygroup\par
+	\StrFindGroup{\mystring}{2,1}[\mygroup]
+	\meaning\mygroup\par
+	\StrFindGroup{\mystring}{2,3,2}[\mygroup]
+	\meaning\mygroup\par
+	\StrFindGroup{\mystring}{2,5}[\mygroup]
+	\meaning\mygroup\par
+\end{minipage}%
+\bigskip
+
+The reverse process exists, and several macros of \Xstring provide the identifier of the group in which they made a cut or they found a substring. These macros are: \verbinline|\IfSubStr|, \verbinline|\StrBefore|, \verbinline|\StrBehind|, \verbinline|\StrSplit|, \verbinline|\StrLeft|, \verbinline|\StrGobbleLeft|, \verbinline|\StrRight|, \verbinline|\StrGobbleRight|, \verbinline|\StrChar|, \verbinline|\StrPosition|.\medskip
+
+After these macros, the control sequence \verbinline|\groupID| expands to the identifier of the group where the cut has been done or the search has succeeded. When not cut can be done or the search fails, \verbinline|\groupID| is empty. Obvioulsly, the use of \verbinline|\groupID| has sense only when \verbinline|\exploregroups| mode is acive and when non starred macros are used.\smallskip
+
+Here are some examples with the macro \verbinline|\StrChar|:\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\exploregroups
+char 1 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{1}\qquad
+\string\groupID = \groupID\par
+char 4 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{4}\qquad
+\string\groupID = \groupID\par
+char 6 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{6}\qquad
+\string\groupID = \groupID\par
+char 20 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{20}\qquad
+\string\groupID = \groupID
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	char 1 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{1}\qquad
+	\string\groupID = \groupID\par
+	char 4 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{4}\qquad
+	\string\groupID = \groupID\par
+	char 6 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{6}\qquad
+	\string\groupID = \groupID\par
+	char 20 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{20}\qquad
+	\string\groupID = \groupID
+\end{minipage}
+
+\subsection{Splitting a string, the macro {\ttfamily\textbackslash StrSplit}}
+\label{StrSplit}
+Here is the syntax:\smallskip
+
+\verbinline|\StrSplit|\ARGU{string}\ARGU{number}\ARGU{stringA}\ARGU{stringB}
+\smallskip
+
+The \argu{string}, is splitted after the \US at position \argu{number}. The left part is assigned to the control sequence \argu{stringA} and the right part is assigned to \argu{stringB}.\par
+This macro returns two strings, so it does \emph{not} display anything. Consequently, it does not provide the optional argument in last position.\medskip
+
+\begin{Conditions}
+	\item If \argu{number}${}\leqslant0$, \argu{stringA} is empty and \argu{stringB} is equal to \argu{string};
+	\item If \argu{number}${}\geqslant$\argu{lengthString}, \argu{stringA} is equal to \argu{string} and \argu{stringB} is empty;
+	\item If \argu{string} is empty, \argu{stringA} and \argu{stringB} are empty, whatever be the integer \argu{number}.
+\end{Conditions}
+
+\begin{minipage}[c]{0.65\linewidth}
+
+\begin{lstlisting}
+\def\redsep{{\color{red}|}}%
+\StrSplit{abcdef}{4}{\csA}{\csB}|\csA\redsep\csB|
+\StrSplit{a b c }{2}{\csA}{\csB}|\csA\redsep\csB|
+\StrSplit{abcdef}{1}{\csA}{\csB}|\csA\redsep\csB|
+\StrSplit{abcdef}{5}{\csA}{\csB}|\csA\redsep\csB|
+\StrSplit{abcdef}{9}{\csA}{\csB}|\csA\redsep\csB|
+\StrSplit{abcdef}{-3}{\csA}{\csB}|\csA\redsep\csB|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\def\redsep{{\color{red}|}}%
+	\StrSplit{abcdef}{4}{\csA}{\csB}|\csA\redsep\csB|\par
+	\StrSplit{a b c }{2}{\csA}{\csB}|\csA\redsep\csB|\par
+	\StrSplit{abcdef}{1}{\csA}{\csB}|\csA\redsep\csB|\par
+	\StrSplit{abcdef}{5}{\csA}{\csB}|\csA\redsep\csB|\par
+	\StrSplit{abcdef}{9}{\csA}{\csB}|\csA\redsep\csB|\par
+	\StrSplit{abcdef}{-3}{\csA}{\csB}|\csA\redsep\csB|
+\end{minipage}%
+
+When the exploration of groups is active and the cut is made at the end of a group, the content of the left string will tbe the entire group while the right string will be empty. The example shows this:\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\hfill
+\begin{lstlisting}
+\exploregroups
+\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+\meaning\strA\par
+\meaning\strB
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+	\meaning\strA\par
+	\meaning\strB
+\end{minipage}%
+\medskip
+
+This macro provides a star version: in this case, the cut is made just before the \US which follows the \US at position \argu{number}. Both version give same results, except when the cut is made at the end of a group; in that case, \verbinline|\StrSplit| closes as many group as necessary until it finds the next \US: the cut is made just before this \US.\smallskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\hfill
+\begin{lstlisting}
+\exploregroups
+Use without star :\par
+\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+\meaning\strA\par
+\meaning\strB\par
+\string\groupID\ = \groupID\par\medskip
+Use with star :\par
+\StrSplit*{ab{cd{ef}gh}ij}{6}\strA\strB
+\meaning\strA\par
+\meaning\strB\par
+\string\groupID\ = \groupID
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	Use without star :\par
+	\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+	\meaning\strA\par
+	\meaning\strB\par
+	\string\groupID\ = \groupID\par\medskip
+	Use with star :\par
+	\StrSplit*{ab{cd{ef}gh}ij}{6}\strA\strB
+	\meaning\strA\par
+	\meaning\strB\par
+	\string\groupID\ = \groupID
+\end{minipage}%
+
+\subsection{Assign a verb content, the macro \ttfamily\textbackslash verbtocs}
+\label{verbtocs}
+The macro \verbinline|\verbtocs| allow to read the content of a \guill{verb} argument containing special characters: \verb|&|, \verb|~|, \verb|\|, \verb|{|, \verb|}|, \verb|_|, \verb|#|, \verb|$|, \verb|^| and \verb|%|. The catcodes of \guill{normal} characters are left unchanged while special characters take a catcode 12. Then, these characters are assigned to a control sequence. The syntax is:\par\nobreak\medskip
+\hfill\verbinline|\verbtocs|\ARGU{name}|\argu{characters}|\hfill{}
+\smallskip
+
+\argu{name} is the name of the control sequence receiving, with an \verbinline|\edef|, the \argu{characters}. \argu{name} thus contains tokens with catcodes 12 (or 10 for space).\medskip
+
+By default, the token delimiting the verb content is \guill{|}. Obviously, this token cannot be both delimiting and being contained into what it delimits. If you need to verbatimize strings containing \guill{|}, you can change at any time the token delimiting the verb content with the macro:\par\nobreak\medskip
+\hfill\verbinline|\setverbdelim|\ARGU{character}\hfill{}\smallskip
+
+Any \argu{token} can be used\footnote{Several tokens can be used, but the syntax of \texttt{\textbackslash verbtocs} becomes less readable ! For this reason, a warning occurs when the argument of \texttt{\textbackslash setverbdelim} contains more than a single token.}. For example, after \verbinline|\setverbdelim{=}|, a verb argument look like this: \verb|=|\argu{characters}\verb|=|.\medskip
+
+About verb arguments, keep in mind that:
+\begin{itemize}
+	\item all the characters before |\argu{characters}| are ignored;
+	\item inside the verb argument, all the spaces are taken into account, even if they are consecutive.
+\end{itemize}
+\medskip
+
+Example:\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\lstset{deletecomment=[l]\%}
+\begin{lstlisting}
+\verbtocs{\result}  |a   & b{ c% d$ e \f|
+I display the result :\par\result
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\result}  |a   & b{ c% d$ e \f|
+	I display the result :\par\result
+\end{minipage}%
+
+\subsection{Tokenization of a text to a control sequence, the macro \ttfamily\textbackslash tokenize}
+The reverse process of what has been seen above is to transform chars into tokens. This is done by the macro:\par\nobreak\medskip
+\hfill\verbinline|\tokenize|\ARGU{name}\ARGU{control sequences}\hfill{}
+\smallskip
+
+\argu{control sequences} is fully expanded if \verbinline|\fullexpandarg| has been called, and is not expanded if \verbinline|\noexpandarg| or \verbinline|\expandarg| are active. After expansion, the chars are tokenized to tokens and assigned to \argu{name} with a \verbinline|\def|.\medskip
+
+Example:\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\verbtocs{\text}|\textbf{a} $\frac{1}{2}$|
+text : \text
+\tokenize{\result}{\text}\par
+result : \result
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\text}
+	  |\textbf{a} $\frac{1}{2}$|
+	text : \text
+	\tokenize{\result}{\text}	\par
+	result : \result
+\end{minipage}%
+\medskip
+
+Obviously, the control sequence \verb|\result| can be called at the last line since the control sequences it contains are defined.
+
+\subsection{Expansion of a control sequence before verbatimize, the macros {\ttfamily\textbackslash StrExpand} and {\ttfamily\textbackslash scancs}}
+\label{scancs}
+The macro \verbinline|\StrExpand| expands the tokens of a string:\par\nobreak\medskip
+\verbinline|\StrExpand|\arguC{number}\ARGU{string}\ARGU{name}\smallskip
+
+By default, \argu{number} is 1 and represnts the number of times each token of \argu{string} has to be expanded. The \argu{name} is a control sequence receiving the result of the expansions.\medskip
+
+Macro works sequentially and by pass: in a pass, each token from left to right is replaced by its 1-expansion. After this expansion, if the \argu{number} of expansions is not reached, an other pass starts, and so on.\medskip
+
+Here is an example:\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\def\csA{1 2}
+\def\csB{a \csA}
+\def\csC{\csB\space}
+\def\csD{x{\csA y}\csB{\csC z}}
+Expansion of \string\csD\ at\par
+\StrExpand[0]{\csD}{\csE} depth 0 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[1]{\csD}{\csE} depth 1 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[2]{\csD}{\csE} depth 2 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[3]{\csD}{\csE} depth 3 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[4]{\csD}{\csE} depth 4 :
+\detokenize\expandafter{\csE}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\def\csA{1 2}
+	\def\csB{a \csA}
+	\def\csC{\csB\space}
+	\def\csD{x{\csA y}\csB{\csC z}}
+	Expansion of \string\csD\ at\par
+	\StrExpand[0]{\csD}{\csE} depth 0 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[1]{\csD}{\csE} depth 1 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[2]{\csD}{\csE} depth 2 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[3]{\csD}{\csE} depth 3 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[4]{\csD}{\csE} depth 4 :
+	\detokenize\expandafter{\csE}
+\end{minipage}%
+\medskip
+
+The macro expands each token consecutively, and does not see what follows: tokens whose expansion depends on other tokens cannot be expanded with this macro. For instance, though "\hbox{\verbinline|\iftrue A\else B\fi|}" has a natural expansion ("A"), it cannot be put in the argument of \verbinline|\StrExpand| and:\par\nobreak\smallskip
+\hfil\verbinline|\StrExpand{\iftrue A\else B\fi}\resultat|\hfil{}\par\nobreak\smallskip
+provokes an error because the first token "\verbinline|\iftrue|" is expanded \emph{alone} without seeing its \verbinline-\fi- which makes \TeX{} angry.
+
+Expansion inside groups is \emph{independant} of the exploration mode: this macro has its own command to expand or not what is inside the groups. By default, tokens inside groups are expanded, but this can be changed with \verbinline-\noexpandingroups-. The default behaviour can be recoverd with \verbinline-\expandingroups-.\bigskip
+
+The \verbinline-\scancs- macro returns the detokenized result:\par\nobreak\medskip
+\verbinline|\scancs|\arguC{number}\ARGU{name}\ARGU{string}\par\nobreak\smallskip
+The \argu{number} is 1 by default and represents the number of expansions.\smallskip
+
+\verbinline-\scancs-  has been kept for compatibility with older versions of \Xstring. This macro now unnecessry, simply takes the result of \verbinline|\StrExpand| and \verbinline|\detokenize| it.
+
+\subsection{Inside the definition of a macro}
+Some difficulties arise inside the definition of a macro, i.e. between braces following a \verbinline|\def\macro| or a\\\verbinline|\newcommand\macro|.\medskip
+
+It is forbidden to use the command \verbinline|\verb| inside the definition of a macro. For the same reasons:\par\medskip
+\hfill\textbf{Do not use \texttt{\textbackslash verbtocs} inside the definition of a macro}.\hfill{}\medskip
+
+But then, how to manipulate special characters and "verbatimize" inside the définition of macros ?\bigskip
+
+The \verbinline|\detokenize| primitive of $\varepsilon$-\TeX can be used but it has limitations:
+\begin{itemize}
+	\item braces must be balanced;
+	\item consecutive spaces make a single space;
+	\item the \verb|%| sign is not allowed;
+	\item a space is inserted after each control sequence;
+	\item \verb|#| signs become  \verb|##|.
+\end{itemize}
+\medskip
+
+It is better to use \verbinline|\scancs| and define \emph{outside the definition of the macros} control sequences containing special characters with \verbinline|\verbtocs|. It is also possible to use \verbinline|\tokenize| to transform the final result (which is generaly \texte{10,11,12}) into control sequences. See example using these macros at the end of this manual, page~\pageref{exemples}.\medskip
+
+In the following teaching example\footnote{It is possible to make much more simple using \texttt{\textbackslash detokenize}. The macro becomes:\par\texttt{\textbackslash newcommand\textbackslash bracearg[1]\{\textbackslash detokenize\{\{\#1\}\}\}}}, the macro \verb|\bracearg| adds braces to its argument. To make this possible, 2 control sequences \verb|\Ob| and \verb|\Cb| containing "\verb|{|" and "\verb|}|" are defined outside the definition of \verb|\bracearg|, and expanded inside it:\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\verbtocs{\Ob}|{|
+\verbtocs{\Cb}|}|
+\newcommand\bracearg[1]{%
+	\def\text{#1}%
+	\scancs{\result}{\Ob\text\Cb}%
+	\result}
+
+\bracearg{xstring}\par
+\bracearg{\a}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\Ob}|{|
+	\verbtocs{\Cb}|}|
+	\newcommand\bracearg[1]{%
+		\def\text{#1}%
+		\scancs{\result}{\Ob\text\Cb}%
+		\result}
+
+	\bracearg{xstring}\par
+	\bracearg{\a}
+\end{minipage}%
+
+\subsection{The macro \ttfamily\textbackslash StrRemoveBraces}
+Advanced users may need to remove the braces of an argument.
+
+The macro \verbinline|\StrRemoveBraces| does this. Its syntax is:\smallskip
+
+\verbinline|\StrRemoveBraces|\ARGU{string}\arguC{name}
+\smallskip
+
+This macro is sensitive to exploration mode and will remove \emph{all} the braces with \verbinline|\exploregroups| while it will remove braces of lower level with \verbinline|\noexploregroups|.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexploregroups
+\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+\meaning\mycs
+
+\exploregroups
+\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+\meaning\mycs
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexploregroups
+	\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+	\meaning\mycs
+
+	\exploregroups
+	\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+	\meaning\mycs
+\end{minipage}%
+
+\subsection{Examples}
+\label{exemples}
+Here are some very simple examples involving the macros of this package in programming purposes.
+
+\subsubsection{Example 1}
+We want to substitute the 2 first \verbinline|\textit| by \verbinline|\textbf| in the control sequence \verb|\myCS| which contains \par\smallskip
+\hfill\verbinline|\textit{A}\textit{B}\textit{C}|\hfill{}
+\medskip
+
+We expect: \textbf{A}\textbf{B}\textit{C}\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\expandarg
+\def\myCS{\textit{A}\textit{B}\textit{C}}
+\def\pattern{\textit}
+\def\replace{\textbf}
+\StrSubstitute[2]{\myCS}{\pattern}{\replace}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\expandarg
+	\def\myCS{\textit{A}\textit{B}\textit{C}}
+	\def\pattern{\textit}
+	\def\replace{\textbf}
+	\StrSubstitute[2]{\myCS}{\pattern}{\replace}
+\end{minipage}%
+\medskip
+
+It is possible to avoid to define \verb|\pattern| and \verb|\replace|: a "snare" can be used. It can be a control sequence which expansion is empty, like the famous \verbinline|\empty|. The code would have been:\par\nobreak\smallskip
+\hfil\verbinline|\StrSubstitute[2]{\myCS}{\empty\textit}{\empty\textbf}|\hfil{}\medskip
+
+With this code, in both arguments, the first token \verbinline|\empty| is expanded to "nothing" and the following significant tokens \verbinline|\textit| and \verbinline|textbf| are left unchanged.\smallskip
+
+By this way, \verbinline|\empty| is a way to "hack" \verbinline|\expandarg|: it allows to avoid the expansion of all the other tokens. The control sequence \verbinline|\noexpand| can be used instead of \verbinline|\empty| for the same result.
+
+\subsubsection{Exemple 2}
+Here, we try to write a macro which gobbles \verb|n| \USs in a string from a given position, and assigns the result to a control sequence.
+
+Let's call this macro \verb|StringDel| and let's give it this syntax:\par\nobreak
+\hfil\verb|\StringDel{string}{position}{n}{\name_of_result}|\hfil{}
+\medskip
+
+We can proceed like this: take the string before the position and save it. Then remove \verb|n + position| \USs from the initial string, and add (concatenate) this result to the string previously saved. This gives the following code:\par\nobreak\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\newcommand\StringDel[4]{%
+	\begingroup
+	\expandarg% locally in this group
+	\StrLeft{\empty#1}{\number\numexpr#2-1}[#4]%
+	\StrGobbleLeft{\empty#1}{\numexpr#2+#3-1}[\StrA]%
+	\expandafter\expandafter\expandafter\endgroup
+	\expandafter\expandafter\expandafter\def
+	\expandafter\expandafter\expandafter#4%
+	\expandafter\expandafter\expandafter
+	{\expandafter#4\StrA}%
+}
+
+\noexploregroups
+\StringDel{abcdefgh}{2}{3}{\cmd}
+\meaning\cmd
+
+\StringDel{a\textbf{1}b\textbf{2c}3d}{3}{4}{\cmd}
+\meaning\cmd
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\newcommand\StringDel[4]{%
+		\begingroup
+		\expandarg% locally in this group
+		\StrLeft{\empty#1}{\number\numexpr#2-1}[#4]%
+		\StrGobbleLeft{\empty#1}{\numexpr#2+#3-1}[\StrA]%
+		\expandafter\expandafter\expandafter\endgroup
+		\expandafter\expandafter\expandafter\def
+		\expandafter\expandafter\expandafter#4%
+		\expandafter\expandafter\expandafter{\expandafter#4\StrA}%
+	}
+
+	\noexploregroups
+	\StringDel{abcdefgh}{2}{3}{\cmd}
+	\meaning\cmd
+
+	\StringDel{a\textbf{1}b\textbf{2c}3d}{3}{4}{\cmd}
+	\meaning\cmd
+\end{minipage}%
+\fullexpandarg\bigskip
+
+To concatenate, the \LaTeX{} macro \verb|\g@addto@macro| could have been used, leading to a lighter code without the huge bridge of \verbinline|\expandafter|. The assignment\footnote{The macro {\ttfamily\string\g@addto@macro} can be used if the catcode of "{\ttfamily\string@}" is temporarily changed with {\ttfamily\string\makeatletter} and restored with {\ttfamily\string\makeatother}} can be written like this:\par\nobreak\smallskip
+\hfil\verbinline|\expandafter\g@addto@macro\expandafter#4\expandafter{\StrA}\endgroup|\hfil{}
+
+\subsubsection{Example 3}
+Let's try to write a macro \verb|\tofrac| that transforms an argument of this type \guill{a/b} into \guill{$\frac{a}{b}$}.\par\medskip
+
+First of all, let's cancel the expansion of arguments with \verbinline|\noexpandarg|, we do not need expansion here. Then, it's easy to cut what is before and behind the first occurrence of \guill{/} (assumed there is a single occurrence) and assign it to \verb|\num| and \verb|\den| and simply call the macro \verbinline|\frac| :\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\newcommand\tofrac[1]{%
+	\StrBefore{#1}{/}[\num]%
+	\StrBehind{#1}{/}[\den]%
+	$\frac{\num}{\den}$%
+}
+\tofrac{15/9}
+\tofrac{u_{n+1}/u_n}
+\tofrac{a^m/a^n}
+\tofrac{x+\sqrt{x}/\sqrt{x^2+x+1}}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\newcommand\tofrac[1]{%
+		\StrBefore{#1}{/}[\num]%
+		\StrBehind{#1}{/}[\den]%
+		$\frac{\num}{\den}$%
+	}
+	\tofrac{15/9}
+	\tofrac{u_{n+1}/u_n}
+	\tofrac{a^m/a^n}
+	\tofrac{x+\sqrt{x}/\sqrt{x^2+x+1}}
+\end{minipage}%
+
+\subsubsection{Example 4}
+Let's try to write a macro \verb|\boldafter| which writes in bold the first word that follows the word contained in the expansion of \verb|\word|.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\newcommand\boldafter[2]{%
+	\noexpandarg
+	\StrBehind[1]{#1 }{ #2 }[\word]%
+	\expandarg
+	\StrBefore{\word}{ }[\word]%
+	\StrSubstitute[1]{#1}{\word}{\textbf{\word}}%
+}
+
+\boldafter{The xstring package is new}{xstring}
+
+\boldafter{The xstring package is new}{ring}
+
+\boldafter{The xstring package is new}{is}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\newcommand\boldafter[2]{%
+		\noexpandarg
+		\StrBehind[1]{#1 }{ #2 }[\word]%
+		\expandarg
+		\StrBefore{\word}{ }[\word]%
+		\StrSubstitute[1]{#1}{\word}{\textbf{\word}}%
+	}
+
+	\boldafter{The xstring package is new}{xstring}
+
+	\boldafter{The xstring package is new}{ring}
+
+	\boldafter{The xstring package is new}{is}
+\end{minipage}%
+\fullexpandarg
+
+\subsubsection{Example 5}
+How to reverse the order of the 2 first control sequences? For this, a macro \verb|\swaptwofirst| does the job and displays the result. But this time, it is not possible to seek the token \verb|\| (catcode 0) with the macros of \Xstring. This is why the use of \verbinline|\scancs| is necessary: after the detokenization of the argument, it becomes possible to search the char \verb|\| (catcode 12). At line 5, a retokenization is done by \verbinline|\tokenize| and \verb|\before| and \verb|\after| are swapped at this moment.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\verbtocs{\antislash}|\|
+\newcommand\swaptwofirst[1]{%
+	\begingroup
+	\fullexpandarg
+	\scancs[0]\mystring{#1}%
+	\StrBefore[3]{\mystring}{\antislash}[\firsttwo]%
+	\StrBehind{\mystring}{\firsttwo}[\others]
+	\StrBefore[2]{\firsttwo}{\antislash}[\before]
+	\StrBehind{\firsttwo}{\before}[\after]%
+	\tokenize\myCS{\after\before\others}%
+	\myCS
+	\endgroup
+}
+
+\swaptwofirst{\underline{A}\textbf{B}\textit{C}}
+
+\swaptwofirst{\Large\underline{A}\textbf{B}123}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\antislash}|\|
+	\newcommand\swaptwofirst[1]{%
+		\begingroup
+		\fullexpandarg
+		\scancs[0]\mystring{#1}%
+		\StrBefore[3]{\mystring}{\antislash}[\firsttwo]%
+		\StrBehind{\mystring}{\firsttwo}[\others]
+		\StrBefore[2]{\firsttwo}{\antislash}[\before]
+		\StrBehind{\firsttwo}{\before}[\after]%
+		\tokenize\myCS{\after\before\others}%
+		\myCS
+		\endgroup
+	}
+
+	\swaptwofirst{\underline{A}\textbf{B}\textit{C}}
+
+	\swaptwofirst{\Large\underline{A}\textbf{B}123}
+\end{minipage}%
+
+
+\subsubsection{Example 6}
+In a string, we want to find the $n$\th{} word between 2 given delimiters. For this, let's write a macro \verb|\findword| with an optional argument which content is the delimiter (space by default), 1 argument containing the string and an other argument containing the number $n$.\medskip
+
+The macro \verb|\findword| artfully uses \verbinline|\StrBetween| and \verbinline|\numexpr|:\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\newcommand\findword[3][ ]{%
+	\StrBetween[#3,\numexpr#3+1]{#1#2#1}{#1}{#1}%
+}
+\noexpandarg
+|\findword{a bc d\textbf{e f} gh}{3}|
+
+|\findword[\nil]{1 \nil 2 3 \nil4\nil5}{2}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\newcommand\findword[3][ ]{%
+		\StrBetween[#3,\numexpr#3+1]{#1#2#1}{#1}{#1}%
+	}
+	\noexpandarg
+	|\findword{a bc d\textbf{e f} gh}{3}|
+
+	|\findword[\nil]{1 \nil 2 3 \nil4\nil5}{2}|
+\end{minipage}%
+
+\bigskip\bigskip
+\begin{center}
+$\star$\par
+$\star$\quad$\star$
+\end{center}
+\par\nobreak\bigskip\bigskip
+That's all, I hope you will find this package useful!\par\nobreak
+Please, send me an \href{mailto:unbonpetit@gmail.com}{email} if you find a bug or if you have any idea of improvement\ldots\par\nobreak\medskip
+Christian Tellechea
+\end{document}

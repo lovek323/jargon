@@ -1,0 +1,2023 @@
+% Ceci est xtring_doc_fr.tex, le manuel en français de xstring
+% This is xtring_doc_fr.tex, the french manual of xstring
+%
+% Christian Tellechea 2009
+%
+% email : unbonpetit@gmail.com
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%
+%     http://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bookmarks=true,bookmarksopen=true,colorlinks=true,hyperfootnotes=false,filecolor=black,linkcolor=blue,urlcolor=magenta,pdfauthor={Christian TELLECHEA},pdftitle={xstring},pdfsubject={package pour la manipulation de chaines de tokens},pdfkeywords={xstring,latex,tex,string,chaine},pdfcreator={LaTeX}]{hyperref}
+\usepackage[a4paper,dvips,margin=1.9cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{color}
+\usepackage{lmodern}
+\usepackage{eurosym}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{xstring}
+\usepackage[bottom]{footmisc}
+\usepackage[frenchb]{babel}
+\makeatletter
+\definecolor{@xs@bckgcolor}{rgb}{1,1,0.875}
+\definecolor{@xs@keywordsxstring}{rgb}{0.7,0,0}
+\definecolor{@xs@keywordslatex}{rgb}{0,0,1}
+\definecolor{@xs@arguments}{rgb}{0,0,0}
+\definecolor{@xs@comments}{rgb}{0.5,0.5,0.5}
+\definecolor{violet}{rgb}{0.66,0,0.66}
+\lstset{%
+	language=[AlLaTeX]TeX,%
+	morekeywords={numexpr,detokenize},%
+	float=hbp,%
+	basicstyle=\small\ttfamily,%
+	identifierstyle=\color{@xs@arguments},%
+	keywordstyle=\color{@xs@keywordslatex},%
+	commentstyle=\itshape\color{@xs@comments},%
+	columns=fixed,%
+	tabsize=4,%
+	frame=single,%
+	extendedchars=true,%
+	showspaces=false,%
+	showstringspaces=false,%
+	numbers=left,%
+	numberstyle=\tiny\ttfamily,%
+	breaklines=true,%
+	breakindent=3em,%
+	backgroundcolor=\color{@xs@bckgcolor},%
+	breakautoindent=true,%
+	captionpos=t,%
+	xleftmargin=1em,%
+	xrightmargin=1em,%
+	lineskip=0pt,%
+	numbersep=1em,%
+	classoffset=1,%
+	morekeywords={% les macros et commandes de xstring
+		IfSubStr,IfSubStrBefore,IfSubStrBehind,%
+		IfBeginWith,IfEndWith,%
+		IfInteger,IfDecimal,integerpart,decimalpart,%
+		IfStrEq,IfEq,IfStrEqCase,IfEqCase,%
+		StrBefore,StrBehind,StrBetween,%
+		StrSubstitute,StrDel,%
+		StrGobbleLeft,StrGobbleRight,StrRight,StrLeft,StrMid,StrChar,%
+		StrSplit,%
+		StrLen,StrCount,StrPosition,StrCompare,%
+		StrFindGroup,groupID,verbtocs,tokenize,scancs,StrExpand,StrRemoveBraces,%
+		exploregroups,noexploregroups,saveexploremode,restoreexploremode,%
+		comparenormal,comparestrict,savecomparemode,restorecomparemode,%
+		expandarg,noexpandarg,normalexpandarg,fullexpandarg,saveexpandmode,restoreexpandmode,%
+		expandingroups,noexpandingroups,%
+		setverbdelim},%
+	keywordstyle=\color{@xs@keywordsxstring},%
+	classoffset=0}
+% redéfinition de l'écriture des textes des footnote
+\long\def\@makefntextFB#1{%
+	\ifx\thefootnote\ftnISsymbol
+		\@makefntextORI{#1}%
+	\else
+		\rule\z@\footnotesep
+		\setbox\@tempboxa\hbox{\@thefnmark}%
+			\ifdim\wd\@tempboxa>\z@
+				\kern2em\llap{\@thefnmark.\kern0.5em}%
+			\fi
+		\hangindent2em\hangafter\@ne#1
+	\fi}
+\makeatother
+
+\newcommand\guill[1]{\og{}#1\fg{}}
+\newcommand\argu[1]{$\langle$\textit{#1}$\rangle$}
+\newcommand\ARGU[1]{\texttt{\color{black}\{}\argu{#1}\texttt{\color{black}\}}}
+\newcommand\arguC[1]{\texttt{\color{black}[}\argu{#1}\texttt{\color{black}]}}
+\newcommand\arguCC[2]{\texttt{\color{black}[}\argu{#1}\texttt{\color{black},}\argu{#2}\texttt{\color{black}]}}
+\newcommand\etoile{$\langle$\texttt{[*]}$\rangle$}
+\newenvironment{Conditions}[1][1cm]%
+{\begin{list}%
+	{$\vartriangleright$}%
+	{\setlength{\leftmargin}{#1}
+	 \setlength{\itemsep}{0pt}
+	 \setlength{\parsep}{0pt}
+	 \setlength{\topsep}{2ptplus3ptminus2pt}
+	}}%
+{\end{list}}
+
+\newcommand\US{unité syntaxique\xspace}
+\newcommand\USs{unités syntaxiques\xspace}
+\newcommand\Xstring{\textsf{xstring}\xspace}
+\newcommand\styleexemple{\small\vskip4pt}
+\newcommand\styleexercice{\footnotesize}
+\newcommand\verbinline{\lstinline[basicstyle=\normalsize\ttfamily]}
+\newcommand\colorise{\color{violet}}
+\listfiles
+\begin{document}
+\setlength{\parindent}{0pt}
+\begin{titlepage}
+	\null\par\vfill
+	\begin{center}
+		\begin{minipage}{0.75\linewidth}
+			\begin{center}
+				\Huge\bfseries \Xstring\par\vspace{5pt}
+				\small v\xstringversion\par\vspace{25pt}
+				\normalsize Manuel de l'utilisateur
+			\end{center}
+		\end{minipage}
+	\end{center}
+	\vspace{1cm}
+	\begin{center}
+		Christian {\sc Tellechea}\par\small
+		\href{mailto:unbonpetit@gmail.com}{\nolinkurl{unbonpetit@gmail.com}}\par\vspace{5pt}
+		\xstringfrenchdate
+	\end{center}
+	\vfill\hrulefill
+	\begin{center}
+		\begin{minipage}{0.85\linewidth}
+			\noindent
+			\hfill\textbf{\textit{Résumé}}\hfill{}\medskip\par
+			Cette extension, qui requiert Plain $\varepsilon$-\TeX, regroupe un ensemble de macros manipulant des chaînes de tokens (ou lexèmes en français). Les macros peuvent être utilisées de façon basique dans le traitement des chaînes de caractères mais peuvent également être utiles en programmation \TeX{} pour la manipulation des tokens, c'est-à-dire du code \TeX{}. Parmis les fonctionnalités, les principales sont :\smallskip
+
+			\parindent1.5em
+			\begin{itemize}
+				\item[$\triangleright$] des tests :
+					\begin{itemize}
+						\item une chaîne en contient elle une autre au moins $n$ fois ?
+						\item une chaîne commence t-elle ou finit-elle par une autre ? etc.
+						\item une chaîne représente t-elle un entier relatif ? Un nombre décimal ?
+						\item deux chaînes sont-elles égales ?
+					\end{itemize}
+				\item[$\triangleright$] des recherches de chaînes :
+					\begin{itemize}
+						\item recherche de ce qui se trouve avant (ou après) la $n$\ieme{} occurrence d'une sous-chaîne;
+						\item recherche de ce qui se trouve entre les occurrences de 2 sous-chaînes;
+						\item sous-chaîne comprise entre 2 positions;
+						\item recherche d'un groupe entre accolades par son identifiant.
+					\end{itemize}
+				\item[$\triangleright$] le remplacement de toutes ou des $n$ premières occurrences d'une sous-chaîne par une autre sous-chaîne;
+				\item[$\triangleright$] des calculs de nombres :
+					\begin{itemize}
+						\item longueur d'une chaîne;
+						\item position de la la $n$\ieme{} occurrence d'une sous-chaîne;
+						\item comptage du nombre d'occurrences d'une sous-chaîne dans une autre;
+						\item position de la 1\iere{} différence entre 2 chaînes;
+						\item renvoi de l'identifiant du groupe dans lequel une recherche ou une coupure s'est faite.
+					\end{itemize}
+			\end{itemize}
+			\setlength{\parindent}{0pt}
+			\medskip
+			D'autres commandes permettent de gérer les tokens spéciaux normalement interdits dans les chaînes (\verb|#| et \verb|%|), ainsi que d'éventuelles différences entre catcodes de tokens, ce qui devrait permettre de couvrir tous les besoins en matière de programmation.
+		\end{minipage}
+	\end{center}
+	\hrulefill\vfill{}
+\end{titlepage}
+
+\tableofcontents
+
+\section{Présentation}
+\subsection{Description}
+Cette extension\footnote{L'extension ne nécessite pas \LaTeX{} et peut être compilée sous Plain $\varepsilon$-\TeX{}.} regroupe des macros et des tests opérant sur des chaînes de tokens, un peu comme en disposent des langages dit \guill{évolués}. On y trouve les opérations habituelles sur les chaînes, comme par exemple : test si une chaîne en contient une autre, commence ou finit par une autre, test si une chaîne est un nombre entier ou décimal, extractions de sous-chaînes, calculs de position d'une sous-chaîne, calculs du nombre d'occurrences, etc.\medskip
+
+On appelle \guill{chaîne de tokens} une suite de tokens quelconques, sachant qu'aucune supposition n'a été faite quant à leur nature, mis à part que dans les chaînes de tokens, les accolades doivent être équilibrées et que les tokens de catcode 6 et 14 (habituellement \verb|%| et \verb|#|) n'y sont pas admis. Tous les autres tokens sont \emph{à priori} permis dans n'importe quel ordre, quelque soit le code qu'ils représentent.\medskip
+
+Les arguments contenant des chaînes de tokens sont lus par \Xstring \emph{\US par \US\footnote{Sauf cas particulier, une \US est un caractère lu dans le code à ces exceptions près : une séquence de contrôle est une \US, un groupe entre accolades est aussi une \US. Voir également page~\pageref{developpementarguments}.}}, ce qui revient à les lire caractère par caractère lorsque ceux-ci contiennent des tokens \guill{normaux}, c'est-à-dire dont les catcodes sont 10, 11 et 12. On peut également utiliser \Xstring à des fins de programmation en utilisant des arguments contenant des séquences de contrôle et des tokens dont les catcodes sont moins inoffensifs. Voir le chapitre sur le mode de lecture et de développement des arguments (page~\pageref{developpementarguments}), la commande \verbinline|\verbtocs| (page~\pageref{verbtocs}), la commande \verbinline|\scancs| (page~\pageref{scancs}).\medskip
+
+Certes d'autres packages manipulant les chaînes de caractères existent (par exemple \href{http://www.ctan.org/tex-archive/macros/latex/contrib/substr/}{\nolinkurl{substr}} et \href{http://www.ctan.org/tex-archive/macros/latex/contrib/stringstrings/}{\nolinkurl{stringstrings}}), mais outre des différences notables quant aux fonctionnalités, ils ne prennent pas en charge les occurrences des sous-chaînes et me semblent soit trop limités, soit trop difficiles à utiliser pour la programmation.\medskip
+
+Comme les macros manipulent des chaînes de tokens, il peut arriver aux utilisateurs avancés de rencontrer des problèmes de \guill{catcodes\footnote{Codes de catégories, en français.}} conduisant à des comportements inattendus. Ces effets indésirables peuvent être contrôlés. Consulter en particulier le chapitre sur les catcodes des arguments page~\pageref{macrosetoilees}.
+
+\subsection{Motivation}
+J'ai été conduit à écrire ce type de macros car je n'ai jamais vraiment trouvé de d'outils sous \LaTeX{} adaptés à mes besoins concernant le traitement de chaînes. Alors, au fil des mois, et avec l'aide de contributeurs\footnote{Je remercie chaleureusement Manuel alias \guill{\nolinkurl{mpg}} pour son aide précieuse, sa compétence et sa disponibilité.} de \nolinkurl{fr.comp.text.tex}, j'ai écrit quelques macros qui me servaient ponctuellement ou régulièrement. Leur nombre s'étant accru, et celles-ci devenant un peu trop dispersées dans les répertoires de mon ordinateur, je les ai regroupées dans ce package.
+
+Ainsi, le fait de donner corps à un ensemble cohérent de macros force à davantage de rigueur et induit naturellement de nécessaires améliorations, ce qui a pris la majeure partie du temps que j'ai consacré à ce package. Pour harmoniser le tout, mais à contre-cœur, j'ai fini par choisir des noms de macros à consonances anglo-saxonnes.\medskip
+
+Ensuite, et cela a été ma principale motivation puisque j'ai découvert \LaTeX{} récemment\footnote{En novembre 2007, je suis donc un \og noob\fg{} pour longtemps encore !}, l'écriture de \Xstring qui est mon premier package m'a surtout permis de beaucoup progresser en programmation pure, et aborder des méthodes propres à la programmation sous \TeX.
+
+\section{Les macros}
+Pour bien comprendre les actions de chaque macro, envisageons tout d'abord le fonctionnement et la présentation des macros dans leur mode de fonctionnement le plus simple. Pas de problème de catcode ici, ni de tokens spéciaux et encore moins de séquence de contrôle dans les arguments : les arguments contiendront des caractères alphanumériques.\medskip
+
+Dans ce chapitre, la totalité des macros est présentée selon ce plan :\par\nobreak\smallskip
+\parindent3em
+\begin{itemize}
+	\item la syntaxe complète\footnote{L'étoile optionnelle après le nom de la macro, et l'argument optionnel entre crochet venant en dernier seront expliqués plus tard. Voir page~\pageref{macrosetoilees} pour les macros étoilées et page~\pageref{argumentoptionnel} pour l'argument optionnel en dernière position.} ainsi que la valeur d'éventuels arguments optionnels;
+	\item une brève description du fonctionnement;
+	\item le fonctionnement sous certaines conditions particulières. Pour chaque conditions envisagée, le fonctionnement décrit est prioritaire sur celui (ceux) se trouvant au dessous de lui;
+	\item enfin, quelques exemples sont donnés. J'ai essayé de les trouver les plus facilement compréhensibles et les plus représentatifs des situations rencontrées dans une utilisation normale\footnote{Pour une collection plus importante d'exemples, on peut aussi consulter le fichier de test.}. Si un doute est possible quant à la présence d'espaces dans le résultat, celui-ci sera délimité par des \guill{\textbar}, étant entendu qu'une chaîne vide est représentée par \guill{\textbar\textbar}.
+\end{itemize}
+\parindent0pt\smallskip
+
+\textbf{Important} : dans les macros qui suivent, sauf cas spécifié, un \argu{nombre} est un nombre entier, un compteur, ou le résultat d'une opération arithmétique effectuée à l'aide de la primitive \verb|\numexpr|.\smallskip
+
+Dans le reste du texte, les macros de \Xstring sont affichées en {\makeatletter\color{@xs@keywordsxstring}rouge}.
+
+\subsection{Les tests}
+\subsubsection{\ttfamily\textbackslash IfSubStr}
+\verbinline|\IfSubStr|\etoile\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+L'argument optionnel \argu{nombre} vaut 1 par défaut.\par\nobreak\smallskip
+Teste si \argu{chaine} contient au moins \argu{nombre} fois \argu{chaineA} et exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\medskip
+
+\begin{Conditions}
+	\item Si \argu{nombre}${}\leqslant0$,  exécute \argu{faux};
+	\item Si \argu{chaine} ou \argu{chaineA} est vide, exécute \argu{faux}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfSubStr{xstring}{tri}{vrai}{faux}
+\IfSubStr{xstring}{a}{vrai}{faux}
+\IfSubStr{a bc def }{c d}{vrai}{faux}
+\IfSubStr{a bc def }{cd}{vrai}{faux}
+\IfSubStr[2]{1a2a3a}{a}{vrai}{faux}
+\IfSubStr[3]{1a2a3a}{a}{vrai}{faux}
+\IfSubStr[4]{1a2a3a}{a}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfSubStr{xstring}{tri}{vrai}{faux}\par
+	\IfSubStr{xstring}{a}{vrai}{faux}\par
+	\IfSubStr{a bc def }{c d}{vrai}{faux}\par
+	\IfSubStr{a bc def }{cd}{vrai}{faux}\par
+	\IfSubStr[2]{1a2a3a}{a}{vrai}{faux}\par
+	\IfSubStr[3]{1a2a3a}{a}{vrai}{faux}\par
+	\IfSubStr[4]{1a2a3a}{a}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfSubStrBefore}
+\verbinline|\IfSubStrBefore|\etoile\arguCC{nombre1}{nombre2}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Les arguments optionnels \argu{nombre1} et \argu{nombre2} valent 1 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, la macro teste si l'occurrence \no\argu{nombre1} de \argu{chaineA} se trouve à gauche de l'occurrence \no\argu{nombre2} de \argu{chaineB}. Exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\medskip
+
+\begin{Conditions}
+	\item Si l'une des occurrences n'est pas trouvée, exécute \argu{faux};
+	\item Si l'un des arguments \argu{chaine}, \argu{chaineA} ou \argu{chaineB} est vide, exécute \argu{faux};
+	\item Si l'un au moins des deux arguments optionnels est négatif ou nul, exécute \argu{faux}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfSubStrBefore{xstring}{st}{in}{vrai}{faux}
+\IfSubStrBefore{xstring}{ri}{s}{vrai}{faux}
+\IfSubStrBefore{LaTeX}{LaT}{TeX}{vrai}{faux}
+\IfSubStrBefore{a bc def }{ b}{ef}{vrai}{faux}
+\IfSubStrBefore{a bc def }{ab}{ef}{vrai}{faux}
+\IfSubStrBefore[2,1]{b1b2b3}{b}{2}{vrai}{faux}
+\IfSubStrBefore[3,1]{b1b2b3}{b}{2}{vrai}{faux}
+\IfSubStrBefore[2,2]{baobab}{a}{b}{vrai}{faux}
+\IfSubStrBefore[2,3]{baobab}{a}{b}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfSubStrBefore{xstring}{st}{in}{vrai}{faux}\par
+	\IfSubStrBefore{xstring}{ri}{s}{vrai}{faux}\par
+	\IfSubStrBefore{LaTeX}{LaT}{TeX}{vrai}{faux}\par
+	\IfSubStrBefore{a bc def }{ b}{ef}{vrai}{faux}\par
+	\IfSubStrBefore{a bc def }{ab}{ef}{vrai}{faux}\par
+	\IfSubStrBefore[2,1]{b1b2b3}{b}{2}{vrai}{faux}\par
+	\IfSubStrBefore[3,1]{b1b2b3}{b}{2}{vrai}{faux}\par
+	\IfSubStrBefore[2,2]{baobab}{a}{b}{vrai}{faux}\par
+	\IfSubStrBefore[2,3]{baobab}{a}{b}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfSubStrBehind}
+\verbinline|\IfSubStrBehind|\etoile\arguCC{nombre1}{nombre2}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Les arguments optionnels \argu{nombre1} et \argu{nombre2} valent 1 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, la macro teste si l'occurrence \no\argu{nombre1} de \argu{chaineA} se trouve après l'occurrence \\\no\argu{nombre2} de \argu{chaineB}. Exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\medskip
+
+\begin{Conditions}
+	\item Si l'une des occurrences n'est pas trouvée, exécute \argu{faux};
+	\item Si l'un des arguments \argu{chaine}, \argu{chaineA} ou \argu{chaineB} est vide, exécute \argu{faux};
+	\item Si l'un au moins des deux arguments optionnels est négatif ou nul, exécute \argu{faux}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfSubStrBehind{xstring}{ri}{xs}{vrai}{faux}
+\IfSubStrBehind{xstring}{s}{i}{vrai}{faux}
+\IfSubStrBehind{LaTeX}{TeX}{LaT}{vrai}{faux}
+\IfSubStrBehind{a bc def }{ d}{a}{vrai}{faux}
+\IfSubStrBehind{a bc def }{cd}{a b}{vrai}{faux}
+\IfSubStrBehind[2,1]{b1b2b3}{b}{2}{vrai}{faux}
+\IfSubStrBehind[3,1]{b1b2b3}{b}{2}{vrai}{faux}
+\IfSubStrBehind[2,2]{baobab}{b}{a}{vrai}{faux}
+\IfSubStrBehind[2,3]{baobab}{b}{a}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfSubStrBehind{xstring}{ri}{xs}{vrai}{faux}\par
+	\IfSubStrBehind{xstring}{s}{i}{vrai}{faux}\par
+	\IfSubStrBehind{LaTeX}{TeX}{LaT}{vrai}{faux}\par
+	\IfSubStrBehind{a bc def }{ d}{a}{vrai}{faux}\par
+	\IfSubStrBehind{a bc def }{cd}{a b}{vrai}{faux}\par
+	\IfSubStrBehind[2,1]{b1b2b3}{b}{2}{vrai}{faux}\par
+	\IfSubStrBehind[3,1]{b1b2b3}{b}{2}{vrai}{faux}\par
+	\IfSubStrBehind[2,2]{baobab}{b}{a}{vrai}{faux}\par
+	\IfSubStrBehind[2,3]{baobab}{b}{a}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfBeginWith}
+\verbinline|\IfBeginWith|\etoile\ARGU{chaine}\ARGU{chaineA}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Teste si \argu{chaine} commence par \argu{chaineA}, et exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\medskip
+
+\begin{Conditions}
+\item Si \argu{chaine} ou \argu{chaineA} est vide, exécute \argu{faux}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfBeginWith{xstring}{xst}{vrai}{faux}
+\IfBeginWith{LaTeX}{a}{vrai}{faux}
+\IfBeginWith{a bc def }{a b}{vrai}{faux}
+\IfBeginWith{a bc def }{ab}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfBeginWith{xstring}{xst}{vrai}{faux}\par
+	\IfBeginWith{LaTeX}{a}{vrai}{faux}\par
+	\IfBeginWith{a bc def }{a b}{vrai}{faux}\par
+	\IfBeginWith{a bc def }{ab}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfEndWith}
+\verbinline|\IfEndWith|\etoile\ARGU{chaine}\ARGU{chaineA}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Teste si \argu{chaine} se termine par \argu{chaineA}, et exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} ou \argu{chaineA} est vide, exécute \argu{faux}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfEndWith{xstring}{ring}{vrai}{faux}
+\IfEndWith{LaTeX}{a}{vrai}{faux}
+\IfEndWith{a bc def }{ef }{vrai}{faux}
+\IfEndWith{a bc def }{ef}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfEndWith{xstring}{ring}{vrai}{faux}\par
+	\IfEndWith{LaTeX}{a}{vrai}{faux}\par
+	\IfEndWith{a bc def }{ef }{vrai}{faux}\par
+	\IfEndWith{a bc def }{ef}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfInteger}
+\verbinline|\IfInteger|\ARGU{nombre}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Teste si \argu{nombre} est un nombre entier relatif (c'est-à-dire dont la partie décimale est absente ou constituée d'une suite de 0), et exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\par\nobreak\smallskip
+Si le test est faux pour cause de caractères non autorisés, la séquence de contrôle \verb|\@xs@afterinteger| contient la partie illégale de \argu{nombre}.\medskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfInteger{13}{vrai}{faux}
+\IfInteger{-219}{vrai}{faux}
+\IfInteger{+9}{vrai}{faux}
+\IfInteger{3.14}{vrai}{faux}
+\IfInteger{8.0}{vrai}{faux}
+\IfInteger{0}{vrai}{faux}
+\IfInteger{49a}{vrai}{faux}
+\IfInteger{+}{vrai}{faux}
+\IfInteger{-}{vrai}{faux}
+\IfInteger{0000}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfInteger{13}{vrai}{faux}\par
+	\IfInteger{-219}{vrai}{faux}\par
+	\IfInteger{+9}{vrai}{faux}\par
+	\IfInteger{3.14}{vrai}{faux}\par
+	\IfInteger{8.0}{vrai}{faux}\par
+	\IfInteger{0}{vrai}{faux}\par
+	\IfInteger{49a}{vrai}{faux}\par
+	\IfInteger{+}{vrai}{faux}\par
+	\IfInteger{-}{vrai}{faux}\par
+	\IfInteger{0000}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfDecimal}
+\label{ifdecimal}
+\verbinline|\IfDecimal|\ARGU{nombre}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Teste si \argu{nombre} est un nombre décimal, et exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\par\nobreak\smallskip
+Les compteurs \verb|\integerpart| et \verb|\decimalpart| contiennent les parties entières et décimales de \argu{nombre}.
+
+Si le test est faux pour cause de caractères non autorisés, la séquence de contrôle \verb|\@xs@afterdecimal| contient la partie illégale de \argu{nombre}, alors que si le test est faux parce que la partie décimale après le séparateur décimal est vide, elle contient \guill{X}.\medskip
+
+\begin{Conditions}
+	\item Le séparateur décimal peut être un point ou une virgule;
+	\item Si le \argu{nombre} commence par un séparateur décimal, le test est vrai (lignes 4 et 5) et la partie entière est considérée comme étant 0;
+	\item Si le \argu{nombre} se termine par un séparateur décimal, le test est faux (lignes 9 et 10).
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfDecimal{3.14}{vrai}{faux}
+\IfDecimal{3,14}{vrai}{faux}
+\IfDecimal{-0.5}{vrai}{faux}
+\IfDecimal{.7}{vrai}{faux}
+\IfDecimal{,9}{vrai}{faux}
+\IfDecimal{1..2}{vrai}{faux}
+\IfDecimal{+6}{vrai}{faux}
+\IfDecimal{-15}{vrai}{faux}
+\IfDecimal{1.}{vrai}{faux}
+\IfDecimal{2,}{vrai}{faux}
+\IfDecimal{.}{vrai}{faux}
+\IfDecimal{,}{vrai}{faux}
+\IfDecimal{+}{vrai}{faux}
+\IfDecimal{-}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfDecimal{3.14}{vrai}{faux}\par
+	\IfDecimal{3,14}{vrai}{faux}\par
+	\IfDecimal{-0.5}{vrai}{faux}\par
+	\IfDecimal{.7}{vrai}{faux}\par
+	\IfDecimal{,9}{vrai}{faux}\par
+	\IfDecimal{1..2}{vrai}{faux}\par
+	\IfDecimal{+6}{vrai}{faux}\par
+	\IfDecimal{-15}{vrai}{faux}\par
+	\IfDecimal{1.}{vrai}{faux}\par
+	\IfDecimal{2,}{vrai}{faux}\par
+	\IfDecimal{.}{vrai}{faux}\par
+	\IfDecimal{,}{vrai}{faux}\par
+	\IfDecimal{+}{vrai}{faux}\par
+	\IfDecimal{-}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfStrEq}
+
+\verbinline|\IfStrEq|\etoile\ARGU{chaineA}\ARGU{chaineB}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Teste si les chaînes \argu{chaineA} et \argu{chaineB} sont égales, c'est-à-dire si elles contiennent successivement les mêmes \US dans le même ordre. Exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\smallskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfStrEq{a1b2c3}{a1b2c3}{vrai}{faux}
+\IfStrEq{abcdef}{abcd}{vrai}{faux}
+\IfStrEq{abc}{abcdef}{vrai}{faux}
+\IfStrEq{3,14}{3,14}{vrai}{faux}
+\IfStrEq{12.34}{12.340}{vrai}{faux}
+\IfStrEq{abc}{}{vrai}{faux}
+\IfStrEq{}{abc}{vrai}{faux}
+\IfStrEq{}{}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfStrEq{a1b2c3}{a1b2c3}{vrai}{faux}\par
+	\IfStrEq{abcdef}{abcd}{vrai}{faux}\par
+	\IfStrEq{abc}{abcdef}{vrai}{faux}\par
+	\IfStrEq{3,14}{3,14}{vrai}{faux}\par
+	\IfStrEq{12.34}{12.340}{vrai}{faux}\par
+	\IfStrEq{abc}{}{vrai}{faux}\par
+	\IfStrEq{}{abc}{vrai}{faux}\par
+	\IfStrEq{}{}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfEq}
+\verbinline|\IfEq|\etoile\ARGU{chaineA}\ARGU{chaineB}\ARGU{vrai}\ARGU{faux}
+\smallskip
+
+Teste si les chaînes \argu{chaineA} et \argu{chaineB} sont égales, \emph{sauf} si \argu{chaineA} et \argu{chaineB} contiennent des nombres, auquel cas la macro teste si les nombres sont égaux. Exécute \argu{vrai} dans l'affirmative, et \argu{faux} dans le cas contraire.\smallskip
+
+\begin{Conditions}
+	\item La définition de \emph{nombre} est celle évoquée dans la macro \verbinline|\IfDecimal| (voir page~\pageref{ifdecimal}), et donc :
+	\item Les signes \guill{+} sont facultatifs;
+	\item Le séparateur décimal peut être indifféremment la virgule ou le point.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfEq{a1b2c3}{a1b2c3}{vrai}{faux}
+\IfEq{abcdef}{ab}{vrai}{faux}
+\IfEq{ab}{abcdef}{vrai}{faux}
+\IfEq{12.34}{12,34}{vrai}{faux}
+\IfEq{+12.34}{12.340}{vrai}{faux}
+\IfEq{10}{+10}{vrai}{faux}
+\IfEq{-10}{10}{vrai}{faux}
+\IfEq{+0,5}{,5}{vrai}{faux}
+\IfEq{1.001}{1.01}{vrai}{faux}
+\IfEq{3*4+2}{14}{vrai}{faux}
+\IfEq{\number\numexpr3*4+2}{14}{vrai}{faux}
+\IfEq{0}{-0.0}{vrai}{faux}
+\IfEq{}{}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfEq{a1b2c3}{a1b2c3}{vrai}{faux}\par
+	\IfEq{abcdef}{ab}{vrai}{faux}\par
+	\IfEq{ab}{abcdef}{vrai}{faux}\par
+	\IfEq{12.34}{12,34}{vrai}{faux}\par
+	\IfEq{+12.34}{12.340}{vrai}{faux}\par
+	\IfEq{10}{+10}{vrai}{faux}\par
+	\IfEq{-10}{10}{vrai}{faux}\par
+	\IfEq{+0,5}{,5}{vrai}{faux}\par
+	\IfEq{1.001}{1.01}{vrai}{faux}\par
+	\IfEq{3*4+2}{14}{vrai}{faux}\par
+	\IfEq{\number\numexpr3*4+2}{14}{vrai}{faux}\par
+	\IfEq{0}{-0.0}{vrai}{faux}\par
+	\IfEq{}{}{vrai}{faux}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfStrEqCase}
+\begin{minipage}{\textwidth}
+	\verbinline|\IfStrEqCase|\etoile\ARGU{chaine}\verb|{%|\par
+	\qquad\qquad\ARGU{chaine1}\ARGU{code1}\verb|%|\par
+	\qquad\qquad\ARGU{chaine2}\ARGU{code2}\verb|%|\par
+	\qquad\qquad\verb|etc...|\par
+	\qquad\qquad\ARGU{chaineN}\ARGU{codeN}\verb|}|\arguC{code alternatif}
+\end{minipage}
+\smallskip
+
+Teste successivement si \argu{chaine} est égale à \argu{chaine1}, \argu{chaine2}, etc. La comparaison se fait au sens de \verbinline|\IfStrEq| (voir paragraphes précédents). Si un test est positif, le code correspondant est exécuté et la macro se termine. Si tous les tests sont négatifs, le code optionnel \argu{code alternatif} est exécuté s'il est présent.\smallskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfStrEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}
+|\IfStrEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|
+\IfStrEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[autre]
+\IfStrEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[autre]
+\IfStrEqCase{+3}{{1}{un}{2}{deux}{3}{trois}}[autre]
+\IfStrEqCase{0.5}{{0}{zero}{.5}{demi}{1}{un}}[autre]
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfStrEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}\par
+	|\IfStrEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|\par
+	\IfStrEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[autre]\par
+	\IfStrEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[autre]\par
+	\IfStrEqCase{+3}{{1}{un}{2}{deux}{3}{trois}}[autre]\par
+	\IfStrEqCase{0.5}{{0}{zero}{.5}{demi}{1}{un}}[autre]
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash IfEqCase}
+\begin{minipage}{\textwidth}
+	\verbinline|\IfEqCase|\etoile\ARGU{chaine}\verb|{%|\par
+	\qquad\qquad\ARGU{chaine1}\ARGU{code1}\verb|%|\par
+	\qquad\qquad\ARGU{chaine2}\ARGU{code2}\verb|%|\par
+	\qquad\qquad\verb|etc...|\par
+	\qquad\qquad\ARGU{chaineN}\ARGU{codeN}\verb|}|\arguC{code alternatif}
+\end{minipage}
+\smallskip
+
+Teste successivement si \argu{chaine} est égale à \argu{chaine1}, \argu{chaine2}, etc. La comparaison se fait au sens de \verbinline|\IfEq| (voir paragraphes précédents). Si un test est positif, le code correspondant est exécuté et la macro se termine. Si tous les tests sont négatifs, le code optionnel \argu{code alternatif} est exécuté s'il est présent.\smallskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\IfEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}
+|\IfEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|
+\IfEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[autre]
+\IfEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[autre]
+\IfEqCase{+3}{{1}{un}{2}{deux}{3}{trois}}[autre]
+\IfEqCase{0.5}{{0}{zero}{.5}{demi}{1}{un}}[autre]
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\IfEqCase{b}{{a}{AA}{b}{BB}{c}{CC}}\par
+	|\IfEqCase{abc}{{a}{AA}{b}{BB}{c}{CC}}|\par
+	\IfEqCase{c}{{a}{AA}{b}{BB}{c}{CC}}[autre]\par
+	\IfEqCase{d}{{a}{AA}{b}{BB}{c}{CC}}[autre]\par
+	\IfEqCase{+3}{{1}{un}{2}{deux}{3}{trois}}[autre]\par
+	\IfEqCase{0.5}{{0}{zero}{.5}{demi}{1}{un}}[autre]
+\end{minipage}%
+
+\subsection{Les macros renvoyant une chaîne}
+\subsubsection{\ttfamily\textbackslash StrBefore}
+\verbinline|\StrBefore|\etoile\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\arguC{nom}
+\smallskip
+
+L'argument optionnel \argu{nombre} vaut 1 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, renvoie ce qui se trouve avant l'occurrence \no\argu{nombre} de \argu{chaineA}.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} ou \argu{chaineA} est vide, une chaîne vide est renvoyée;
+	\item Si \argu{nombre}${}<1$ alors, la macro se comporte comme si \argu{nombre}${}=1$;
+	\item Si l'occurrence n'est pas trouvée, une chaîne vide est renvoyée.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrBefore{xstring}{tri}
+\StrBefore{LaTeX}{e}
+|\StrBefore{LaTeX}{p}|
+|\StrBefore{LaTeX}{L}|
+|\StrBefore{a bc def }{def}|
+|\StrBefore{a bc def }{cd}|
+\StrBefore[1]{1b2b3}{b}
+\StrBefore[2]{1b2b3}{b}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrBefore{xstring}{tri}\par
+	\StrBefore{LaTeX}{e}\par
+	|\StrBefore{LaTeX}{p}|\par
+	|\StrBefore{LaTeX}{L}|\par
+	|\StrBefore{a bc def }{def}|\par
+	|\StrBefore{a bc def }{cd}|\par
+	\StrBefore[1]{1b2b3}{b}\par
+	\StrBefore[2]{1b2b3}{b}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrBehind}
+\verbinline|\StrBehind|\etoile\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\arguC{nom}
+\smallskip
+
+L'argument optionnel \argu{nombre} vaut 1 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, renvoie ce qui se trouve après l'occurrence \no\argu{nombre} de \argu{chaineA}.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} ou \argu{chaineA} est vide, une chaîne vide est renvoyée;
+	\item Si \argu{nombre}${}<1$ alors, la macro se comporte comme si \argu{nombre}${}=1$;
+	\item Si l'occurrence n'est pas trouvée, une chaîne vide est renvoyée.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrBehind{xstring}{tri}
+\StrBehind{LaTeX}{e}
+|\StrBehind{LaTeX}{p}|
+|\StrBehind{LaTeX}{X}|
+|\StrBehind{a bc def }{bc}|
+|\StrBehind{a bc def }{cd}|
+\StrBehind[1]{1b2b3}{b}
+\StrBehind[2]{1b2b3}{b}
+|\StrBehind[3]{1b2b3}{b}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrBehind{xstring}{tri}\par
+	\StrBehind{LaTeX}{e}\par
+	|\StrBehind{LaTeX}{p}|\par
+	|\StrBehind{LaTeX}{X}|\par
+	|\StrBehind{a bc def }{bc}|\par
+	|\StrBehind{a bc def }{cd}|\par
+	\StrBehind[1]{1b2b3}{b}\par
+	\StrBehind[2]{1b2b3}{b}\par
+	|\StrBehind[3]{1b2b3}{b}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrBetween}
+\verbinline|\StrBetween|\etoile\arguCC{nombre1}{nombre2}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}\arguC{nom}
+\smallskip
+
+Les arguments optionnels \argu{nombre1} et \argu{nombre2} valent 1 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, renvoie ce qui se trouve entre\footnote{Au sens strict, c'est-à-dire \emph{sans} les chaînes frontière} les occurrences \no\argu{nombre1} de \argu{chaineA} et \no \argu{nombre2} de \argu{chaineB}.\medskip
+
+\begin{Conditions}
+	\item Si les occurrences ne sont pas dans l'ordre (\argu{chaineA} \emph{puis} \argu{chaineB}) dans \argu{chaine}, une chaîne vide est renvoyée;
+	\item Si l'une des 2 occurrences n'existe pas dans \argu{chaine}, une chaîne vide est renvoyée;
+	\item Si l'un des arguments optionnels \argu{nombre1} ou \argu{nombre2} est négatif ou nul, une chaîne vide est renvoyée.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrBetween{xstring}{xs}{ng}
+|\StrBetween{xstring}{i}{n}|
+|\StrBetween{xstring}{a}{tring}|
+|\StrBetween{a bc def }{a}{d}|
+|\StrBetween{a bc def }{a }{f}|
+\StrBetween{a1b1a2b2a3b3}{a}{b}
+\StrBetween[2,3]{a1b1a2b2a3b3}{a}{b}
+\StrBetween[1,3]{a1b1a2b2a3b3}{a}{b}
+|\StrBetween[3,1]{a1b1a2b2a3b3}{a}{b}|
+\StrBetween[3,2]{abracadabra}{a}{bra}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrBetween{xstring}{xs}{ng}\par
+	|\StrBetween{xstring}{i}{n}|\par
+	|\StrBetween{xstring}{a}{tring}|\par
+	|\StrBetween{a bc def }{a}{d}|\par
+	|\StrBetween{a bc def }{a }{f}|\par
+	\StrBetween{a1b1a2b2a3b3}{a}{b}\par
+	\StrBetween[2,3]{a1b1a2b2a3b3}{a}{b}\par
+	\StrBetween[1,3]{a1b1a2b2a3b3}{a}{b}\par
+	|\StrBetween[3,1]{a1b1a2b2a3b3}{a}{b}|\par
+	\StrBetween[3,2]{abracadabra}{a}{bra}\par
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrSubstitute}
+\verbinline|\StrSubstitute|\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}\arguC{nom}
+\smallskip
+
+L'argument optionnel \argu{nombre} vaut 0 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, la macro remplace les \argu{nombre} premières occurrences de \argu{chaineA} par \argu{chaineB}, sauf si \argu{nombre}${}=0$ auquel cas, \emph{toutes} les occurrences sont remplacées.
+
+\begin{Conditions}
+	\item Si \argu{chaine} est vide, une chaîne vide est renvoyée;
+	\item Si \argu{chaineA} est vide ou n'existe pas dans \argu{chaine}, la macro est sans effet;
+	\item Si \argu{nombre} est supérieur au nombre d'occurrences de \argu{chaineA}, alors toutes les occurrences sont remplacées;
+	\item Si \argu{nombre}${}<0$ alors la macro se comporte comme si \argu{nombre}${}=0$;
+	\item Si \argu{chaineB} est vide, alors les occurrences de \argu{chaineA}, si elles existent, sont supprimées.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrSubstitute{xstring}{i}{a}
+\StrSubstitute{abracadabra}{a}{o}
+\StrSubstitute{abracadabra}{br}{TeX}
+\StrSubstitute{LaTeX}{m}{n}
+\StrSubstitute{a bc def }{ }{M}
+\StrSubstitute{a bc def }{ab}{AB}
+\StrSubstitute[1]{a1a2a3}{a}{B}
+\StrSubstitute[2]{a1a2a3}{a}{B}
+\StrSubstitute[3]{a1a2a3}{a}{B}
+\StrSubstitute[4]{a1a2a3}{a}{B}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrSubstitute{xstring}{i}{a}\par
+	\StrSubstitute{abracadabra}{a}{o}\par
+	\StrSubstitute{abracadabra}{br}{TeX}\par
+	\StrSubstitute{LaTeX}{m}{n}\par
+	\StrSubstitute{a bc def }{ }{M}\par
+	\StrSubstitute{a bc def }{ab}{AB}\par
+	\StrSubstitute[1]{a1a2a3}{a}{B}\par
+	\StrSubstitute[2]{a1a2a3}{a}{B}\par
+	\StrSubstitute[3]{a1a2a3}{a}{B}\par
+	\StrSubstitute[4]{a1a2a3}{a}{B}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrDel}
+\verbinline|\StrDel|\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\arguC{nom}
+\smallskip
+
+L'argument optionnel \argu{nombre} vaut 0 par défaut.\par\nobreak\smallskip
+Supprime les \argu{nombre} premières occurrences de \argu{chaineA} dans \argu{chaine}, sauf si \argu{nombre}${}=0$ auquel cas, \emph{toutes} les occurrences sont supprimées.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} est vide, une chaîne vide est renvoyée;
+	\item Si \argu{chaineA} est vide ou n'existe pas dans \argu{chaine}, la macro est sans effet;
+	\item Si \argu{nombre} est supérieur au nombre d'occurrences de \argu{chaineA}, alors toutes les occurrences sont supprimées;
+	\item Si \argu{nombre}${}<0$ alors la macro se comporte comme si \argu{nombre}${}=0$;
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrDel{abracadabra}{a}
+\StrDel[1]{abracadabra}{a}
+\StrDel[4]{abracadabra}{a}
+\StrDel[9]{abracadabra}{a}
+\StrDel{a bc def }{ }
+|\StrDel{a bc def }{def}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrDel{abracadabra}{a}\par
+	\StrDel[1]{abracadabra}{a}\par
+	\StrDel[4]{abracadabra}{a}\par
+	\StrDel[9]{abracadabra}{a}\par
+	\StrDel{a bc def }{ }\par
+	|\StrDel{a bc def }{def}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrGobbleLeft}
+\verbinline|\StrGobbleLeft|\ARGU{chaine}\ARGU{nombre}\arguC{nom}
+\smallskip
+
+Dans \argu{chaine}, enlève les \argu{nombre} premieres \USs de gauche.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} est vide, renvoie une chaîne vide;
+	\item Si \argu{nombre}${}\leqslant0$, aucune \US n'est supprimée;
+	\item Si \argu{nombre}${}\geqslant{}$\argu{longueurChaine}, toutes les \USs sont supprimées.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrGobbleLeft{xstring}{2}
+|\StrGobbleLeft{xstring}{9}|
+\StrGobbleLeft{LaTeX}{4}
+\StrGobbleLeft{LaTeX}{-2}
+|\StrGobbleLeft{a bc def }{4}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrGobbleLeft{xstring}{2}\par
+	|\StrGobbleLeft{xstring}{9}|\par
+	\StrGobbleLeft{LaTeX}{4}\par
+	\StrGobbleLeft{LaTeX}{-2}\par
+	|\StrGobbleLeft{a bc def }{4}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrLeft}
+\verbinline|\StrLeft|\ARGU{chaine}\ARGU{nombre}\arguC{nom}
+\smallskip
+
+Dans \argu{chaine}, renvoie la sous-chaîne de gauche de longueur \argu{nombre}.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} est vide, renvoie une chaîne vide;
+	\item Si \argu{nombre}${}\leqslant0$, aucune \US n'est retournée;
+	\item Si \argu{nombre}${}\geqslant{}$\argu{longueurChaine}, toutes les \USs sont retournées.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrLeft{xstring}{2}
+\StrLeft{xstring}{9}
+\StrLeft{LaTeX}{4}
+|\StrLeft{LaTeX}{-2}|
+|\StrLeft{a bc def }{5}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrLeft{xstring}{2}\par
+	\StrLeft{xstring}{9}\par
+	\StrLeft{LaTeX}{4}\par
+	|\StrLeft{LaTeX}{-2}|\par
+	|\StrLeft{a bc def }{5}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrGobbleRight}
+\verbinline|\StrGobbleRight|\ARGU{chaine}\ARGU{nombre}\arguC{nom}
+\smallskip
+
+Agit comme \verbinline|\StrGobbleLeft|, mais enlève les \USs à droite de \argu{chaine}.
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrGobbleRight{xstring}{2}
+|\StrGobbleRight{xstring}{9}|
+\StrGobbleRight{LaTeX}{4}
+|\StrGobbleRight{LaTeX}{-2}|
+|\StrGobbleRight{a bc def }{4}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrGobbleRight{xstring}{2}\par
+	|\StrGobbleRight{xstring}{9}|\par
+	\StrGobbleRight{LaTeX}{4}\par
+	|\StrGobbleRight{LaTeX}{-2}|\par
+	|\StrGobbleRight{a bc def }{4}|
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrRight}
+\verbinline|\StrRight|\ARGU{chaine}\ARGU{nombre}\arguC{nom}
+\smallskip
+
+Agit comme \verbinline|\StrLeft|, mais renvoie les \USs à la droite de \argu{chaine}.
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrRight{xstring}{2}
+\StrRight{xstring}{9}
+\StrRight{LaTeX}{4}
+|\StrRight{LaTeX}{-2}|
+\StrRight{a bc def }{5}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrRight{xstring}{2}\par
+	\StrRight{xstring}{9}\par
+	\StrRight{LaTeX}{4}\par
+	|\StrRight{LaTeX}{-2}|\par
+	\StrRight{a bc def }{5}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrChar}
+\verbinline|\StrChar|\ARGU{chaine}\ARGU{nombre}\arguC{nom}
+\smallskip
+
+Renvoie l'\US à la position \argu{nombre} dans la chaîne \argu{chaine}.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} est vide, aucune \US n'est renvoyée;
+	\item Si \argu{nombre}${}\leqslant0$ ou si \argu{nombre}${}>{}$\argu{longueurChaine}, aucune \US n'est renvoyée.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrChar{xstring}{4}
+|\StrChar{xstring}{9}|
+|\StrChar{xstring}{-5}|
+\StrChar{a bc def }{6}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrChar{xstring}{4}\par
+	|\StrChar{xstring}{9}|\par
+	|\StrChar{xstring}{-5}|\par
+	\StrChar{a bc def }{6}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrMid}
+\verbinline|\StrMid|\ARGU{chaine}\ARGU{nombre1}\ARGU{nombre2}\arguC{nom}
+\smallskip
+
+Dans \argu{chaine}, renvoie la sous chaîne se trouvant entre\footnote{Au sens large, c'est-à-dire que les chaînes \guill{frontière} sont renvoyés.} les positions \argu{nombre1} et \argu{nombre2}.\medskip
+
+\begin{Conditions}
+	\item Si \argu{chaine} est vide, une chaîne vide est renvoyée;
+	\item Si \argu{nombre1}${}>{}$\argu{nombre2}, alors rien n'est renvoyé;
+	\item Si \argu{nombre1}${}<1$ et \argu{nombre2}${}<1$ alors rien n'est renvoyé;
+	\item Si \argu{nombre1}${}>{}$\argu{longueurChaine} et \argu{nombre2}${}>{}$\argu{longueurChaine}, alors rien n'est renvoyé;
+	\item Si \argu{nombre1}${}<1$, alors la macro se comporte comme si \argu{nombre1}${}=1$;
+	\item Si \argu{nombre2}${}>{}$\argu{longueurChaine}, alors la macro se comporte comme si \argu{nombre2}${}={}$\argu{longueurChaine}.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrMid{xstring}{2}{5}
+\StrMid{xstring}{-4}{2}
+|\StrMid{xstring}{5}{1}|
+\StrMid{xstring}{6}{15}
+\StrMid{xstring}{3}{3}
+|\StrMid{a bc def }{2}{7}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrMid{xstring}{2}{5}\par
+	\StrMid{xstring}{-4}{2}\par
+	|\StrMid{xstring}{5}{1}|\par
+	\StrMid{xstring}{6}{15}\par
+	\StrMid{xstring}{3}{3}\par
+	|\StrMid{a bc def }{2}{7}|
+\end{minipage}%
+
+\subsection{Les macros renvoyant des nombres}
+\subsubsection{\ttfamily\textbackslash StrLen}
+\verbinline|\StrLen|\ARGU{chaine}\arguC{nom}
+\smallskip
+
+Renvoie la longueur de \argu{chaine}.
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrLen{xstring}
+\StrLen{A}
+\StrLen{a bc def }
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrLen{xstring}\par
+	\StrLen{A}\par
+	\StrLen{a bc def }
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrCount}
+\verbinline|\StrCount|\ARGU{chaine}\ARGU{chaineA}\arguC{nom}
+\smallskip
+
+Compte combien de fois \argu{chaineA} est contenue dans \argu{chaine}.\par\medskip
+
+\begin{Conditions}
+	\item Si l'un au moins des arguments \argu{chaine} ou \argu{chaineA} est vide, la macro renvoie 0.
+\end{Conditions}
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrCount{abracadabra}{a}
+\StrCount{abracadabra}{bra}
+\StrCount{abracadabra}{tic}
+\StrCount{aaaaaa}{aa}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrCount{abracadabra}{a}\par
+	\StrCount{abracadabra}{bra}\par
+	\StrCount{abracadabra}{tic}\par
+	\StrCount{aaaaaa}{aa}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrPosition}
+\verbinline|\StrPosition|\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\arguC{nom}
+\smallskip
+
+L'argument optionnel \argu{nombre} vaut 1 par défaut.\par\nobreak\smallskip
+Dans \argu{chaine}, renvoie la position de l'occurrence \no\argu{nombre} de \argu{chaineA}.\medskip
+
+\begin{Conditions}
+	\item Si \argu{nombre} est supérieur au nombre d'occurrences de \argu{chaineA}, alors la macro renvoie 0.
+	\item Si \argu{chaine} ne contient pas \argu{chaineA}, alors la macro renvoie 0.
+\end{Conditions}
+\medskip
+
+\begin{minipage}[t]{0.65\linewidth}
+\begin{lstlisting}
+\StrPosition{xstring}{ring}
+\StrPosition[4]{abracadabra}{a}
+\StrPosition[2]{abracadabra}{bra}
+\StrPosition[9]{abracadabra}{a}
+\StrPosition{abracadabra}{z}
+\StrPosition{a bc def }{d}
+\StrPosition[3]{aaaaaa}{aa}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\StrPosition{xstring}{ring}\par
+	\StrPosition[4]{abracadabra}{a}\par
+	\StrPosition[2]{abracadabra}{bra}\par
+	\StrPosition[9]{abracadabra}{a}\par
+	\StrPosition{abracadabra}{z}\par
+	\StrPosition{a bc def }{d}\par
+	\StrPosition[3]{aaaaaa}{aa}
+\end{minipage}%
+
+\subsubsection{\ttfamily\textbackslash StrCompare}
+\verbinline|\StrCompare|\etoile\ARGU{chaineA}\ARGU{chaineB}\arguC{nom}
+\smallskip
+
+Cette macro peut fonctionner avec 2 tolérances : la tolérance \guill{normale} sélectionnée par défaut, et la tolérance \guill{stricte}.\medskip
+
+\begin{itemize}
+	\item La tolérance normale, activée par la commande \verbinline|\comparenormal|.\par
+	La macro compare successivement les \US de gauche à droite des chaînes \argu{chaineA} et \argu{chaineB} jusqu'à ce qu'une différence apparaisse ou que la fin de la plus courte chaîne soit atteinte. Si aucune différence n'est trouvée, la macro renvoie 0. Sinon, la position de la 1\iere{} différence est renvoyée.
+	\item La tolérance stricte, activée par la commande \verbinline|\comparestrict|.\par
+	La macro compare les 2 chaînes. Si elles sont égales, elle renvoie 0 sinon la position de la 1\iere{} différence est renvoyée.
+\end{itemize}
+\smallskip
+
+L'ordre des 2 chaînes n'a aucune influence sur le comportement de la macro.
+
+\medskip On peut également mémoriser le mode de comparaison en cours avec \verbinline|\savecomparemode|, le modifier par la suite et revenir à la situation lors de la sauvegarde avec \verbinline|\restorecomparemode|.\medskip
+
+Exemples en tolérance normale :\par\nobreak
+\begin{minipage}[t]{0.65\linewidth}
+\comparenormal
+\begin{lstlisting}
+\StrCompare{abcd}{abcd}
+\StrCompare{abcd}{abc}
+\StrCompare{abc}{abcd}
+\StrCompare{a b c}{abc}
+\StrCompare{aaa}{baaa}
+\StrCompare{abc}{xyz}
+\StrCompare{123456}{123457}
+\StrCompare{abc}{}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\comparenormal
+	\StrCompare{abcd}{abcd}\par
+	\StrCompare{abcd}{abc}\par
+	\StrCompare{abc}{abcd}\par
+	\StrCompare{a b c}{abc}\par
+	\StrCompare{aaa}{baaa}\par
+	\StrCompare{abc}{xyz}\par
+	\StrCompare{123456}{123457}\par
+	\StrCompare{abc}{}
+\end{minipage}%
+\medskip
+
+Exemples en tolérance stricte :\par\nobreak
+\begin{minipage}[t]{0.65\linewidth}
+\comparestrict
+\begin{lstlisting}
+\StrCompare{abcd}{abcd}
+\StrCompare{abcd}{abc}
+\StrCompare{abc}{abcd}
+\StrCompare{a b c}{abc}
+\StrCompare{aaa}{baaa}
+\StrCompare{abc}{xyz}
+\StrCompare{123456}{123457}
+\StrCompare{abc}{}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[t]{0.35\linewidth}
+	\styleexemple
+	\comparestrict
+	\StrCompare{abcd}{abcd}\par
+	\StrCompare{abcd}{abc}\par
+	\StrCompare{abc}{abcd}\par
+	\StrCompare{a b c}{abc}\par
+	\StrCompare{aaa}{baaa}\par
+	\StrCompare{abc}{xyz}\par
+	\StrCompare{123456}{123457}\par
+	\StrCompare{abc}{}
+\end{minipage}%
+
+\section{Modes de fonctionnement}
+\subsection{Développement des arguments}
+\label{devarg}
+\lstset{basicstyle=\footnotesize\ttfamily}
+\subsubsection{Les macros {\ttfamily \textbackslash fullexpandarg}, {\ttfamily \textbackslash expandarg} et {\ttfamily \textbackslash noexpandarg}}
+La macro \verbinline|\fullexpandarg| est appelée par défaut, ce qui fait que certains arguments (en \textcolor{violet}{violet} dans la liste ci dessous) transmis aux macros sont développés le plus possible (pour cela, un \verb|\edef| est utilisé). Ce mode de développement maximal permet dans la plupart des cas d'éviter d'utiliser des chaînes d'\verb|\expandafter|. Le code en est souvent allégé.
+
+On peut interdire le développement de ces arguments (et ainsi revenir au comportement normal de \TeX) en invoquant \verbinline|\noexpandarg| ou \verbinline|\normalexpandarg| qui sont synonymes.\medskip
+
+Il existe enfin un autre mode de développement de ces arguments que l'on appelle avec \verbinline|\expandarg|. Dans ce cas, le \textbf{premier token} de ces arguments est développé \emph{une fois} avant que la macro ne soit appelée. Si l'argument contient plus d'un token, les tokens qui suivent le premier ne sont pas développés (on peut contourner cette volontaire limitation et utiliser la macro \verbinline|\StrExpand|, voir page~\pageref{scancs}).\medskip
+
+Les commandes \verbinline|\fullexpandarg|, \verbinline|\noexpandarg|, \verbinline|\normalexpandarg| et \verbinline|\expandarg| peuvent être appelées à tout moment dans le code et fonctionnent comme des bascules. On peut rendre leur portée locale dans un groupe.\medskip
+
+On peut également mémoriser le mode de développement en cours avec \verbinline|\saveexpandmode|, le modifier par la suite et revenir à la situation lors de la sauvegarde avec \verbinline|\restoreexpandmode|.\medskip
+
+Dans la liste ci-dessous, on peut voir en \textcolor{violet}{violet} quels arguments sont soumis à l'éventuel développement pour chaque macro vue dans le chapitre précedent :
+
+\nobreak\smallskip
+\parindent3em
+\begin{itemize}
+	\item\verb|\IfSubStr|\etoile{\colorise\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfSubStrBefore|\etoile{\colorise\arguCC{nombre1}{nombre2}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfSubStrBehind|\etoile{\colorise\arguCC{nombre1}{nombre2}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfBeginWith|\etoile{\colorise\ARGU{chaine}\ARGU{chaineA}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfEndWith|\etoile{\colorise\ARGU{chaine}\ARGU{chaineA}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfInteger|{\colorise\ARGU{nombre}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfDecimal|{\colorise\ARGU{nombre}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfStrEq|\etoile{\colorise\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfEq|\etoile{\colorise\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfStrEqCase|\etoile{\colorise\ARGU{chaine}\texttt{\color{black}\{}\colorise\ARGU{chaine1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfStrEqCase}\etoile\ARGU{chaine}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{chaine2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{chaine $n$}}\ARGU{code $n$}\verb|}|\arguC{code alternatif}
+	\item\verb|\IfEqCase|\etoile{\colorise\ARGU{chaine}\texttt{\color{black}\{}\colorise\ARGU{chaine1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfEqCase}\etoile\ARGU{chaine}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{chaine2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{chaine $n$}}\ARGU{code $n$}\verb|}|\arguC{code alternatif}
+	\item\verb|\StrBefore|\etoile{\colorise\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrBehind|\etoile{\colorise\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrBetween|\etoile{\colorise\arguCC{nombre1}{nombre2}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\arguC{nom}
+	\item\verb|\StrSubstitute|{\colorise\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\arguC{nom}
+	\item\verb|\StrDel|{\colorise\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrSplit|{\colorise\ARGU{chaine}\ARGU{nombre}}\ARGU{chaineA}\ARGU{chaineB}\qquad{\small(voir page~\pageref{StrSplit} pour la macro \verb|StrSplit|)}
+	\item\verb|\StrGobbleLeft|{\colorise\ARGU{chaine}\ARGU{nombre}}\arguC{nom}
+	\item\verb|\StrLeft|{\colorise\ARGU{chaine}\ARGU{nombre}}\arguC{nom}
+	\item\verb|\StrGobbleRight|{\colorise\ARGU{chaine}\ARGU{nombre}}\arguC{nom}
+	\item\verb|\StrRight|{\colorise\ARGU{chaine}\ARGU{nombre}}\arguC{nom}
+	\item\verb|\StrChar|{\colorise\ARGU{chaine}\ARGU{nombre}}\arguC{nom}
+	\item\verb|\StrMid|{\colorise\ARGU{chaine}\ARGU{nombre1}\ARGU{nombre2}}\arguC{nom}
+	\item\verb|\StrLen|{\colorise\ARGU{chaine}}\arguC{nom}
+	\item\verb|\StrCount|{\colorise\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrPosition|{\colorise\arguC{nombre}\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrCompare|{\colorise\ARGU{chaineA}\ARGU{chaineB}}\arguC{nom}
+\end{itemize}
+\parindent0pt
+
+\subsubsection{Caractères et lexèmes autorisés dans les arguments}
+Tout d'abord, quelque soit le mode de développement choisi, \textbf{les tokens de catcode 6 et 14 (habituellement {\ttfamily\#} et {\ttfamily\%}) sont interdits dans tous les arguments}\footnote{Le token {\ttfamily\#} sera peut-être autorisé dans une future version !}.\bigskip
+
+Lorsque le mode \verbinline|\fullexpandarg| est activé, les arguments sont évalués à l'aide de la primitive \verb|\edef| avant d'être transmis aux macros. Par conséquent, sont autorisés dans les arguments :
+
+\nobreak\smallskip\parindent3em
+\begin{itemize}
+	\item les lettres, majuscules, minuscules, accentuées\footnote{Pour pouvoir utiliser des lettres accentuées de façon fiable, il est nécessaire de charger le packages \texttt{\string\fontenc} avec l'option \texttt{[T1]}, ainsi que \texttt{\string\inputenc} avec l'option correspondant au codage du fichier tex.} ou non, les chiffres, les espaces\footnote{Selon la règle \TeX{}iènne, plusieurs espaces consécutifs n'en font qu'un.} ainsi que tout autre token de catcode 10, 11 ou 12 (signes de ponctuation, signes opératoires mathématiques, parenthèses, crochets, etc);
+	\item les tokens de catcode 1 à 4, qui sont habituellement : \og\verb|{|\fg\quad\og\verb|}|\fg\footnote{Attention : les accolades \textbf{doivent} être équilibrées dans les arguments !}\quad\og\verb|$|\fg\quad\og\verb|&|\fg
+	\item les tokens de catcode 7 et 8, qui sont habituellement : \og\verb|^|\fg\quad\og\verb|_|\fg
+	\item toute séquence de contrôle si elle est purement développable\footnote{C'est-à-dire qu'elle peut être mise à l'intérieur d'un {\ttfamily\string\edef }.} et dont le développement maximal donne des caractères autorisés;
+	\item un token de catcode 13 (caractère actif) s'il est purement développable.
+\end{itemize}
+\parindent0pt\smallskip
+
+Lorsque les arguments ne sont plus développés (utilisation de \verbinline|\noexpandarg|), on peut aussi inclure dans les arguments n'importe quel token, quelque soit le code qui en résulte comme par exemple toute séquence de contrôle, même non définie ou tout token de catcode 13. On peut également inclure dans les arguments des tokens de test comme \verbinline|\if| ou \verbinline|\ifx| ou tout autre token de test, même sans leur \verbinline|\fi| correspondant; ou bien un \verbinline|\csname| sans le \verbinline|\endcsname| correspondant.
+
+Dans l'exemple suivant, l'argument contient un \verbinline|\ifx| \emph{sans} le \verbinline|\fi|, et l'on isole ce qui est entre le \verbinline|\ifx| et le \verbinline|\else| :\par\medskip\nobreak
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\StrBetween{\ifx ab faux \else vrai}{\ifx}{\else}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\StrBetween{\ifx ab faux \else vrai}{\ifx}{\else}
+\end{minipage}
+\medskip
+
+Lorsqu'on utilise \verbinline|\expandarg|, la précaution concerne le premier token qui est développé une fois et doit donc être défini. Les autres tokens sont laissés tel quels comme avec \verbinline|\noexpandarg|.
+
+\subsection{Développement des macros, argument optionnel}
+\label{argumentoptionnel}
+Les macros de ce package ne sont pas purement développables et ne peuvent donc pas être mises dans l'argument d'un \verb|\edef|. L'imbrication des macros de ce package n'est pas permise non plus.\medskip
+
+C'est pour cela que les macros renvoyant un résultat, c'est-à-dire toutes sauf les tests, sont dotées d'un argument optionnel venant en dernière position. Cet argument prend la forme de \arguC{nom}, où \argu{nom} est une séquence de contrôle qui recevra (l'assignation se fait avec un \verb|\edef|) le résultat de la macro, ce qui fait que \argu{nom} est purement développable et peut donc se trouver dans l'argument d'un \verb|\edef|. Dans le cas de la présence d'un argument optionnel en dernière position, aucun affichage n'aura lieu. Cela permet donc contourner les limitations évoquées dans les exemples ci dessus.\medskip
+
+Ainsi cette construction non permise censée assigner à \verb|\Resultat| les 4 caractères de gauche de \verb|xstring| :\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\edef\Resultat{\StrLeft{xstring}{4}}|\par\nobreak
+\qquad est équivalente à :\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrLeft{xstring}{4}[\Resultat]|\medskip
+
+Et cette imbrication non permise censée enlever le premier et le dernier caractère de \verb|xstring| :\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrGobbleLeft{\StrGobbleRight{xstring}{1}}{1}|\par\nobreak
+\qquad se programme ainsi :\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrGobbleRight{xstring}{1}[\machaine]|\par\nobreak
+\hspace{0.2\linewidth}\verbinline|\StrGobbleLeft{\machaine}{1}|\par
+
+\subsection{Traitement des arguments}
+\label{developpementarguments}
+\subsubsection{Traitement à l'\US prés}
+Les macros de \Xstring traitent les arguments \US par \US. Dans le code \TeX{}, une \US\footnote{Pour les utilisateurs familiers avec la programmation \LaTeX, une \US est ce qui est supprimé par la macro \texttt{\string\@gobble} dont le code, d'une grande simplicité, est : {\ttfamily\string\def\string\@gobble\string#1\string{\string}}} est soit :\par\nobreak\smallskip\parindent3em
+\begin{itemize}
+	\item une séquence de contrôle;
+	\item un groupe, c'est à dire une suite de tokens située entre deux accolades équilibrées;
+	\item un caractère ne faisant pas partie des 2 espèces ci dessus.
+\end{itemize}
+\medskip\parindent0pt
+
+Voyons ce qu'est la notion d'\US sur un exemple. Prenons cet argument : \og\verb|ab\textbf{xyz}cd|\fg
+
+\nobreak Il contient 6 \USs qui sont : \og\verb|a|\fg, \og\verb|b|\fg, \og\verb|\textbf|\fg, \og\verb|{xyz}|\fg, \og\verb|c|\fg{} et \og\verb|d|\fg.
+
+\nobreak\medskip Que va t-il arriver si l'on se place sous \verbinline|\noexpandarg| et que l'on demande à \Xstring de trouver la longueur de cet argument et d'en trouver le 4\ieme{} \guill{caractère} ?\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\StrLen{ab\textbf{xyz}cd}\par
+\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+\meaning\mychar
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\StrLen{ab\textbf{xyz}cd}\par
+	\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+	\meaning\mychar
+\end{minipage}%
+\fullexpandarg
+\medskip
+
+Il est nécessaire d'utiliser \verb|\meaning| pour bien visualiser le véritable contenu de \verb|\mychar| et non pas de simplement d'appeler cette séquence de contrôle, ce qui fait perdre des informations ---~les accolades ici. On voit qu'on n'obtient pas vraiment un \guill{caractère}, mais cela était prévisible : il s'agit d'une \US.
+
+\subsubsection{Exploration des groupes}
+Par défaut, la commande \verbinline|\noexploregroups| est appelée et donc dans l'argument à examiner qui contient la chaîne de tokens, \Xstring considère les groupes entre accolades comme \USs fermées dans lesquelles \Xstring ne regarde pas.
+
+Pour certains besoins spécifiques, il peut être nécessaire de modifier le mode de lecture des arguments et d'explorer l'intérieur des groupes entre accolades. Pour cela on peut invoquer \verbinline|\exploregroups|.\medskip
+
+Que va donner ce nouveau mode d'exploration sur l'exemple précédent ? \Xstring ne va plus compter le groupe comme une seule \US mais va compter les \USs se trouvant à l'intérieur, et ainsi de suite s'il y avait plusieurs niveaux d'imbrication de groupes:
+
+\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\exploregroups
+\StrLen{ab\textbf{xyz}cd}\par
+\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+\meaning\mychar
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\exploregroups
+	\StrLen{ab\textbf{xyz}cd}\par
+	\StrChar{ab\textbf{xyz}cd}{4}[\mychar]
+	\meaning\mychar
+\end{minipage}%
+\fullexpandarg\noexploregroups
+\medskip
+
+L'exploration des groupes peut se réveler utile pour le comptage, le calcul de position ou les tests, mais comporte une limitation lorsque l'on appelle des macros renvoyant des chaînes : lorsqu'un argument est coupé à l'intérieur d'un groupe, alors \textbf{le résultat ne tient pas compte de ce qui se trouve à l'extérieur de ce groupe}. Il faut donc utiliser ce mode en connaissance de cause lorsque l'on utilise les macros renvoyant des chaînes.
+
+Voyons ce que cela signifie sur un exemple : mettons que l'on veuille renvoyer ce qui se trouve à droite de la 2\ieme{} occurrence de \verb|\a| dans l'argument \verb|\a1{\b1\a2}\a3|. Comme l'on explore les groupes, cette occurrence se trouve à l'intérieur du groupe \verb|{\b1\a2}|. Le résultat renvoyé sera donc : \verb|\b1|. Vérifions-le :
+
+
+
+L'exploration des groupes\footnote{On peut consulter le fichier de test de \Xstring qui comporte de nombreux exemples et met en évidence les différences selon le mode d'exploration des groupes.} peut ainsi changer le comportement de la plupart des macros de \Xstring, à l'exception de \verbinline|\IfInteger|, \verbinline|\IfDecimal|, \verbinline|\IfStrEq|, \verbinline|\IfEq| et \verbinline|\StrCompare| qui sont insensibles au mode d'exploration en cours.
+
+De plus, pour des raison d'équilibrage d'accolades, 2 macros n'opèrent qu'en mode \verbinline|\noexploregroups|, quelque soit le mode d'exploration en cours : \verbinline|\StrBetween| et \verbinline|\StrMid|.\medskip
+
+On peut mémoriser le mode de d'exploration en cours avec \verbinline|\saveexploremode|, le modifier par la suite et revenir à la situation lors de la sauvegarde avec \verbinline|\restoreexploremode|.
+
+\subsection{Catcodes et macros étoilées}
+\label{macrosetoilees}
+Les macros de \Xstring tiennent compte des catcodes des tokens constituant les arguments. Il faut donc garder à l'esprit, particulièrement lors des tests, que les tokens \emph{et leurs catcodes} sont examinés.\medskip
+
+Par exemple, ces 2 arguments :\par\nobreak\smallskip
+\hfil\verb|{\string a\string b}|\qquad et\qquad\verb|{ab}|\hfil{}\par\smallskip
+ne se développent pas en 2 arguments égaux aux yeux de \Xstring. Dans le premier cas, à cause de l'emploi de la primitive \verb|\string|, les caractères \og\verb|ab|\fg{} ont un catcode de 12 alors que dans l'autre cas, ils ont leurs catcodes naturels de 11. Il convient donc d'être conscient de ces subtilités lorsque l'on emploie des primitives dont les résultats sont des chaînes de caractères ayant des catcodes de 12 et 10. Ces primitives sont par exemple : \verb|\string|, \verb|\detokenize|, \verb|\meaning|, \verb|\jobname|, \verb|\fontname|, \verb|\romannumeral|, etc.\medskip
+
+Pour demander aux macros de ne pas tenir compte des catcodes, on peut utiliser les macros étoilées. Après l'éventuel développement des arguments en accord avec le mode de développement, celles-ci convertissent (à l'aide d'un \verb|\detokenize|) leur arguments en chaînes de caractères dont les catcodes sont 12 et 10 pour l'espace, avant que la macro non étoilée travaille sur ces arguments ainsi modifiés. Il faut noter que les arguments optionnels ne sont pas concernés par ces modifications et gardent leur catcode.\smallskip
+
+Voici un exemple :\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\IfStrEq{\string a\string b}{ab}{vrai}{faux}\par
+\IfStrEq*{\string a\string b}{ab}{vrai}{faux}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\IfStrEq{\string a\string b}{ab}{vrai}{faux}\par
+	\IfStrEq*{\string a\string b}{ab}{vrai}{faux}
+\end{minipage}%
+\smallskip
+
+Les chaînes n'étant pas égales à cause des catcodes, le test est bien \emph{négatif} dans la version non étoilée.\bigskip
+
+\textbf{Attention} : utiliser une macro étoilée a des conséquenses ! Les arguments sont \guill{détokénisés}, il n'y a donc plus de séquence de contrôle, plus de goupes, ni aucun caractère de catcode spécial puisque tout est converti en caractères \guill{inoffensifs} ayant le même catcode.\medskip
+
+Ainsi, pour les macros renvoyant une chaîne, si on emploie les versions étoilées, le résultat sera une chaîne de caractères dont les catcodes sont 12, et 10 pour l'espace.
+
+Et donc, après un \og\verbinline|\StrBefore*{a \b c d}{c}[\montexte]|\fg{}, la séquence de contrôle \verb|\montexte| se développera en \og{}\verb|a|${}_{12}$\verb*| |${}_{10}$\verb|\|${}_{12}$\verb|b|${}_{12}$\verb*| |${}_{10}$\fg{}.\medskip
+
+Les macros détokenisant leur arguments par l'utilisation de l'étoile sont présentées dans la liste ci-dessous. Pour chacune d'entre elles, on peut voir en \textcolor{violet}{violet} quels arguments seront détokenisé lorsque l'étoile sera employée :
+
+\nobreak\smallskip\parindent3em
+\begin{itemize}
+	\item\verb|\IfSubStr|\etoile\arguC{nombre}{\colorise\ARGU{chaine}\ARGU{chaineA}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfSubStrBefore|\etoile\arguCC{nombre1}{nombre2}{\colorise\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfSubStrBehind|\etoile\arguCC{nombre1}{nombre2}{\colorise\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfBeginWith|\etoile{\colorise\ARGU{chaine}\ARGU{chaineA}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfEndWith|\etoile{\colorise\ARGU{chaine}\ARGU{chaineA}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfStrEq|\etoile{\colorise\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfEq|\etoile{\colorise\ARGU{chaineA}\ARGU{chaineB}}\ARGU{vrai}\ARGU{faux}
+	\item\verb|\IfStrEqCase|\etoile{\colorise\ARGU{chaine}\texttt{\color{black}\{}\colorise\ARGU{chaine1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfStrEqCase}\etoile\ARGU{chaine}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{chaine2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{chaine $n$}}\ARGU{code $n$}\verb|}|\arguC{code alternatif}
+	\item\verb|\IfEqCase|\etoile{\colorise\ARGU{chaine}\texttt{\color{black}\{}\colorise\ARGU{chaine1}}\ARGU{code1}\par
+		\setbox0=\hbox{{\ttfamily\string\IfEqCase}\etoile\ARGU{chaine}{\ttfamily\{}}
+		\hskip\wd0{\colorise\ARGU{chaine2}}\ARGU{code2}\par
+		\hskip\wd0\ \ldots\par
+		\hskip\wd0{\colorise\ARGU{chaine $n$}}\ARGU{code $n$}\verb|}|\arguC{code alternatif}
+	\item\verb|\StrBefore|\etoile\arguC{nombre}{\colorise\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrBehind|\etoile\arguC{nombre}{\colorise\ARGU{chaine}\ARGU{chaineA}}\arguC{nom}
+	\item\verb|\StrBetween|\etoile\arguCC{nombre1}{nombre2}{\colorise\ARGU{chaine}\ARGU{chaineA}\ARGU{chaineB}}\arguC{nom}
+	\item\verb|\StrCompare|\etoile{\colorise\ARGU{chaineA}\ARGU{chaineB}}\arguC{nom}
+\end{itemize}
+\parindent0pt
+
+\section{Macros avancées pour la programmation}
+Bien que \Xstring ait la possibilité de lire et traiter des arguments contenant du code \TeX{} ou \LaTeX{} ce qui devrait couvrir la plupart des besoins en programmation, il peut arriver pour des besoins très spécifiques que les macros décritesz précédemment ne suffisent pas. Ce chapitre présente d'autres macros qui permettent d'aller plus loin ou de contourner certaines limitations.
+\subsection{Recherche d'un groupe, les macros {\ttfamily\textbackslash StrFindGroup} et {\ttfamily\textbackslash groupID}}
+Lorsque le mode \verbinline=\exploregroups= est actif, la macro \verbinline=\StrFindGroup= permet de trouver un groupe entre accolades explicites en spécifiant son identifiant :
+
+\nobreak\smallskip
+\verbinline|\StrFindGroup|\ARGU{argument}\ARGU{identifiant}\arguC{nom}\medskip
+
+Lorsque le groupe caractérisé par l'identifiant n'existe pas, une chaîne vide sera assignée à la séquence de contrôle \argu{nom}. Si le groupe existe, ce groupe \emph{avec ses accolades} sera assigné à \argu{nom}.\smallskip
+
+Cet identifiant est une suite d'entiers séparés par des virgules caractérisant le groupe cherché dans l'argument. Le premier entier est le $n$\ieme{} groupe (d'imbrication 1) dans lequel est le groupe cherché. Puis, en se plaçant dans ce groupe, le 2\ieme{} entier est le $n$\ieme{} groupe dans lequel est le groupe cherché. Et ainsi de suite jusqu'à ce que l'imbrication du groupe soit atteinte.\bigskip
+
+Prenons par exemple l'argument suivant où l'on a 3 niveaux d'imbrication de groupes. Pour plus de clarté, les accolades délimitant les groupes sont colorées en rouge pour l'imbrication de niveau 1, en bleu pour le niveau 2 et en vert pour le niveau 3. Les groupes dans chaque imbrication sont ensuite numérotés selon la règle décrite ci-dessus :
+\begingroup
+	\def\AccO#1{\text{\color{#1}\ttfamily\{}}
+	\def\AccF#1{\text{\color{#1}\ttfamily\}}}
+	\def\texte#1{\text{\texttt{\color{black}#1}}}
+	\def\decalbrace{\vphantom{\underbrace{A}_A}}
+	\[\texte{a}{\color{red}\underbrace{\AccO{red}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{bc}\AccF{blue}}_{\color{blue}1}}\texte{d}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{efg}\AccF{blue}}_{\color{blue}2}}\AccF{red}}_{\color{red}1}}\texte{h}{\color{red}\underbrace{\AccO{red}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{ij}\AccF{blue}}_{\color{blue}1}}{\color{blue}\underbrace{\decalbrace\AccO{blue}\texte{k}\AccF{blue}}_{\color{blue}2}}{\color{blue}\underbrace{\AccO{blue}\texte{l}{\color{green}\underbrace{\AccO{green}\texte{m}\AccF{green}}_{\color{green}1}}{\color{green}\underbrace{\AccO{green}\texte{no}\AccF{green}}_{\color{green}2}}\AccF{blue}}_{\color{blue}3}}\texte{p}\AccF{red}}_{\color{red}2}}\]
+\endgroup
+\smallskip
+Dans cet exemple :
+
+\nobreak\parindent3em
+\begin{itemize}
+	\item le groupe \verb={{bc}d{efg}}= a donc pour identifiant \texttt{\color{red}1};
+	\item le groupe \verb={ij}= a pour identifiant \texttt{{\color{red}2},\color{blue}1};
+	\item le groupe \verb={no}= a pour identifiant \texttt{{\color{red}2},{\color{blue}3},\color{green}2};
+	\item l'argument dans sa totalité \og\verb=a{{bc}d{efg}}h{{ij}{k}{l{m}{no}}p}=\fg{} a pour identifiant \verb=0=, seul cas où l'entier 0 est contenu dans l'identifiant d'un groupe.
+\end{itemize}
+\parindent0pt
+\medskip
+Voici l'exemple complet :\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\exploregroups
+\expandarg
+\def\chaine{a{{bc}d{efg}}h{{ij}{k}{l{m}{no}}p}}
+\StrFindGroup{\chaine}{1}[\mongroupe]
+\meaning\mongroupe\par
+\StrFindGroup{\chaine}{2,1}[\mongroupe]
+\meaning\mongroupe\par
+\StrFindGroup{\chaine}{2,3,2}[\mongroupe]
+\meaning\mongroupe\par
+\StrFindGroup{\chaine}{2,5}[\mongroupe]
+\meaning\mongroupe\par
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	\expandarg
+	\def\chaine{a{{bc}d{efg}}h{{ij}{k}{l{m}{no}}p}}
+	\StrFindGroup{\chaine}{1}[\mongroupe]
+	\meaning\mongroupe\par
+	\StrFindGroup{\chaine}{2,1}[\mongroupe]
+	\meaning\mongroupe\par
+	\StrFindGroup{\chaine}{2,3,2}[\mongroupe]
+	\meaning\mongroupe\par
+	\StrFindGroup{\chaine}{2,5}[\mongroupe]
+	\meaning\mongroupe\par
+\end{minipage}%
+\bigskip
+
+Le processus inverse existe, et plusieurs macros de \Xstring donnent aussi comme information l'identifiant du groupe dans lequel elles ont fait une coupure ou trouvé une recherche. Ces macros sont :  \verbinline|\IfSubStr|, \verbinline|\StrBefore|, \verbinline|\StrBehind|, \verbinline|\StrSplit|, \verbinline|\StrLeft|, \verbinline|\StrGobbleLeft|, \verbinline|\StrRight|, \verbinline|\StrGobbleRight|, \verbinline|\StrChar|, \verbinline|\StrPosition|.\medskip
+
+Après l'appel à ces macros, la commande \verbinline|\groupID| se développe en l'identifiant du groupe dans lequel la coupure s'est faite ou la recherche d'un argument a abouti. Lorsque la coupure ne peut avoir lieu ou que la recherche n'a pas abouti, \verbinline|\groupID| est vide. Évidemment, l'utilisation de \verbinline|\groupID| n'a de sens que lorsque le mode \verbinline|\exploregroups| est actif, et quand les macros ne sont pas étoilées.\smallskip
+
+Voici quelques exemples avec la macro \verbinline|\StrChar| :\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\exploregroups
+char 1 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{1}\qquad
+\string\groupID = \groupID\par
+char 4 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{4}\qquad
+\string\groupID = \groupID\par
+char 6 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{6}\qquad
+\string\groupID = \groupID\par
+char 20 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{20}\qquad
+\string\groupID = \groupID
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	char 1 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{1}\qquad
+	\string\groupID = \groupID\par
+	char 4 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{4}\qquad
+	\string\groupID = \groupID\par
+	char 6 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{6}\qquad
+	\string\groupID = \groupID\par
+	char 20 = \StrChar{a{b{cd}{e{f}g}h}ijkl}{20}\qquad
+	\string\groupID = \groupID
+\end{minipage}
+
+\subsection{Coupure d'une chaîne, la macro {\ttfamily\textbackslash StrSplit}}
+\label{StrSplit}
+Voici la syntaxe de cette macro :\par\nobreak\smallskip
+\verbinline|\StrSplit|\ARGU{chaine}\ARGU{nombre}\ARGU{chaineA}\ARGU{chaineB}
+\smallskip
+
+La \argu{chaine}, est coupée en deux chaînes juste après l'\US se situant à la position \argu{nombre}. La partie gauche est assigné à la séquence de contrôle \argu{chaineA} et la partie droite à \argu{chaineB}.\par
+Cette macro renvoie \emph{deux chaînes} et donc \textbf{n'affiche rien}. Par conséquent, elle ne dispose pas de l'argument optionnel en dernière position.\medskip
+
+\begin{Conditions}
+	\item Si \argu{nombre}${}\leqslant0$, \argu{chaineA} sera vide et \argu{chaineB} contiendra la totalité de \argu{chaine};
+	\item Si \argu{nombre}${}\geqslant$\argu{longueurChaine}, \argu{chaineA} contiendra la totalité de \argu{chaine} et \argu{chaineB} sera vide;
+	\item Si \argu{chaine} est vide \argu{chaineA} et \argu{chaineB} seront vides, quelque soit l'entier \argu{nombre}.
+\end{Conditions}
+
+\begin{minipage}[c]{0.65\linewidth}
+\hfill
+\begin{lstlisting}
+	\def\seprouge{{\color{red}|}}
+	\StrSplit{abcdef}{4}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{a b c }{2}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{1}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{5}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{9}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{-3}{\csA}{\csB}|\csA\seprouge\csB|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\def\seprouge{{\color{red}|}}
+	\StrSplit{abcdef}{4}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{a b c }{2}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{1}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{5}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{9}{\csA}{\csB}|\csA\seprouge\csB|\par
+	\StrSplit{abcdef}{-3}{\csA}{\csB}|\csA\seprouge\csB|
+\end{minipage}%
+
+\setverbdelim{|}\medskip
+
+Lorsque l'exploration des groupes est activée, et que l'on demande une coupure en fin de groupe, alors une chaîne contiendra la totalité du groupe tansque l'autre sera vide comme on le voit sur cet exemple :\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\hfill
+\begin{lstlisting}
+\exploregroups
+\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+\meaning\strA\par
+\meaning\strB
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+	\meaning\strA\par
+	\meaning\strB
+\end{minipage}%
+\medskip
+
+Une version étoilée de cette macro existe : dans ce cas, la coupure se fait juste avant la prochaine \US qui suit l'\US désirée. La version étoilée ne donne des résultats différents de la version normale que lorsque la $n$\ieme{} \US est à la fin d'un groupe auquel cas, la coupure intervient non pas après cette \US mais \emph{avant} la prochaine \US, que \verbinline|\StrSplit| atteint en fermant autant de groupes que nécessaire.\smallskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\hfill
+\begin{lstlisting}
+\exploregroups
+Utilisation sans \'etoile :\par
+\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+\meaning\strA\par
+\meaning\strB\par
+\string\groupID\ = \groupID\par\medskip
+Utilisation avec \'etoile :\par
+\StrSplit*{ab{cd{ef}gh}ij}{6}\strA\strB
+\meaning\strA\par
+\meaning\strB\par
+\string\groupID\ = \groupID
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\exploregroups
+	Utilisation sans étoile :\par
+	\StrSplit{ab{cd{ef}gh}ij}{6}\strA\strB
+	\meaning\strA\par
+	\meaning\strB\par
+	\string\groupID\ = \groupID\par\medskip
+	Utilisation avec \'etoile :\par
+	\StrSplit*{ab{cd{ef}gh}ij}{6}\strA\strB
+	\meaning\strA\par
+	\meaning\strB\par
+	\string\groupID\ = \groupID
+\end{minipage}%
+
+\subsection{Assigner un contenu verb, la macro \ttfamily\textbackslash verbtocs}
+\label{verbtocs}
+La macro \verbinline|\verbtocs| permet le lire le contenu d'un \guill{verb} qui peut contenir tous les caractères spéciaux : \verb|&|, \verb|~|, \verb|\|, \verb|{|, \verb|}|, \verb|_|, \verb|#|, \verb|$|, \verb|^| et \verb|%|. Les caractères \guill{normaux} gardent leur catcodes naturels, sauf les caractères spéciaux qui prennent un catcode de 12. Ensuite, ces caractères sont assignés à une séquence de contrôle. La syntaxe complète est :\par\nobreak\medskip
+\hfill\verbinline|\verbtocs|\ARGU{nom}|\argu{caractères}|\hfill{}
+\smallskip
+
+\argu{nom} est le nom d'une séquence de contrôle qui recevra à l'aide d'un \verb|\edef| les \argu{caractères}. \argu{nom} contiendra donc des caractères de catcodes 12 ou 10 pour l'espace.\medskip
+
+Par défaut, le token délimitant le contenu verb est \guill{|}, étant entendu que ce token ne peut être à la fois le délimiteur et être contenu dans ce qu'il délimite. Au cas où on voudrait lire un contenu verb contenant \guill{|}, on peut changer à tout moment le token délimitant le contenu verb par la macro :\par\medskip
+\hfill\verbinline|\setverbdelim|\ARGU{token}\hfill{}\smallskip
+
+Tout \argu{token} de catcode 12 peut être utilisé\footnote{Plusieurs tokens peuvent être utilisés au risque d'alourdir la syntaxe de \texttt{\string\verbtocs} ! Pour cette raison, avertissement sera émis si l'argument de \texttt{\string\setverbdelim} contient plusieurs tokens.}.\medskip
+
+Concernant ces arguments verb, il faut tenir compte des deux points suivants :
+
+\nobreak
+\begin{itemize}
+	\item tous les caractères se trouvant avant |\argu{caractères}| seront ignorés;
+	\item à l'intérieur des délimiteurs, tous les espaces sont comptabilisés même s'ils sont consécutifs.
+\end{itemize}
+\medskip
+
+Exemple :\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\lstset{deletecomment=[l]\%}
+\begin{lstlisting}
+\verbtocs{\resultat}  |a   & b{ c% d$ e \f|
+J'affiche le r\'esultat :\par\resultat
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\resultat}  |a   & b{ c% d$ e \f|
+	J'affiche le r\'esultat :\par\resultat
+\end{minipage}%
+
+\subsection{Tokenisation d'un texte vers une séquence de contrôle, la macro \ttfamily\textbackslash tokenize}
+Le processus inverse de ce qui a été vu au dessus consiste à interpréter une suite de caractères en tokens. Pour cela, on dispose de la macro :\par\nobreak\medskip
+\hfill\verbinline|\tokenize|\ARGU{nom}\ARGU{texte}\hfill{}
+\smallskip
+
+\argu{texte} est développé le plus possible si l'on a invoqué \verbinline|\fullexpandarg|; il n'est pas développé si l'on a invoqué \verbinline|\noexpandarg| ou \verbinline|\expandarg|. Après développement éventuel, le \argu{texte} est transformé en tokens puis assigné à l'aide d'un \verb|\def| à la séquence de contrôle \argu{nom}.\medskip
+
+Voici un exemple où l'on détokenise un argument, on affiche le texte obtenu, puis on transforme ce texte en ce que l'argument était au début; enfin, on affiche le résultat de la tokenisation :\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\verbtocs{\text}|\textbf{a} $\frac{1}{2}$|
+texte : \text
+\tokenize{\resultat}{\text}\par
+r\'esultat : \resultat
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\text}|\textbf{a} $\frac{1}{2}$|
+	texte : \text
+	\tokenize{\resultat}{\text}	\par
+	r\'esultat : \resultat
+\end{minipage}%
+\medskip
+
+Il est bien évident à la dernière ligne, que l'appel à la séquence de contrôle \verb|\resultat| est ici possible puisque les séquences de contrôle qu'elle contient sont définies.\medskip
+
+\subsection{Développement contrôlé, les macros  {\ttfamily\textbackslash StrExpand} et {\ttfamily\textbackslash scancs}}
+\label{scancs}
+La macro \verbinline|\StrExpand| développe les tokens de la chaîne passée en argument. Voici sa syntaxe :\par\nobreak\medskip
+\verbinline|\StrExpand|\arguC{nombre}\ARGU{chaine}\ARGU{nom}\smallskip
+
+Le \argu{nombre} vaut 1 par défaut et représente le nombre de développement(s) que doit subir la \argu{chaine} de tokens. Le \argu{nom} est le nom d'une séquence de contrôle à laquelle est assigné le résultat, une fois que tous les tokens aient été développé le nombre de fois demandé.\medskip
+
+La macro opère séquentiellement et par passe : chaque token est remplacé par son 1-dévelopement, et le token suivant subit le même traitement jusqu'à ce que la chaîne ait été parcourue. Ensuite, s'il reste des niveaux de développement à faire, une nouvelle passe est initiée, et ainsi de suite jusqu'à ce que le nombre de développements voulu aient été exécutés.\medskip
+
+Voici un exemple :\par\nobreak\smallskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\def\csA{1 2}
+\def\csB{a \csA}
+\def\csC{\csB\space}
+\def\csD{x{\csA y}\csB{\csC z}}
+D\'eveloppement de \string\csD\ au\par
+\StrExpand[0]{\csD}{\csE} niveau 0 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[1]{\csD}{\csE} niveau 1 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[2]{\csD}{\csE} niveau 2 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[3]{\csD}{\csE} niveau 3 :
+\detokenize\expandafter{\csE}\par
+\StrExpand[4]{\csD}{\csE} niveau 4 :
+\detokenize\expandafter{\csE}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\def\csA{1 2}
+	\def\csB{a \csA}
+	\def\csC{\csB\space}
+	\def\csD{x{\csA y}\csB{\csC z}}
+	Développement de \string\csD\ au\par
+	\StrExpand[0]{\csD}{\csE} niveau 0 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[1]{\csD}{\csE} niveau 1 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[2]{\csD}{\csE} niveau 2 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[3]{\csD}{\csE} niveau 3 :
+	\detokenize\expandafter{\csE}\par
+	\StrExpand[4]{\csD}{\csE} niveau 4 :
+	\detokenize\expandafter{\csE}
+\end{minipage}%
+\medskip
+
+La macro opère séquentiellement et chaque token est développé isolément sans tenir compte de ce qui suit. On ne peut donc développer que des tokens se suffisant à eux même et n'en nécessitant aucun autre. Ainsi, \og\hbox{\verbinline|\iftrue A\else B\fi|}\fg, bien que se développant en \guill{A} ne peut être mis dans l'argument de \verbinline|\StrExpand|, et l'instruction :\par\nobreak\smallskip
+\hfil\verbinline|\StrExpand{\iftrue A\else B\fi}\resultat|\hfil{}\par\nobreak\smallskip
+fera échouer la compilation puisque le premier token \og\verbinline|\iftrue|\fg{} sera développé \emph{seul}, c'est-à-dire sans son \verbinline-\fi- correspondant, ce qui fâchera \TeX{} !\smallskip
+
+Les règles habituelles de lecture des arguments sont en vigueur, à savoir qu'un espace suivant une séquence de contrôle est ignoré, et plusieurs espaces consécutifs n'en font qu'un. Ces règles ne s'appliquent pas pour des espaces explicitement demandés avec \verb-\space- ou \verb*-\ -\footnote{À ce propos, \texttt{\string\space} n'a pas la même signification que \texttt{\string\ }. La première séquence de contrôle se \emph{développe} en un espace tandis que la deuxième est une primitive \TeX{} qui \emph{affiche} une espace. Comme toutes les primitives, cette dernière est son propre développement.}.\smallskip
+
+Le développement de ce qui se trouve à l'intérieur des groupes est \emph{indépendant} du mode d'exploration des groupes : cette macro possède ses propres commandes pour développer ce qui est dans les groupes ou pas. Par défaut, les tokens se trouvant à l'intérieur des groupes sont développés, mais on peut demander à ce que ce développement ne se fasse pas en invoquant \verbinline-\noexpandingroups- et revenir au comportement par defaut par \verbinline-\expandingroups-.\bigskip
+
+On peut détokeniser le résultat obtenu par la macro \verbinline-\StrExpand- avec la macro \verbinline-\scancs- dont la syntaxe est :\par\nobreak\medskip
+\verbinline|\scancs|\arguC{nombre}\ARGU{nom}\ARGU{chaine}\par\nobreak\smallskip
+Le \argu{nombre} vaut 1 par défaut et représente le nombre de développement(s) que doit subir chaque token constituant la \argu{chaine}. Le \argu{nom} est le nom d'une séquence de contrôle à laquelle est assigné le résultat, une fois que tous les tokens aient été développés le nombre de fois demandé et ensuite détokénisés.\smallskip
+
+\verbinline-\scancs-  a été conservée pour garder une compatibilité avec des précédentes versions de \Xstring. Pour les mêmes raisons, sa syntaxe n'est pas cohérente avec la syntaxe des autres macros. Cette macro, devenue triviale, prend le résultat de \verbinline|\StrExpand| et lui applique simplement un \verbinline|\detokenize|.
+
+\subsection{À l'intérieur d'une définition de macro}
+Avec le verbatim, certaines difficultés surviennent lorsque l'on se trouve à l'intérieur de la définition d'une macro, c'est-à-dire entre les accolades suivant un \verb|\def\macro| ou un \verb|\newcommand\macro|.\medskip
+
+Pour les mêmes raison qu'il est interdit d'employer la commande \verb|\verb| à l'intérieur de la définition d'une macro, les arguments  verb du type |\argu{caractères}| sont également interdits, ce qui disqualifie la macro \verbinline|\verbtocs|. Il faut donc observer la règle suivante :\par\medskip
+\hfill{\bfseries Ne pas utiliser la macro \verbinline-\verbtocs- à l'intérieur de la définition d'une macro}.\hfill{}\bigskip
+
+Mais alors, comment faire pour manipuler des arguments textuels verb et \guill{verbatimiser} dans les définitions de macro ?\bigskip
+
+Il y a la primitive \verb|\detokenize| de $\varepsilon$-\TeX, mais elle comporte des restrictions, entre autres :
+
+\nobreak
+\begin{itemize}
+	\item les accolades doivent être équilibrées;
+	\item les espaces consécutifs sont ignorés;
+	\item les signes \verb|%| sont interdits;
+	\item une espace est ajoutée après chaque séquence de contrôle.
+\end{itemize}
+\medskip
+
+Il est préférable d'utiliser la macro \verbinline|\scancs|, et définir avec \verbinline|\verbtocs| à l'extérieur des définitions de macros, des séquences de contrôle contenant des caractères spéciaux détokénisés. On pourra aussi utiliser la macro \verbinline|\tokenize| pour transformer le résultat final (qui est une chaîne de caractères) en une séquence de contrôle. On peut voir des exemples utilisant ces macros page~\pageref{exemples}, à la fin de ce manuel.\medskip
+
+Dans l'exemple artificiel\footnote{On peut agir beaucoup plus simplement en utilisant la commande \texttt{\string\detokenize}. Il suffit de définir la macro ainsi :\par\texttt{\string\newcommand\string\bracearg[1]\{\string\detokenize\{\{\#1\}\}\}}} qui suit, on écrit une macro qui met son argument entre accolades. Pour cela, on définit en dehors de la définition de la macro 2 séquences de contrôles \verb|\Ob| et \verb|\Cb| contenant une accolade ouvrante et une accolade fermante de catcodes 12. Ces séquences de contrôle sont ensuite développées et utilisées à l'intérieur de la macro pour obtenir le résultat voulu :\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\verbtocs{\Ob}|{|
+\verbtocs{\Cb}|}|
+\newcommand\bracearg[1]{%
+	\def\text{#1}%
+	\scancs{\result}{\Ob\text\Cb}%
+	\result}
+
+\bracearg{xstring}\par
+\bracearg{\a}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\Ob}|{|
+	\verbtocs{\Cb}|}|
+	\newcommand\bracearg[1]{%
+		\def\text{#1}%
+		\scancs{\result}{\Ob\text\Cb}%
+		\result}
+
+	\bracearg{xstring}\par
+	\bracearg{\a}
+\end{minipage}%
+
+\subsection{La macro \ttfamily\textbackslash StrRemoveBraces}
+Pour des utilisations spéciales, on peut désirer retirer les accolades délimitant les groupes dans un argument.
+
+On peut utiliser la macro \verbinline|\StrRemoveBraces| dont voici la syntaxe :\par\nobreak\smallskip
+\verbinline|\StrRemoveBraces|\ARGU{chaine}\arguC{nom}
+\smallskip
+
+Cette macro est sensible au mode d'exploration, et retirera \emph{toutes} les accolades avec \verbinline|\exploregroups| alors qu'elle ne retirera que les accolades des groupes de plus bas niveau avec \verbinline|\noexploregroups|.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexploregroups
+\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+\meaning\mycs
+
+\exploregroups
+\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+\meaning\mycs
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexploregroups
+	\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+	\meaning\mycs
+
+	\exploregroups
+	\StrRemoveBraces{a{b{c}d}e{f}g}[\mycs]
+	\meaning\mycs
+\end{minipage}%
+
+\subsection{Exemples d'utilisation en programmation}
+\label{exemples}
+Voici quelques exemples très simples d'utilisation des macros comme on pourrait en rencontrer en programmation.
+
+\subsubsection{Exemple 1}
+On cherche à remplacer les deux premiers \verb|\textit| par \verb|\textbf| dans la séquence de contrôle \verb|\myCS| qui contient :\par\nobreak\smallskip
+\hfill\verb|\textit{A}\textit{B}\textit{C}|\hfill{}
+\medskip
+
+On cherche évidemment à obtenir \verb|\textbf{A}\textbf{B}\textit{C}| qui affiche : \textbf{A}\textbf{B}\textit{C}\medskip
+
+Pour cela, on va développer les arguments des macros une fois avant qu'elles les traitent, en invoquant la commande \verbinline|\expandarg|.
+
+Ensuite, on définit \verb|\pattern| qui est le motif à remplacer, et \verb|\replace| qui est le motif de substitution. On travaille token par token puisque \verbinline|\expandarg| a été appelé, il suffit d'invoquer \verbinline|\StrSubstitute| pour faire les 2 substitutions.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\expandarg
+\def\myCS{\textit{A}\textit{B}\textit{C}}
+\def\pattern{\textit}
+\def\replace{\textbf}
+\StrSubstitute[2]{\myCS}{\pattern}{\replace}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\expandarg
+	\def\myCS{\textit{A}\textit{B}\textit{C}}
+	\def\pattern{\textit}
+	\def\replace{\textbf}
+	\StrSubstitute[2]{\myCS}{\pattern}{\replace}
+\end{minipage}%
+\medskip
+
+Pour éviter de définir les séquences de contrôle \verb|\pattern| et \verb|\replace|, on aurait pu utiliser un leurre comme par exemple une séquence de contrôle qui se développe en \guill{rien} comme \verb|\empty|, et coder de cette façon :\par\smallskip
+\hfil\verbinline|\StrSubstitute[2]{\myCS}{\empty\textit}{\empty\textbf}|\hfil{}\medskip
+
+Ainsi, \verb|\empty| est développée en \guill{rien} et il reste dans les 2 derniers arguments les séquences de contrôles significatives \verb|\textit| et \verb|textbf|.\smallskip
+
+La séquence de contrôle \verbinline|\empty| est donc un \guill{hack} pour \verbinline|\expandarg| : elle permet de bloquer le développement du 1\ier{} token ! On aurait d'ailleurs pu utiliser \verbinline|\noexpand| au lieu de \verbinline|\empty| pour obtenir le même résultat.
+
+\subsubsection{Exemple 2}
+On cherche ici à écrire une commande qui efface \verb|n| unités syntaxiques dans une chaîne à partir d'une position donnée, et affecte le résultat dans une séquence de contrôle dont on peut choisir le nom.
+
+On va appeler cette macro \verb|StringDel| et lui donner la syntaxe :\par\nobreak\smallskip
+\hfil\verb|\StringDel{chaine}{position}{n}{\nom_resultat}|\hfil{}
+\medskip
+
+On peut procéder ainsi : prendre la chaîne se trouvant juste avant la position, la sauvegarder. Ensuite enlever \verb|n + position| \USs à la chaîne initiale, et concaténer ce résultat à ce qui a été sauvegardé auparavant. Cela donne le code suivant :\par\nobreak\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\newcommand\StringDel[4]{%
+	\begingroup
+	\expandarg% portee locale au groupe
+	\StrLeft{\empty#1}{\number\numexpr#2-1}[#4]%
+	\StrGobbleLeft{\empty#1}{\numexpr#2+#3-1}[\StrA]%
+	\expandafter\expandafter\expandafter\endgroup
+	\expandafter\expandafter\expandafter\def
+	\expandafter\expandafter\expandafter#4%
+	\expandafter\expandafter\expandafter
+	{\expandafter#4\StrA}%
+}
+
+\noexploregroups
+\StringDel{abcdefgh}{2}{3}{\cmd}
+\meaning\cmd
+
+\StringDel{a\textbf{1}b\textbf{2c}3d}{3}{4}{\cmd}
+\meaning\cmd
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\newcommand\StringDel[4]{%
+		\begingroup
+		\expandarg% portée locale au groupe
+		\StrLeft{\empty#1}{\number\numexpr#2-1}[#4]%
+		\StrGobbleLeft{\empty#1}{\numexpr#2+#3-1}[\StrA]%
+		\expandafter\expandafter\expandafter\endgroup
+		\expandafter\expandafter\expandafter\def
+		\expandafter\expandafter\expandafter#4%
+		\expandafter\expandafter\expandafter{\expandafter#4\StrA}%
+	}
+
+	\noexploregroups
+	\StringDel{abcdefgh}{2}{3}{\cmd}
+	\meaning\cmd
+
+	\StringDel{a\textbf{1}b\textbf{2c}3d}{3}{4}{\cmd}
+	\meaning\cmd
+\end{minipage}%
+\fullexpandarg\bigskip
+
+Pour la concaténation, on aurait pu procéder différemment en utilisant la macro \verb|\g@addto@macro| de \LaTeX{}. Cela évite aussi ces laborieux \guill{ponts} d'\verbinline|\expandafter|. Il suffit alors de remplacer l'assignation et la sortie du groupe se trouvant entre les lignes 6 à 10 par\footnote{À condition d'avoir provisoirement changé le code de catégorie de \og{\ttfamily\string@}\fg{} en écrivant la macro entre les commandes {\ttfamily\string\makeatletter} et {\ttfamily\string\makeatother}} :\par\nobreak\smallskip
+\hfil\verbinline|\expandafter\g@addto@macro\expandafter#4\expandafter{\StrA}\endgroup|\hfil{}
+
+\subsubsection{Exemple 3}
+Cherchons à écrire une macro \verb|\tofrac| qui transforme une écriture du type \guill{a/b} par \guill{$\frac{a}{b}$}.\medskip
+
+Tout d'abord, annulons le développement des arguments avec \verbinline|\noexpandarg| : nous n'avons pas besoin de développement ici. Il suffit d'isoler ce qui se trouve avant et après la 1\iere{} occurrence de \guill{/} (on suppose qu'il n'y a qu'une seule occurrence), le mettre dans les séquences de contrôle \verb|\num| et \verb|\den| et simplement appeler la macro \TeX{} \verb|\frac| :\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\noexpandarg
+\newcommand\tofrac[1]{%
+	\StrBefore{#1}{/}[\num]%
+	\StrBehind{#1}{/}[\den]%
+	$\frac{\num}{\den}$%
+}
+\tofrac{15/9}
+\tofrac{u_{n+1}/u_n}
+\tofrac{a^m/a^n}
+\tofrac{x+\sqrt{x}/\sqrt{x^2+x+1}}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\noexpandarg
+	\newcommand\tofrac[1]{%
+		\StrBefore{#1}{/}[\num]%
+		\StrBehind{#1}{/}[\den]%
+		$\frac{\num}{\den}$%
+	}
+	\tofrac{15/9}
+	\tofrac{u_{n+1}/u_n}
+	\tofrac{a^m/a^n}
+	\tofrac{x+\sqrt{x}/\sqrt{x^2+x+1}}
+\end{minipage}%
+
+\subsubsection{Exemple 4}
+Soit une phrase composée de texte. Dans cette phrase, essayons construire une macro qui mette en gras le 1\ier{} mot qui suit un mot donné. On entend par mot une suite de caractère ne commençant ni ne finissant par un espace. Si le mot n'existe pas dans la phrase, rien n'est fait.\medskip
+
+On va écrire une macro \verb|\grasapres| qui effectue ce travail. On appelle \verbinline|\StrBehind| qui assigne à \verb|\mot| ce qui se trouve après la 1\iere{} occurrence du mot (précédé et suivi de son espace). Ensuite, le mot à mettre en gras est ce qui se trouve avant le 1\ier{} espace dans la séquence de contrôle \verb|\mot|. Remarquons que ceci reste vrai même si le mot à mettre en gras est le dernier de l'argument car un espace a été rajouté à la fin de l'argument par \verb|{#1 }| lors de l'appel à \verbinline|\StrBehind|. Remarquons aussi que \verbinline|\expandarg| a été appelé et donc, le premier token de l'argument \verb|\textbf{\mot}| est développé 1 fois, \emph{lui aussi} ! Cela est possible (heureusement sinon, il aurait fallu faire autrement et utiliser le hack de l'exemple précédent) puisque le 1-développement de cette macro de \LaTeX{} est \og\verb|\protect\textbf|\fg{}\footnote{En toute rigueur, il aurait fallu écrire :\par\hspace{2em}{\ttfamily\string\StrSubstitute[1]\{\string#1\}\{\string\mot\}\{\string\expandafter\string\textbf\string\expandafter\{\string\mot\}\}}\newline De cette façon, dans {\ttfamily\{\string\expandafter\string\textbf\string\expandafter\{\string\mot\}\}}, la séquence de contrôle {\ttfamily\string\mot} est développée \textbf{avant} que l'appel à la macro ne se fasse. Cela est dû à l'{\ttfamily\string\expandafter} placé en début d'argument qui est développé à cause de {\ttfamily\string\expandarg} et grace à l'autre {\ttfamily\string\expandafter}, provoque le développement de {\ttfamily\string\mot}}.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\newcommand\grasapres[2]{%
+	\noexpandarg
+	\StrBehind[1]{#1 }{ #2 }[\mot]%
+	\expandarg
+	\StrBefore{\mot}{ }[\mot]%
+	\StrSubstitute[1]{#1}{\mot}{\textbf{\mot}}%
+}
+
+\grasapres{Le package xstring est nouveau}{package}
+
+\grasapres{Le package xstring est nouveau}{ckage}
+
+\grasapres{Le package xstring est nouveau}{est}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\newcommand\grasapres[2]{%
+		\noexpandarg
+		\StrBehind[1]{#1 }{ #2 }[\mot]%
+		\expandarg
+		\StrBefore{\mot}{ }[\mot]%
+		\StrSubstitute[1]{#1}{\mot}{\textbf{\mot}}%
+	}
+
+	\grasapres{Le package xstring est nouveau}{package}
+
+	\grasapres{Le package xstring est nouveau}{ckage}
+
+	\grasapres{Le package xstring est nouveau}{est}
+\end{minipage}%
+\fullexpandarg
+
+\subsubsection{Exemple 5}
+Soit un argument commençant par au moins 3 séquences de contrôles avec leurs éventuels arguments. Comment intervertir les 2 premières séquences de contrôle de telle sorte qu'elles gardent leurs arguments ? On va pour cela écrire une macro \verb|\swaptwofirst|.
+
+Cette fois ci, on ne peut pas chercher le seul caractère \og\verb|\|\fg{} (de catcode 0) dans un argument. Nous serons obligé de détokeniser l'argument, c'est ce que fait \verbinline|\scancs[0]\chaine{#1}| qui met le résultat dans \verb|\chaine|. Ensuite, on cherchera dans cette séquence de contrôle les occurrences de \verb|\antislash| qui contient le caractère \og\verb|\|\fg{} de catcode 12, assigné avec un \verbinline|\verbtocs| écrit \emph{en dehors\footnote{En effet, la macro {\tt\string\verbtocs} et son argument verb est interdite à l'intérieur de la définition d'une macro.}} du corps de la macro. La macro se termine par une retokenisation, une fois que les chaînes \verb|\avant| et \verb|\apres| aient été échangées.\medskip
+
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\verbtocs{\antislash}|\|
+\newcommand\swaptwofirst[1]{%
+	\begingroup
+	\fullexpandarg
+	\scancs[0]\chaine{#1}%
+	\StrBefore[3]{\chaine}{\antislash}[\firsttwo]%
+	\StrBehind{\chaine}{\firsttwo}[\others]
+	\StrBefore[2]{\firsttwo}{\antislash}[\avant]
+	\StrBehind{\firsttwo}{\avant}[\apres]%
+	\tokenize\myCS{\apres\avant\others}%
+	\myCS
+	\endgroup
+}
+
+\swaptwofirst{\underline{A}\textbf{B}\textit{C}}
+
+\swaptwofirst{\Large\underline{A}\textbf{B}123}
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\verbtocs{\antislash}|\|
+	\newcommand\swaptwofirst[1]{%
+		\begingroup
+		\fullexpandarg
+		\scancs[0]\chaine{#1}%
+		\StrBefore[3]{\chaine}{\antislash}[\firsttwo]%
+		\StrBehind{\chaine}{\firsttwo}[\others]
+		\StrBefore[2]{\firsttwo}{\antislash}[\avant]
+		\StrBehind{\firsttwo}{\avant}[\apres]%
+		\tokenize\myCS{\apres\avant\others}%
+		\myCS
+		\endgroup
+	}
+
+	\swaptwofirst{\underline{A}\textbf{B}\textit{C}}
+
+	\swaptwofirst{\Large\underline{A}\textbf{B}123}
+\end{minipage}%
+
+\subsubsection{Exemple 6}
+Dans une chaîne, on cherche ici à isoler le n\ieme{} mot se trouvant entre 2 délimiteurs précis. Pour cela on écrira une macro \verb|\findword| admettant comme argument optionnel le délimiteur de mot (l'espace par défaut), 1 argument contenant la chaîne, 1 argument contenant le nombre correspondant au n\ieme{} mot cheché.\medskip
+
+La macro \verb|\findword| utilise \verbinline|\StrBetween| et \verb|\numexpr| de façon astucieuse, et profite du fait que \verbinline-\StrBetween- n'explore pas les groupes :\par\nobreak\medskip
+\begin{minipage}[c]{0.65\linewidth}
+\begin{lstlisting}
+\newcommand\findword[3][ ]{%
+	\StrBetween[#3,\numexpr#3+1]{#1#2#1}{#1}{#1}%
+}
+\noexpandarg
+|\findword{a bc d\textbf{e f} gh}{3}|
+
+|\findword[\nil]{1 \nil 2 3 \nil4\nil5}{2}|
+\end{lstlisting}%
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+	\styleexercice
+	\newcommand\findword[3][ ]{%
+		\StrBetween[#3,\numexpr#3+1]{#1#2#1}{#1}{#1}%
+	}
+	\noexpandarg
+	|\findword{a bc d\textbf{e f} gh}{3}|
+
+	|\findword[\nil]{1 \nil 2 3 \nil4\nil5}{2}|
+\end{minipage}%
+
+On peut observer que le résultat de la ligne 7 qui est \og\verb*|2 3 |\fg{} ne commence \emph{pas} par une espace puisque dans le code, cet espace suit une séquence de contrôle~---~ici \verb|\nil|.
+\bigskip\bigskip
+\begin{center}
+$\star$\par
+$\star$\quad$\star$
+\end{center}
+\bigskip\bigskip
+
+C'est tout, j'espère que ce package vous sera utile !\par\nobreak
+Merci de me signaler par \href{mailto:unbonpetit@gmail.com}{email} tout bug ou toute proposition d'amélioration\ldots\par\nobreak\bigskip
+Christian \textsc{Tellechea}
+\end{document}

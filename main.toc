@@ -1,0 +1,151 @@
+\contentsline {chapter}{Introduction{\rmfamily \mdseries \\ The purpose and scope of this File}}{5}
+\contentsline {chapter}{A Few Terms{\rmfamily \mdseries \\ Of slang, Jargon and Techspeak}}{7}
+\contentsline {chapter}{Revision History{\rmfamily \mdseries \\ How the File came to be}}{9}
+\contentsline {part}{I\hspace {1em}How Jargon Works}{13}
+\contentsline {chapter}{Jargon Construction{\rmfamily \mdseries \\ How hackers invent jargon}}{15}
+\contentsline {chapter}{Hacker Writing Style{\rmfamily \mdseries \\ How they write}}{21}
+\contentsline {chapter}{Email Quotes{\rmfamily \mdseries \\ And the Inclusion Problem}}{27}
+\contentsline {chapter}{Hacker Speech Style{\rmfamily \mdseries \\ How hackers talk}}{29}
+\contentsline {chapter}{International Style{\rmfamily \mdseries \\ Some notes on usage outside the U.S.}}{31}
+\contentsline {chapter}{Lamer-speak{\rmfamily \mdseries \\ Crackers, Phreaks, and Lamers}}{33}
+\contentsline {part}{II\hspace {1em}How to Use the Lexicon}{35}
+\contentsline {chapter}{Pronunciation Guide{\rmfamily \mdseries \\ How to read the pronunciation keys}}{37}
+\contentsline {chapter}{Other Lexicon Conventions{\rmfamily \mdseries \\ How to read lexicon entries}}{39}
+\contentsline {paragraph}{Amateur Packet Radio}{40}
+\contentsline {paragraph}{Berkeley}{40}
+\contentsline {paragraph}{BBN}{40}
+\contentsline {paragraph}{Cambridge}{40}
+\contentsline {paragraph}{CMU}{40}
+\contentsline {paragraph}{Commodore}{40}
+\contentsline {paragraph}{DEC}{40}
+\contentsline {paragraph}{Fairchild}{40}
+\contentsline {paragraph}{FidoNet}{40}
+\contentsline {paragraph}{IBM}{40}
+\contentsline {paragraph}{MIT}{40}
+\contentsline {paragraph}{NRL}{40}
+\contentsline {paragraph}{NYU}{40}
+\contentsline {paragraph}{OED}{40}
+\contentsline {paragraph}{Purdue}{40}
+\contentsline {paragraph}{SAIL}{40}
+\contentsline {paragraph}{SI}{40}
+\contentsline {paragraph}{Stanford}{40}
+\contentsline {paragraph}{Sun}{40}
+\contentsline {paragraph}{TMRC}{40}
+\contentsline {paragraph}{UCLA}{40}
+\contentsline {paragraph}{UK}{40}
+\contentsline {paragraph}{Usenet}{40}
+\contentsline {paragraph}{WPI}{40}
+\contentsline {paragraph}{WWW}{40}
+\contentsline {paragraph}{XEROC PARC}{40}
+\contentsline {paragraph}{Yale}{40}
+\contentsline {chapter}{Format for New Entries{\rmfamily \mdseries \\ How to submit new entries for the File}}{43}
+\vspace {6pt}
+\contentsline {chapter}{The Jargon Lexicon{\rmfamily \mdseries \\ The lexicon itself}}{45}
+\contentsline {paragraph}{ad-hockery}{45}
+\contentsline {chapter}{A{\rmfamily \mdseries \\ }}{47}
+\contentsline {chapter}{B{\rmfamily \mdseries \\ }}{49}
+\contentsline {paragraph}{B1FF}{49}
+\contentsline {paragraph}{barf}{49}
+\contentsline {paragraph}{bboard}{49}
+\contentsline {paragraph}{BBS}{49}
+\contentsline {paragraph}{beam}{49}
+\contentsline {paragraph}{bignum}{49}
+\contentsline {paragraph}{BNF}{49}
+\contentsline {paragraph}{boxen}{49}
+\contentsline {paragraph}{brain-damaged}{49}
+\contentsline {paragraph}{burble}{49}
+\contentsline {chapter}{C{\rmfamily \mdseries \\ }}{51}
+\contentsline {paragraph}{chomp}{51}
+\contentsline {paragraph}{Commonwealth Hackish}{51}
+\contentsline {paragraph}{core}{51}
+\contentsline {paragraph}{cracker}{51}
+\contentsline {paragraph}{crock}{51}
+\contentsline {paragraph}{cruft}{51}
+\contentsline {paragraph}{cuspy}{51}
+\contentsline {chapter}{D{\rmfamily \mdseries \\ }}{53}
+\contentsline {paragraph}{Datamation}{53}
+\contentsline {paragraph}{DEC}{53}
+\contentsline {paragraph}{droid}{53}
+\contentsline {chapter}{E{\rmfamily \mdseries \\ }}{55}
+\contentsline {paragraph}{elegant}{55}
+\contentsline {paragraph}{elite}{55}
+\contentsline {paragraph}{email}{55}
+\contentsline {chapter}{F{\rmfamily \mdseries \\ }}{57}
+\contentsline {paragraph}{FidoNet}{57}
+\contentsline {paragraph}{flamage}{57}
+\contentsline {paragraph}{flame}{57}
+\contentsline {paragraph}{flavorful}{57}
+\contentsline {paragraph}{foo}{57}
+\contentsline {paragraph}{foobar}{57}
+\contentsline {paragraph}{frob}{57}
+\contentsline {paragraph}{frobnicate}{57}
+\contentsline {paragraph}{frobnitz}{57}
+\contentsline {paragraph}{FTP}{57}
+\contentsline {chapter}{G{\rmfamily \mdseries \\ }}{59}
+\contentsline {paragraph}{Gosperism}{59}
+\contentsline {paragraph}{grep}{59}
+\contentsline {chapter}{H{\rmfamily \mdseries \\ }}{61}
+\contentsline {paragraph}{hack}{61}
+\contentsline {paragraph}{HCF}{61}
+\contentsline {paragraph}{high moby}{61}
+\contentsline {paragraph}{holy wars}{61}
+\contentsline {chapter}{I{\rmfamily \mdseries \\ }}{63}
+\contentsline {paragraph}{ITS}{63}
+\contentsline {chapter}{J{\rmfamily \mdseries \\ }}{65}
+\contentsline {chapter}{K{\rmfamily \mdseries \\ }}{67}
+\contentsline {paragraph}{killer poke}{67}
+\contentsline {paragraph}{kludge}{67}
+\contentsline {paragraph}{kluge}{67}
+\contentsline {chapter}{L{\rmfamily \mdseries \\ }}{69}
+\contentsline {paragraph}{lamer}{69}
+\contentsline {paragraph}{leech}{69}
+\contentsline {paragraph}{lose}{69}
+\contentsline {paragraph}{lossage}{69}
+\contentsline {chapter}{M{\rmfamily \mdseries \\ }}{71}
+\contentsline {paragraph}{management}{71}
+\contentsline {paragraph}{meeces}{71}
+\contentsline {paragraph}{moby}{71}
+\contentsline {paragraph}{mu}{71}
+\contentsline {paragraph}{MUD}{71}
+\contentsline {chapter}{N{\rmfamily \mdseries \\ }}{73}
+\contentsline {paragraph}{newsgroup}{73}
+\contentsline {paragraph}{NIL}{73}
+\contentsline {chapter}{O{\rmfamily \mdseries \\ }}{75}
+\contentsline {paragraph}{PDP-10}{75}
+\contentsline {paragraph}{PHB}{75}
+\contentsline {paragraph}{pointy-haired}{75}
+\contentsline {paragraph}{poser}{75}
+\contentsline {chapter}{P{\rmfamily \mdseries \\ }}{77}
+\contentsline {paragraph}{random}{77}
+\contentsline {paragraph}{rude}{77}
+\contentsline {chapter}{Q{\rmfamily \mdseries \\ }}{79}
+\contentsline {chapter}{R{\rmfamily \mdseries \\ }}{81}
+\contentsline {chapter}{S{\rmfamily \mdseries \\ }}{83}
+\contentsline {chapter}{T{\rmfamily \mdseries \\ }}{85}
+\contentsline {paragraph}{T}{85}
+\contentsline {paragraph}{talk mode}{85}
+\contentsline {paragraph}{TMRC}{85}
+\contentsline {paragraph}{toggle}{85}
+\contentsline {paragraph}{troglodyte}{85}
+\contentsline {paragraph}{TWENEX}{85}
+\contentsline {chapter}{U{\rmfamily \mdseries \\ }}{87}
+\contentsline {paragraph}{Unix}{87}
+\contentsline {paragraph}{Usenet}{87}
+\contentsline {paragraph}{UUCPNET}{87}
+\contentsline {chapter}{V{\rmfamily \mdseries \\ }}{89}
+\contentsline {paragraph}{VAXen}{89}
+\contentsline {paragraph}{vi}{89}
+\contentsline {paragraph}{VMS}{89}
+\contentsline {chapter}{W{\rmfamily \mdseries \\ }}{91}
+\contentsline {paragraph}{WAITS}{91}
+\contentsline {paragraph}{Weenix}{91}
+\contentsline {paragraph}{win}{91}
+\contentsline {paragraph}{wizard}{91}
+\contentsline {paragraph}{warez d00dz}{91}
+\contentsline {chapter}{X{\rmfamily \mdseries \\ }}{93}
+\contentsline {chapter}{Y{\rmfamily \mdseries \\ }}{95}
+\contentsline {chapter}{Z{\rmfamily \mdseries \\ }}{97}
+\contentsline {paragraph}{old fart}{97}
+\contentsline {paragraph}{Stupids}{97}
+\contentsline {paragraph}{suit}{97}
+\contentsline {paragraph}{SNAFU principle}{97}
