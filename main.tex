@@ -1,6 +1,6 @@
-\documentclass{book}
+\documentclass{report}
 
-\usepackage{url,paralist,fancyhdr,xcolor,enumitem,textcomp,verbatim,longtable,multicol}
+\usepackage{url,paralist,fancyhdr,xcolor,enumitem,textcomp,verbatim,longtable,multicol,scrextend,framed}
 \usepackage{xstring/xstring}
 \usepackage[margin=1in]{geometry}
 \usepackage[titles]{tocloft}
@@ -35,13 +35,20 @@
 \newcommand{\worktitle}[1]{\textit{#1}}
 \newcommand{\Tilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
 
-%\citeusenet{Name, Poster}{poster@email}{YYYY}{Post subject}{alt.group.name}{googleid}{D Month}
-\newcommand{\citeusenet}[7]{%
-	\begin{flushright}{\footnotesize\rmfamily{#1 \url{<#2>}, #3: #4 \textit{#5}, \textbf{#6}, #7}}\end{flushright}}
-\newenvironment{usenet}{\begin{quote}\ttfamily}{\rmfamily\end{quote}}
+%\citeusenet{Name, Poster}{poster@email}{YYYY}{Post subject}{group.name}{googleid}{D Month}
+\newcommand{\citeusenet}[7]
+{\hfill{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}}
+\newcommand{\citeusenetfn}[7]{{\footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
+\newenvironment{usenet}{\begin{addmargin}{0.5in}\raggedright\small\ttfamily}{\rmfamily\end{addmargin}}
 
-\definecolor{grey1}{HTML}{CCCCCC}
-\renewcommand{\labelenumi}{\colorbox{grey1}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
+\definecolor{shadecolor}{HTML}{DDDDDD}
+\newenvironment{new}{\begin{oframed}{\footnotesize NOT IN THE JARGON FILE
+
+}}{\end{oframed}}
+
+\newenvironment{code}{\begin{addmargin}{0.5in}\raggedright\ttfamily}{\rmfamily\end{addmargin}}
+
+\renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
 
 \begin{document}
     \title{The New Hacker's Dictionary}
@@ -89,15 +96,14 @@
     \pagestyle{fancy}
     \fancyhead{}
     \fancyfoot{}
-    \fancyhead[LE,RO]{%
+    \fancyhead[L,R]{%
         \sffamily\bfseries\rightmark--\leftmark}
-    \fancyhead[RE]{\sffamily\thepage}
-    \fancyhead[LO]{\sffamily\thepage}
+    \fancyhead[R]{\sffamily\thepage}
+    \fancyhead[L]{\sffamily\thepage}
     \renewcommand{\headrulewidth}{0.1em}
 
-    \mainentry{ad-hockery}
-
 	\Chapter{A}{}
+	\input entries/a
 	\Chapter{B}{}
 	\input entries/b
 	\Chapter{C}{}
@@ -124,12 +130,13 @@
 	\Chapter{N}{}
     \input entries/n
 	\Chapter{O}{}
-    \input entries/p
 	\Chapter{P}{}
-	\input entries/r
+    \input entries/p
 	\Chapter{Q}{}
 	\Chapter{R}{}
+	\input entries/r
 	\Chapter{S}{}
+	\input entries/s
 	\Chapter{T}{}
 	\input entries/t
 	\Chapter{U}{}
@@ -144,17 +151,6 @@
 
     \mainentry{old fart}
 
-    \mainentry{Stupids}
-
-    \mainentry{suit} n.
-
-    \begin{inparaenum}
-        \item Ugly and uncomfortable `business clothing' often worn by non-hackers. Invariably worn with a `tie', a strangulation device that partially cuts off the blood supply to the brain. It is thought that this explains much about the behavior of suit-wearers. Compare \citeentry{droid}.
-        \item A person who habitually wears suits, as distinct from a techie or hacker. See \citeentry{pointy-haired}, \citeentry{burble}, \citeentry{management}, \citeentry{Stupids}, \citeentry{SNAFU principle}, \citeentry{PHB}, and \citeentry{brain-damaged}.
-    \end{inparaenum}
-
-    \mainentry{SNAFU principle}
-
 
     \pagestyle{plain}
 
@@ -168,5 +164,73 @@
     \chapter*{Appendix C}\label{Appendix-C}
 
     \chapter*{Bibliography}\label{Bibliography}
+
+	\chapter*{Some of the Best Usenet}
+
+	\begin{usenet}
+		A VISIT FROM SAINT WOZ\\
+		by Marty Knight\\
+		(Reprinted with permission of the Author)
+
+		`Twas the night before Christmas, sounds all through the house,\\
+		the printer a'buzzing; the clicking of mouse.\\
+		The floppies were stored in their cases with care\\
+		in hopes that St. Wozniak soon would be there.\\
+		The children were nestled, all snug in their beds,\\
+		while TransWarp GS's danced in their head\\
+		I need 3 megs more, but RAM costs a min\\
+		I'm nodding off, waiting for my printer to prin\\
+		When out on the lawn there arose such a clatter,\\
+		I woke with a start, ``Now what's the matter?''\\
+		Awakened from slumber I jumped up to see,\\
+		tripped over the dog and fell on my knee.\\
+		The moon shining onto the new fallen snow\\
+		formed a non-standard pallette with objects below.\\
+		When what to my poor bloodshot eyes should appear\\
+		but SHR graphics! Stereo sound do I hear!\\
+		With a sixteen bit chip and new bug-free GSOS,\\
+		I knew right away that it must be Saint Woz.\\
+		More rapid than Transwarp, his menus they came.\\
+		He clicked and he dragged and he called them by name.\\
+		"Now Pulldowns, now Buttons, now Dialogs, too.\\
+		On Finder, Mac Interface, we're faster than Mac II!\\
+		Blue slips for marketing! DTS better not scoff!\\
+		ProDOS format for Technotes or I'll lay you all off!\\
+		You know lame excuses make customers sad;\\
+		well Macs in the schools make Applers mad."\\
+		So up to the housetop his menus they flew\\
+		with a sack full of RAM chips and Saint Wozniak, too.\\
+		I listened intently with my two little ears\\
+		to true stereo sound spreading holiday cheer.\\
+		As I was scratching head and was turning around\\
+		down the chimney Saint Wozniak came with a bound.\\
+		He wore sneakers, a t-shirt, and blue jeans\\
+		stained with some soda (I think it was cream).\\
+		A bundle of chips he had slung on his back\\
+		and he looked like a hacker there searching his pack.\\
+		His eyes twinkled brightly, his dimples so merry,\\
+		his cheeks like twin apples, his nose like a cherry.\\
+		His droll little mouth smiled a smile O so grand,\\
+		a full bearded chin, AppleLink in his hand.\\
+		A thick slice of pizza he held tight with his teeth\\
+		while the steam from it circled his head like a wreath.\\
+		A plump little face and a round little belly;\\
+		he laughed and it shook like a bowl full of jelly.\\
+		He was chubby and plump; a right jolly old elf.\\
+		I laughed when I saw him - he resembled myself.\\
+		He winked his left eye and he twisted his head,\\
+		so I knew deep inside I had nothing to dread.\\
+		He said not a word, just went right to work.\\
+		He soldered and programmed, then turned with a jerk.\\
+		Then placing his finger on top of that mess,\\
+		and giving a nod - POOF! fast GS!\\
+		He leaped to his ship as it rose from the ground,\\
+		up into the sky, and as he turned 'round\\
+		I heard him exclaim, ere he flew out of sight,\\
+		``GS plusses for all, and to all a good night!''
+
+		\citeusenet{The Unknown User}{unknown@ucscb.ucsc.edu}{1989}{A Visit from Saint Woz}{alt.folklore.computers}{\_mXEGBQNF\_A}
+			{15 December}
+	\end{usenet}
 \end{document}
 
