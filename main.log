@@ -1,15 +1,20 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.12)  24 JUN 2012 18:22
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.6.21)  29 JUN 2012 11:11
 entering extended mode
  %&-line parsing enabled.
 **main
 (./main.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/report.cls
+Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -24,11 +29,11 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+(/usr/share/texmf/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
 )
-(/usr/share/texmf-texlive/tex/latex/paralist/paralist.sty
+(/usr/share/texmf/tex/latex/paralist/paralist.sty
 Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \pltopsep=\skip43
 \plpartopsep=\skip44
@@ -36,7 +41,7 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \plparsep=\skip46
 \pl@lab=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip47
 \f@ncyO@elh=\skip48
 \f@ncyO@erh=\skip49
@@ -50,15 +55,17 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/share/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count88
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -67,19 +74,17 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texmf-texlive/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2009/05/18 v2.2 Customized lists
-\enit@toks=\toks15
+(/usr/share/texmf/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2005/05/12 v1.1 Customized lists
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks15
 )
 \labelindent=\skip56
 \enit@outerparindent=\dimen103
-\enitdp@desc=\count88
 )
-(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+(/usr/share/texmf/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -94,7 +99,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+(/usr/share/texmf/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -146,13 +151,13 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 )
-(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks17
-\verbatim@line=\toks18
+\every@verbatim=\toks16
+\verbatim@line=\toks17
 \verbatim@in@stream=\read1
 )
-(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+(/usr/share/texmf/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip57
 \LTright=\skip58
@@ -168,10 +173,10 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LT@rows=\count91
 \c@LT@tables=\count92
 \c@LT@chunks=\count93
-\LT@p@ftn=\toks19
+\LT@p@ftn=\toks18
 )
-(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
-Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+(/usr/share/texmf/tex/latex/tools/multicol.sty
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
 \c@tracingmulticols=\count94
 \mult@box=\box30
 \multicol@leftmargin=\dimen105
@@ -217,30 +222,15 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \mult@nat@firstbox=\box54
 \colbreak@box=\box55
 )
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrextend.sty
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2009/07/24 v3.04a KOMA-Script package (KOMA-Script-dependent 
-basics and keyval usage)
-
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2009/07/24 v3.04a KOMA-Script package (KOMA-Script-independent
- basics and keyval usage)
-
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2009/03/25 v3.03 KOMA-Script package (loading files)
-
-Package scrlfile, 2009/03/25 v3.03 KOMA-Script package (loading files)
-                  Copyright (C) Markus Kohm
-
-)))) (/usr/share/texmf-texlive/tex/latex/ltxmisc/framed.sty
+(/usr/share/texmf/tex/latex/ltxmisc/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip63
 \fb@frw=\dimen113
 \fb@frh=\dimen114
 \FrameRule=\dimen115
 \FrameSep=\dimen116
-)
-(./xstring/xstring.sty (./xstring/xstring.tex
+) (./xstring/xstring.sty
+(./xstring/xstring.tex
 \@xs@message=\write3
 \integerpart=\count102
 \decimalpart=\count103
@@ -250,17 +240,8 @@ LaTeX Warning: You have requested package `xstring/xstring',
                but the package provides `xstring'.
 
 Package: xstring 2010/03/28  v1.5d  String manipulations (C Tellechea)
-) (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
-Package: geometry 2008/12/21 v4.2 Page Geometry
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode not detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
-Package ifvtex Info: VTeX not detected.
-)
+) (/usr/share/texmf/tex/latex/geometry/geometry.sty
+Package: geometry 2002/07/08 v3.2 Page Geometry
 \Gm@cnth=\count104
 \Gm@cntv=\count105
 \c@Gm@tempcnt=\count106
@@ -268,10 +249,11 @@ Package ifvtex Info: VTeX not detected.
 \Gm@wd@mp=\dimen118
 \Gm@odd@mp=\dimen119
 \Gm@even@mp=\dimen120
-\Gm@dimlist=\toks20
-)
-(/usr/share/texmf-texlive/tex/latex/tocloft/tocloft.sty
-Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
+\Gm@dimlist=\toks19
+
+(/usr/share/texmf/tex/xelatex/xetexconfig/geometry.cfg))
+(/usr/share/texmf/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2003/09/26 v2.3c parameterised ToC, etc., typesetting
 
 
 Package tocloft Note: The document has chapter divisions.
@@ -312,37 +294,47 @@ Package tocloft Note: The document has chapter divisions.
 \cftbeforetabskip=\skip95
 \cfttabindent=\skip96
 \cfttabnumwidth=\skip97
-) (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+) (/usr/share/texmf/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+(/usr/share/texmf/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+(/usr/share/texmf/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    ... okay on input line 67.
 
-*geometry auto-detecting driver*
-*geometry detected driver: dvips*
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count109
+\scratchdimen=\dimen121
+\scratchbox=\box56
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen122
+\MPnumerator=\count113
+\everyMPtoPDFconversion=\toks20
+)
 -------------------- Geometry parameters
 paper: class default
 landscape: --
@@ -360,7 +352,7 @@ truedimen: --
 includehead: --
 includefoot: --
 includemp: --
-driver: dvips
+driver: pdftex
 -------------------- Page layout dimensions and switches
 \paperwidth  614.295pt
 \paperheight 794.96999pt
@@ -382,9 +374,9 @@ driver: dvips
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-(./preamble.tex
+ (./preamble.tex
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+ (/usr/share/texmf/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -393,8 +385,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 22.
 ) [1
 
-]
-(./main.toc
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -409,117 +400,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--44
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
  []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
  []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
  []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--79
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
  []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--85
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
  []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--96
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--107
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--117
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--123
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--136
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
- []  
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--154
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--158
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--162
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--170
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
  []  
  []
 
@@ -529,7 +435,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--171
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--187
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--195
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--201
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--214
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--224
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--244
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--245
+ []  
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 253--253
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--287
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--295
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--305
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--311
  []  
  []
 
@@ -539,168 +535,324 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--172
 
  [4] (./introduction.tex
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 12.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+ (/usr/share/texmf/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-[5
+) [5
 
-]) [6] (./a-few-terms.tex
-
-LaTeX Warning: Reference `Jargon-Construction' on page 7 undefined on input lin
-e 23.
-
-[7
+])
+[6] (./a-few-terms.tex [7
 
 ]) [8] (./revision-history.tex [9
 
-] [10] [11]) [12] [13
+] [10] [11]) [12]
+[13
 
-]
-(./jargon-construction.tex [14
+] (./jargon-construction.tex [14
 
 ] [15] [16] [17]) [18]
 (./hacker-writing-style.tex [19
 
-] [20] [21] [22]) [23] (./email-quotes.tex
-[24
+] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
+[]\T1/cmtt/m/n/9 I'm now employed, but I'm responsible for my employer's opinio
+ns, not vice versa.
+ []
+
+[22]) [23] (./email-quotes.tex [24
 
 ]) [25] (./hacker-speech-style.tex) [26
 
-] (./international-style.tex)
-[27
+]
+(./international-style.tex) [27
 
 ] (./lamer-speak.tex [28
 
 ]) [29] [30
 
-] (./pronunciation-guide.tex [31
+]
+(./pronunciation-guide.tex [31
 
-])
-[32] (./other-lexicon-conventions.tex [33
+]) [32] (./other-lexicon-conventions.tex [33
 
-] [34]) [35]
-(./format-for-new-entries.tex) [36
+]
+[34]) [35] (./format-for-new-entries.tex) [36
 
 ] [37
 
 ] (./entries/a.tex
-(./entries/a/abbrev.tex) (./entries/a/abend.tex) (./entries/a/accumulator.tex
-[38
+(./entries/a/abbrev.tex) (./entries/a/abend.tex
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+[]\T1/cmtt/m/n/9 We have the IBM 370 C compiler written by Bell Labs. When runn
+ing under "MVS" it works fine.
+ []
 
-]) (./entries/a/ack.tex) (./entries/a/acme.tex) (./entries/a/ad-hockery.tex) (.
-/entries/a/alt.tex)) [39] (./entries/b.tex (./entries/b/b1ff.tex)
-(./entries/b/barf.tex) (./entries/b/bboard.tex) (./entries/b/bbs.tex)
-(./entries/b/beam.tex) (./entries/b/bignum.tex) (./entries/b/bnf.tex)
-(./entries/b/boxen.tex) (./entries/b/brain-damaged.tex) (./entries/b/bug.tex)
-(./entries/b/burble.tex)) [40
 
-] (./entries/c.tex (./entries/c/chomp.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+\T1/cmtt/m/n/9 We wrote and compiled a program under "MVS". This took a second 
+to compile ,link and run ...
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--31
+[]\T1/cmtt/m/n/9 As I said in my response to Douglas Reay, having realized that
+ I've offended people through my
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--31
+\T1/cmtt/m/n/9 deliberate obnoxiousness, I am going to take myself out of the s
+ituation. If I were less of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--31
+\T1/cmtt/m/n/9 a hypocrite, I'd resolve to stay away forever, but I don't have 
+the strength of character to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--31
+\T1/cmtt/m/n/9 do that. Instead, I'll resolve to remain silent at least through
+ the end of August, except to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--40
+[]\T1/cmtt/m/n/9 I have just seen the character demo of TRITON's new game "Into
+ the Shadows". Now I understand
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--40
+\T1/cmtt/m/n/9 why Triton has been absend so long. I am not that much into role
+ playing games, so I don't
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--40
+\T1/cmtt/m/n/9 know what the standards are today, but the movement and animatio
+n of the characters in the demo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--40
+\T1/cmtt/m/n/9 are fantastic. That's what I call realistic. So Triton spent the
+ir time well the last, well,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--40
+\T1/cmtt/m/n/9 two years. For all of you who haven't seen it yet: Don't waste a
+ny more time and download it
+ []
+
+) (./entries/a/accumulator.tex [38
+
+]) (./entries/a/ack.tex)
+(./entries/a/acme.tex) (./entries/a/acolyte.tex) (./entries/a/ad-hockery.tex)
+(./entries/a/ada.tex [39]) (./entries/a/address harvester.tex)
+(./entries/a/adger.tex) (./entries/a/admin.tex) (./entries/a/advent.tex)
+(./entries/a/afaik.tex) (./entries/a/afj.tex) (./entries/a/afk.tex [40])
+(./entries/a/ai.tex) (./entries/a/ai koans.tex) (./entries/a/ai-complete.tex)
+(./entries/a/aids.tex) (./entries/a/aidx.tex) (./entries/a/airplane rule.tex)
+(./entries/a/alderson loop.tex [41]) (./entries/a/aliasing bug.tex)
+(./entries/a/alice and bob.tex) (./entries/a/all-elbows.tex)
+(./entries/a/alpha geek.tex) (./entries/a/alpha particles.tex [42])
+(./entries/a/alt.tex) (./entries/a/alt bit.tex) (./entries/a/aluminium book.tex
+) (./entries/a/ambimouseterous.tex) (./entries/a/amiga.tex)
+(./entries/a/amiga persecution complex.tex [43]) (./entries/a/amoeba.tex)
+(./entries/a/amp off.tex) (./entries/a/amper.tex) (./entries/a/angband.tex)
+(./entries/a/angle brackets.tex) (./entries/a/angry fruit salad.tex)
+(./entries/a/annoybot.tex) (./entries/a/ansi.tex [44])
+(./entries/a/ansi standard.tex) (./entries/a/ansi standard pizza.tex)
+(./entries/a/aol!.tex) (./entries/a/app.tex) (./entries/a/arena.tex)
+(./entries/a/ascii.tex)) [45] [46] (./entries/b.tex (./entries/b/b1ff.tex)
+(./entries/b/background.tex) (./entries/b/barf.tex) (./entries/b/bboard.tex)
+(./entries/b/bbs.tex) (./entries/b/beam.tex) (./entries/b/bignum.tex)
+(./entries/b/bigot.tex) (./entries/b/bit rot.tex)
+(./entries/b/blaze humor viewer.tex) (./entries/b/bnf.tex)
+(./entries/b/book titles.tex) (./entries/b/bot.tex) (./entries/b/boxen.tex)
+(./entries/b/brain-damaged.tex) (./entries/b/broket.tex) (./entries/b/bsd.tex)
+(./entries/b/bucky bits.tex [47
+
+]) (./entries/b/bug.tex) (./entries/b/burble.tex)) [48] (./entries/c.tex (./ent
+ries/c/careware.tex)
+(./entries/c/charityware.tex) (./entries/c/choke.tex) (./entries/c/chomp.tex)
+(./entries/c/classic c.tex) (./entries/c/clone.tex)
 (./entries/c/code grinder.tex) (./entries/c/commonwealth-hackish.tex)
 (./entries/c/core.tex) (./entries/c/cracker.tex) (./entries/c/cracking.tex)
-(./entries/c/crash.tex) (./entries/c/crock.tex) (./entries/c/cruft.tex)
-(./entries/c/cuspy.tex)) [41
+(./entries/c/crash.tex) (./entries/c/crippleware.tex) (./entries/c/crock.tex)
+(./entries/c/cruft.tex) (./entries/c/cuspy.tex)) [49
 
-] (./entries/d.tex (./entries/d/datamation.tex)
-(./entries/d/dec.tex) (./entries/d/droid.tex)) [42
+] (./entries/d.tex
+(./entries/d/datamation.tex) (./entries/d/dec.tex) (./entries/d/droid.tex)
+(./entries/d/dumbass attack.tex)) [50
 
 ] (./entries/e.tex
-(./entries/e/enq.tex) (./entries/e/elegant.tex) (./entries/e/elite.tex)
-(./entries/e/emacs.tex) (./entries/e/email.tex)) [43
+(./entries/e/elder days.tex) (./entries/e/elegant.tex)
+(./entries/e/elephantine.tex) (./entries/e/elite.tex)
+(./entries/e/eliza effect.tex) (./entries/e/emacs.tex) (./entries/e/email.tex)
+(./entries/e/enq.tex) (./entries/e/elvish.tex)) [51
 
 ] (./entries/f.tex
+(./entries/f/fandango on core.tex) (./entries/f/feature key.tex)
 (./entries/f/fidonet.tex) (./entries/f/flamage.tex) (./entries/f/flame.tex)
-(./entries/f/flavorful.tex) (./entries/f/foo.tex) (./entries/f/foobar.tex)
-(./entries/f/frob.tex) (./entries/f/frobnicate.tex) (./entries/f/frobnitz.tex)
-(./entries/f/ftp.tex)) [44
+(./entries/f/flame war.tex) (./entries/f/flavorful.tex) (./entries/f/foo.tex)
+(./entries/f/foobar.tex) (./entries/f/freeware.tex) (./entries/f/frob.tex)
+(./entries/f/frobnicate.tex) (./entries/f/frobnitz.tex) (./entries/f/frs.tex)
+(./entries/f/ftp.tex [52
 
-] (./entries/g.tex (./entries/g/gosperism.tex)
-(./entries/g/grep.tex)) [45
+])) [53] (./entries/g.tex (./entries/g/gc.tex)
+(./entries/g/gedanken.tex) (./entries/g/get a life-.tex) (./entries/g/glob.tex)
+(./entries/g/gnu.tex) (./entries/g/gnu-linux.tex) (./entries/g/gosperism.tex)
+(./entries/g/grep.tex) (./entries/g/guiltware.tex)) [54
 
-] (./entries/h.tex (./entries/h/hack.tex)
-(./entries/h/hcf.tex) (./entries/h/high-moby.tex) (./entries/h/holy-wars.tex))
-[46
+] (./entries/h.tex
+(./entries/h/ha ha only serious.tex) (./entries/h/hack.tex)
+(./entries/h/hacker humor.tex) (./entries/h/hcf.tex) (./entries/h/high-moby.tex
+) (./entries/h/holy wars.tex) (./entries/h/hp-sux.tex)) [55
 
-] (./entries/i.tex (./entries/i/insanely great.tex) (./entries/i/its.tex))
-[47
+] (./entries/i.tex
+(./entries/i/iso standard cup of tea.tex) (./entries/i/infinite loop.tex)
+(./entries/i/infocom.tex) (./entries/i/insanely great.tex)
+(./entries/i/intercal.tex) (./entries/i/its.tex)) [56
 
-] [48
+] [57
 
-] (./entries/k.tex (./entries/k/killer poke.tex)
-(./entries/k/kludge.tex) (./entries/k/kluge.tex [49
+] (./entries/k.tex
+(./entries/k/k&r.tex) (./entries/k/killer app.tex) (./entries/k/killer poke.tex
+) (./entries/k/kiss principle.tex) (./entries/k/kludge.tex)
+(./entries/k/kluge.tex [58
 
-])) [50] (./entries/l.tex
-(./entries/l/lamer.tex) (./entries/l/leech.tex) (./entries/l/lose.tex)
-(./entries/l/lossage.tex)) [51
+]) (./entries/k/kremvax.tex)) [59] (./entries/l.tex
+(./entries/l/lamer.tex) (./entries/l/leech.tex) (./entries/l/lisp.tex)
+(./entries/l/lose.tex) (./entries/l/lossage.tex)) [60
 
-] (./entries/m.tex (./entries/m/management.tex)
-(./entries/m/meeces.tex) (./entries/m/moby.tex) (./entries/m/mu.tex)
-(./entries/m/mud.tex)) [52
-
-] (./entries/n.tex (./entries/n/nak.tex)
-(./entries/n/newsgroup.tex) (./entries/n/nil.tex)) [53
-
-] [54
-
-] (./entries/p.tex
-(./entries/p/pdp-10.tex) (./entries/p/phb.tex) (./entries/p/phreaking.tex)
-(./entries/p/ping.tex) (./entries/p/pistol.tex [55
+] (./entries/m.tex
+(./entries/m/macintrash.tex) (./entries/m/management.tex)
+(./entries/m/meeces.tex) (./entries/m/memory leak.tex)
+(./entries/m/memory smash.tex) (./entries/m/mess-dos.tex)
+(./entries/m/meta bit.tex) (./entries/m/moby.tex [61
 
 ])
-(./entries/p/pointy-haired.tex) (./entries/p/poser.tex)) [56] [57
+(./entries/m/monstrosity.tex) (./entries/m/moria.tex) (./entries/m/mu.tex)
+(./entries/m/mud.tex)) [62] (./entries/n.tex (./entries/n/nadger.tex)
+(./entries/n/nak.tex) (./entries/n/nethack.tex) (./entries/n/netiquette.tex)
+(./entries/n/newbie.tex) (./entries/n/newsgroup.tex) (./entries/n/nil.tex)
+(./entries/n/nominal semidestructor.tex) (./entries/n/np--.tex)) [63
 
 ]
-(./entries/r.tex (./entries/r/random.tex) (./entries/r/retrocomputing.tex)
-(./entries/r/rude.tex)) [58
+(./entries/o.tex (./entries/o/old fart.tex) (./entries/o/operating system.tex)
+(./entries/o/osu.tex) (./entries/o/overrun screw.tex)) [64
 
-] (./entries/s.tex (./entries/s/snafu principle.tex) (./entries/s/stack.tex) (.
-/entries/s/stupids.tex) (./entries/s/suit.tex))
-[59
+] (./entries/p.tex
+(./entries/p/pascal.tex) (./entries/p/payware.tex) (./entries/p/pdp-10.tex)
+(./entries/p/phb.tex) (./entries/p/phreaking.tex [65
 
-] (./entries/t.tex (./entries/t/t.tex) (./entries/t/talk-mode.tex)
-(./entries/t/teco.tex [60
+]) (./entries/p/ping.tex)
+(./entries/p/pistol.tex) (./entries/p/plugh.tex) (./entries/p/pointy-haired.tex
+) (./entries/p/poser.tex) (./entries/p/postcardware.tex)
+(./entries/p/postmaster.tex) (./entries/p/precedence lossage.tex)
+(./entries/p/priesthood.tex)) [66] [67
 
-]) (./entries/t/tmrc.tex) (./entries/t/toggle.tex)
-(./entries/t/troglodyte.tex) (./entries/t/twenex.tex)) [61] (./entries/u.tex
-(./entries/u/unix.tex) (./entries/u/usenet.tex) (./entries/u/uucpnet.tex))
-[62
+] (./entries/r.tex
+(./entries/r/random.tex) (./entries/r/random number god.tex)
+(./entries/r/real world.tex) (./entries/r/retrocomputing.tex)
+(./entries/r/rogue.tex) (./entries/r/rotary debugger.tex) (./entries/r/rude.tex
+)) [68
 
-] (./entries/v.tex (./entries/v/vaxen.tex) (./entries/v/vi.tex)
-(./entries/v/vms.tex)) [63
+] (./entries/s.tex (./entries/s/scumos.tex)
+(./entries/s/september that never ended.tex) (./entries/s/sex.tex)
+(./entries/s/shareware.tex) (./entries/s/smash the stack.tex)
+(./entries/s/snafu principle.tex) (./entries/s/spam.tex) (./entries/s/stack.tex
+) (./entries/s/stale pointer bug.tex) (./entries/s/stupids.tex)
+(./entries/s/suit.tex) (./entries/s/sun-stools.tex) (./entries/s/sysop.tex)
+(./entries/s/system mangler.tex [69
+
+])) [70] (./entries/t.tex (./entries/t/t.tex) (./entries/t/talk-mode.tex) (./en
+tries/t/teco.tex [71
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 56--60
+[]\T1/cmtt/m/n/9 After having teco as my only editor for about 1.5 years (on a 
+PDP-11 running RSTS/E), I
+ []
+
+) (./entries/t/teergrube.tex) (./entries/t/tenured graduate student.tex)
+(./entries/t/tmrc.tex) (./entries/t/toggle.tex) (./entries/t/tool.tex)
+(./entries/t/tops-10.tex) (./entries/t/troglodyte.tex)
+(./entries/t/trojan horse.tex) (./entries/t/troll.tex) (./entries/t/twenex.tex
+[72])) [73] (./entries/u.tex (./entries/u/unix.tex) (./entries/u/usenet.tex)
+(./entries/u/usg unix.tex) (./entries/u/uucpnet.tex)) [74
+
+] (./entries/v.tex
+(./entries/v/vadding.tex) (./entries/v/vaxen.tex) (./entries/v/vi.tex)
+(./entries/v/video toaster.tex) (./entries/v/virgin.tex) (./entries/v/virus.tex
+) (./entries/v/vms.tex)) [75
 
 ] (./entries/w.tex (./entries/w/waits.tex)
-(./entries/w/warez-d00dz.tex) (./entries/w/weenix.tex) (./entries/w/win.tex)
-(./entries/w/wizard.tex) (./entries/w/write-only language.tex)
-(./entries/w/wrong thing.tex) (./entries/w/wtf.tex)) [64
+(./entries/w/warez-d00dz.tex) (./entries/w/weenie.tex) (./entries/w/weenix.tex)
+(./entries/w/win.tex) (./entries/w/wizard.tex) (./entries/w/worm.tex)
+(./entries/w/write-only language.tex) (./entries/w/wrong thing.tex)
+(./entries/w/wtf.tex)) [76
 
-] [65
+] (./entries/x.tex (./entries/x/x.tex)
+(./entries/x/xyzzy.tex)) [77
 
-] [66
+] [78
 
-] [67
+] (./entries/z.tex (./entries/z/zork.tex))
+[79
 
-]
-(./appendix-a.tex [68
+] (./entries/0.tex (./entries/0/-ware.tex)) [80
 
-]) [69] [70
+] (./appendix-a.tex [81
 
-] [71
+])
+[82] [83
 
-] [72
+] [84
 
-] [73
+] [85
 
-] [74] (./main.aux)
+] [86
 
-LaTeX Warning: There were undefined references.
-
- ) 
+] [87] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4230 strings out of 495062
- 57969 string characters out of 1182644
- 127814 words of memory out of 3000000
- 6928 multiletter control sequences out of 15000+50000
- 24788 words of font info for 49 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 33i,11n,43p,890b,334s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 4659 strings out of 256216
+ 63591 string characters out of 1917072
+ 112526 words of memory out of 1500000
+ 7046 multiletter control sequences out of 10000+200000
+ 24007 words of font info for 48 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 25i,12n,43p,890b,267s stack positions out of 5000i,500n,6000p,200000b,15000s
+ </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecti0800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecrm0600.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecti0900.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm0900.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecss1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/
+jknappen/ec/ecss0800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecbx0800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ectt0900.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecrm0800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecbx1440.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/lj
+four/jknappen/ec/ecbx2074.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/l
+jfour/jknappen/ec/tcrm1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecrm0700.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk
+/ljfour/jknappen/ec/ecsx0900.600pk> </home/jason/.texlive2007/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecti1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/jason/.texlive2007/texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/jason/.texlive2007/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/jason/.texlive2007/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/jason/.texlive2007/texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ectt1000.600pk></usr/share/texmf/fonts/type1/bluesky/
+cm/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/
+cmsy7.pfb>
+Output written on main.pdf (87 pages, 440238 bytes).
+PDF statistics:
+ 1132 PDF objects out of 1200 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on main.dvi (74 pages, 165808 bytes).

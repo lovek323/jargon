@@ -47,127 +47,266 @@
 \contentsline {paragraph}{accumulator}{38}
 \contentsline {paragraph}{ACK}{39}
 \contentsline {paragraph}{Acme}{39}
+\contentsline {paragraph}{acolyte}{39}
 \contentsline {paragraph}{ad-hockery}{39}
-\contentsline {paragraph}{alt}{39}
-\contentsline {chapter}{B{\rmfamily \mdseries \\ }}{40}
-\contentsline {paragraph}{B1FF}{40}
-\contentsline {paragraph}{barf}{40}
-\contentsline {paragraph}{bboard}{40}
-\contentsline {paragraph}{BBS}{40}
-\contentsline {paragraph}{beam}{40}
-\contentsline {paragraph}{bignum}{40}
-\contentsline {paragraph}{BNF}{40}
-\contentsline {paragraph}{boxen}{40}
-\contentsline {paragraph}{brain-damaged}{40}
-\contentsline {paragraph}{bug}{40}
-\contentsline {paragraph}{burble}{40}
-\contentsline {chapter}{C{\rmfamily \mdseries \\ }}{41}
-\contentsline {paragraph}{chomp}{41}
-\contentsline {paragraph}{code grinder}{41}
-\contentsline {paragraph}{Commonwealth Hackish}{41}
-\contentsline {paragraph}{core}{41}
-\contentsline {paragraph}{cracker}{41}
-\contentsline {paragraph}{cracking}{41}
-\contentsline {paragraph}{crash}{41}
-\contentsline {paragraph}{crock}{41}
-\contentsline {paragraph}{cruft}{41}
-\contentsline {paragraph}{cuspy}{41}
-\contentsline {chapter}{D{\rmfamily \mdseries \\ }}{42}
-\contentsline {paragraph}{Datamation}{42}
-\contentsline {paragraph}{DEC}{42}
-\contentsline {paragraph}{droid}{42}
-\contentsline {chapter}{E{\rmfamily \mdseries \\ }}{43}
-\contentsline {paragraph}{ENQ}{43}
-\contentsline {paragraph}{elegant}{43}
-\contentsline {paragraph}{elite}{43}
-\contentsline {paragraph}{EMACS}{43}
-\contentsline {paragraph}{email}{43}
-\contentsline {chapter}{F{\rmfamily \mdseries \\ }}{44}
-\contentsline {paragraph}{FidoNet}{44}
-\contentsline {paragraph}{flamage}{44}
-\contentsline {paragraph}{flame}{44}
-\contentsline {paragraph}{flavorful}{44}
-\contentsline {paragraph}{foo}{44}
-\contentsline {paragraph}{foobar}{44}
-\contentsline {paragraph}{frob}{44}
-\contentsline {paragraph}{frobnicate}{44}
-\contentsline {paragraph}{frobnitz}{44}
-\contentsline {paragraph}{FTP}{44}
-\contentsline {chapter}{G{\rmfamily \mdseries \\ }}{45}
-\contentsline {paragraph}{Gosperism}{45}
-\contentsline {paragraph}{grep}{45}
-\contentsline {chapter}{H{\rmfamily \mdseries \\ }}{46}
-\contentsline {paragraph}{hack}{46}
-\contentsline {paragraph}{HCF}{46}
-\contentsline {paragraph}{high moby}{46}
-\contentsline {paragraph}{holy wars}{46}
-\contentsline {chapter}{I{\rmfamily \mdseries \\ }}{47}
-\contentsline {paragraph}{insanely great}{47}
-\contentsline {paragraph}{ITS}{47}
-\contentsline {chapter}{J{\rmfamily \mdseries \\ }}{48}
-\contentsline {chapter}{K{\rmfamily \mdseries \\ }}{49}
-\contentsline {paragraph}{killer poke}{49}
-\contentsline {paragraph}{kludge}{49}
-\contentsline {paragraph}{kluge}{49}
-\contentsline {chapter}{L{\rmfamily \mdseries \\ }}{51}
-\contentsline {paragraph}{lamer}{51}
-\contentsline {paragraph}{leech}{51}
-\contentsline {paragraph}{lose}{51}
-\contentsline {paragraph}{lossage}{51}
-\contentsline {chapter}{M{\rmfamily \mdseries \\ }}{52}
-\contentsline {paragraph}{management}{52}
-\contentsline {paragraph}{meeces}{52}
-\contentsline {paragraph}{moby}{52}
-\contentsline {paragraph}{mu}{52}
-\contentsline {paragraph}{MUD}{52}
-\contentsline {chapter}{N{\rmfamily \mdseries \\ }}{53}
-\contentsline {paragraph}{NAK}{53}
-\contentsline {paragraph}{newsgroup}{53}
-\contentsline {paragraph}{NIL}{53}
-\contentsline {chapter}{O{\rmfamily \mdseries \\ }}{54}
-\contentsline {chapter}{P{\rmfamily \mdseries \\ }}{55}
-\contentsline {paragraph}{PDP-10}{55}
-\contentsline {paragraph}{PHB}{55}
-\contentsline {paragraph}{phreaking}{55}
-\contentsline {paragraph}{ping}{56}
-\contentsline {paragraph}{pistol}{56}
-\contentsline {paragraph}{pointy-haired}{56}
-\contentsline {paragraph}{poser}{56}
-\contentsline {chapter}{Q{\rmfamily \mdseries \\ }}{57}
-\contentsline {chapter}{R{\rmfamily \mdseries \\ }}{58}
-\contentsline {paragraph}{random}{58}
-\contentsline {paragraph}{retrocomputing}{58}
-\contentsline {paragraph}{rude}{58}
-\contentsline {chapter}{S{\rmfamily \mdseries \\ }}{59}
-\contentsline {paragraph}{SNAFU principle}{59}
-\contentsline {paragraph}{stack}{59}
-\contentsline {paragraph}{Stupids}{59}
-\contentsline {paragraph}{suit}{59}
-\contentsline {chapter}{T{\rmfamily \mdseries \\ }}{60}
-\contentsline {paragraph}{T}{60}
-\contentsline {paragraph}{talk mode}{60}
-\contentsline {paragraph}{TECO}{60}
-\contentsline {paragraph}{TMRC}{61}
-\contentsline {paragraph}{toggle}{61}
-\contentsline {paragraph}{troglodyte}{61}
-\contentsline {paragraph}{TWENEX}{61}
-\contentsline {chapter}{U{\rmfamily \mdseries \\ }}{62}
-\contentsline {paragraph}{Unix}{62}
-\contentsline {paragraph}{Usenet}{62}
-\contentsline {paragraph}{UUCPNET}{62}
-\contentsline {chapter}{V{\rmfamily \mdseries \\ }}{63}
-\contentsline {paragraph}{VAXen}{63}
-\contentsline {paragraph}{vi}{63}
-\contentsline {paragraph}{VMS}{63}
-\contentsline {chapter}{W{\rmfamily \mdseries \\ }}{64}
-\contentsline {paragraph}{WAITS}{64}
-\contentsline {paragraph}{warez d00dz}{64}
-\contentsline {paragraph}{Weenix}{64}
-\contentsline {paragraph}{win}{64}
-\contentsline {paragraph}{wizard}{64}
-\contentsline {paragraph}{write-only language}{64}
-\contentsline {paragraph}{wtf}{64}
-\contentsline {chapter}{X{\rmfamily \mdseries \\ }}{65}
-\contentsline {chapter}{Y{\rmfamily \mdseries \\ }}{66}
-\contentsline {chapter}{Z{\rmfamily \mdseries \\ }}{67}
-\contentsline {paragraph}{old fart}{67}
+\contentsline {paragraph}{Ada}{39}
+\contentsline {paragraph}{address harvester}{40}
+\contentsline {paragraph}{adger}{40}
+\contentsline {paragraph}{admin}{40}
+\contentsline {paragraph}{ADVENT}{40}
+\contentsline {paragraph}{AFAIK}{40}
+\contentsline {paragraph}{AFJ}{40}
+\contentsline {paragraph}{AFK}{41}
+\contentsline {paragraph}{AI}{41}
+\contentsline {paragraph}{AI koans}{41}
+\contentsline {paragraph}{AI-complete}{41}
+\contentsline {paragraph}{AIDS}{41}
+\contentsline {paragraph}{AIDX}{41}
+\contentsline {paragraph}{airplane rule}{41}
+\contentsline {paragraph}{Alderson loop}{41}
+\contentsline {paragraph}{aliasing bug}{42}
+\contentsline {paragraph}{Alice and Bob}{42}
+\contentsline {paragraph}{all-elbows}{42}
+\contentsline {paragraph}{alpha geek}{42}
+\contentsline {paragraph}{alpha particles}{43}
+\contentsline {paragraph}{alt}{43}
+\contentsline {paragraph}{alt bit}{43}
+\contentsline {paragraph}{Aluminium Book}{43}
+\contentsline {paragraph}{ambimouseterous}{43}
+\contentsline {paragraph}{Amiga}{43}
+\contentsline {paragraph}{Amiga Persecution Complex}{43}
+\contentsline {paragraph}{amoeba}{44}
+\contentsline {paragraph}{amp off}{44}
+\contentsline {paragraph}{amper}{44}
+\contentsline {paragraph}{Angband}{44}
+\contentsline {paragraph}{angle brackets}{44}
+\contentsline {paragraph}{angry fruit salad}{44}
+\contentsline {paragraph}{annoybot}{45}
+\contentsline {paragraph}{ANSI}{45}
+\contentsline {paragraph}{ANSI standard}{45}
+\contentsline {paragraph}{ANSI standard pizza}{45}
+\contentsline {paragraph}{AOL!}{45}
+\contentsline {paragraph}{app}{45}
+\contentsline {paragraph}{arena}{45}
+\contentsline {paragraph}{ASCII}{46}
+\contentsline {chapter}{B{\rmfamily \mdseries \\ }}{47}
+\contentsline {paragraph}{B1FF}{47}
+\contentsline {paragraph}{background}{47}
+\contentsline {paragraph}{barf}{47}
+\contentsline {paragraph}{bboard}{47}
+\contentsline {paragraph}{BBS}{47}
+\contentsline {paragraph}{beam}{47}
+\contentsline {paragraph}{bignum}{47}
+\contentsline {paragraph}{bigot}{47}
+\contentsline {paragraph}{bit rot}{47}
+\contentsline {paragraph}{The BLAZE Humor Viewer}{47}
+\contentsline {paragraph}{BNF}{47}
+\contentsline {paragraph}{book titles}{47}
+\contentsline {paragraph}{bot}{47}
+\contentsline {paragraph}{boxen}{47}
+\contentsline {paragraph}{brain-damaged}{47}
+\contentsline {paragraph}{broket}{47}
+\contentsline {paragraph}{BSD}{48}
+\contentsline {paragraph}{bucky bits}{48}
+\contentsline {paragraph}{bug}{48}
+\contentsline {paragraph}{burble}{48}
+\contentsline {chapter}{C{\rmfamily \mdseries \\ }}{49}
+\contentsline {paragraph}{careware}{49}
+\contentsline {paragraph}{charityware}{49}
+\contentsline {paragraph}{choke}{49}
+\contentsline {paragraph}{chomp}{49}
+\contentsline {paragraph}{Classic C}{49}
+\contentsline {paragraph}{clone}{49}
+\contentsline {paragraph}{code grinder}{49}
+\contentsline {paragraph}{Commonwealth Hackish}{49}
+\contentsline {paragraph}{core}{49}
+\contentsline {paragraph}{cracker}{49}
+\contentsline {paragraph}{cracking}{49}
+\contentsline {paragraph}{crash}{49}
+\contentsline {paragraph}{crippleware}{49}
+\contentsline {paragraph}{crock}{49}
+\contentsline {paragraph}{cruft}{49}
+\contentsline {paragraph}{cuspy}{49}
+\contentsline {chapter}{D{\rmfamily \mdseries \\ }}{50}
+\contentsline {paragraph}{Datamation}{50}
+\contentsline {paragraph}{DEC}{50}
+\contentsline {paragraph}{droid}{50}
+\contentsline {paragraph}{dumbass attack}{50}
+\contentsline {chapter}{E{\rmfamily \mdseries \\ }}{51}
+\contentsline {paragraph}{elder days}{51}
+\contentsline {paragraph}{elegant}{51}
+\contentsline {paragraph}{elephantine}{51}
+\contentsline {paragraph}{elite}{51}
+\contentsline {paragraph}{ELIZA effect}{51}
+\contentsline {paragraph}{EMACS}{51}
+\contentsline {paragraph}{email}{51}
+\contentsline {paragraph}{ENQ}{51}
+\contentsline {paragraph}{elvish}{51}
+\contentsline {chapter}{F{\rmfamily \mdseries \\ }}{52}
+\contentsline {paragraph}{fandango on core}{52}
+\contentsline {paragraph}{feature key}{52}
+\contentsline {paragraph}{FidoNet}{52}
+\contentsline {paragraph}{flamage}{52}
+\contentsline {paragraph}{flame}{52}
+\contentsline {paragraph}{flame war}{52}
+\contentsline {paragraph}{flavorful}{52}
+\contentsline {paragraph}{foo}{52}
+\contentsline {paragraph}{foobar}{52}
+\contentsline {paragraph}{freeware}{52}
+\contentsline {paragraph}{frob}{52}
+\contentsline {paragraph}{frobnicate}{52}
+\contentsline {paragraph}{frobnitz}{52}
+\contentsline {paragraph}{FRS}{53}
+\contentsline {paragraph}{FTP}{53}
+\contentsline {chapter}{G{\rmfamily \mdseries \\ }}{54}
+\contentsline {paragraph}{GC}{54}
+\contentsline {paragraph}{gedanken}{54}
+\contentsline {paragraph}{Get a life!}{54}
+\contentsline {paragraph}{glob}{54}
+\contentsline {paragraph}{GNU}{54}
+\contentsline {paragraph}{GNU/Linux}{54}
+\contentsline {paragraph}{Gosperism}{54}
+\contentsline {paragraph}{grep}{54}
+\contentsline {paragraph}{guiltware}{54}
+\contentsline {chapter}{H{\rmfamily \mdseries \\ }}{55}
+\contentsline {paragraph}{ha ha only serious}{55}
+\contentsline {paragraph}{hack}{55}
+\contentsline {paragraph}{hacker humor}{55}
+\contentsline {paragraph}{HCF}{55}
+\contentsline {paragraph}{high moby}{55}
+\contentsline {paragraph}{holy wars}{55}
+\contentsline {paragraph}{HP-SUX}{55}
+\contentsline {chapter}{I{\rmfamily \mdseries \\ }}{56}
+\contentsline {paragraph}{ISO standard cup of tea}{56}
+\contentsline {paragraph}{infinite loop}{56}
+\contentsline {paragraph}{Infocom}{56}
+\contentsline {paragraph}{insanely great}{56}
+\contentsline {paragraph}{INTERCAL}{56}
+\contentsline {paragraph}{ITS}{56}
+\contentsline {chapter}{J{\rmfamily \mdseries \\ }}{57}
+\contentsline {chapter}{K{\rmfamily \mdseries \\ }}{58}
+\contentsline {paragraph}{K\&R}{58}
+\contentsline {paragraph}{killer app}{58}
+\contentsline {paragraph}{killer poke}{58}
+\contentsline {paragraph}{KISS Principle}{58}
+\contentsline {paragraph}{kludge}{58}
+\contentsline {paragraph}{kluge}{58}
+\contentsline {paragraph}{kremvax}{59}
+\contentsline {chapter}{L{\rmfamily \mdseries \\ }}{60}
+\contentsline {paragraph}{lamer}{60}
+\contentsline {paragraph}{leech}{60}
+\contentsline {paragraph}{LISP}{60}
+\contentsline {paragraph}{lose}{60}
+\contentsline {paragraph}{lossage}{60}
+\contentsline {chapter}{M{\rmfamily \mdseries \\ }}{61}
+\contentsline {paragraph}{Macintrash}{61}
+\contentsline {paragraph}{management}{61}
+\contentsline {paragraph}{meeces}{61}
+\contentsline {paragraph}{memory leak}{61}
+\contentsline {paragraph}{memory smash}{61}
+\contentsline {paragraph}{mess-dos}{61}
+\contentsline {paragraph}{meta bit}{61}
+\contentsline {paragraph}{moby}{61}
+\contentsline {paragraph}{monstrosity}{62}
+\contentsline {paragraph}{moria}{62}
+\contentsline {paragraph}{mu}{62}
+\contentsline {paragraph}{MUD}{62}
+\contentsline {chapter}{N{\rmfamily \mdseries \\ }}{63}
+\contentsline {paragraph}{nadger}{63}
+\contentsline {paragraph}{NAK}{63}
+\contentsline {paragraph}{nethack}{63}
+\contentsline {paragraph}{netiquette}{63}
+\contentsline {paragraph}{newbie}{63}
+\contentsline {paragraph}{newsgroup}{63}
+\contentsline {paragraph}{NIL}{63}
+\contentsline {paragraph}{Nominal Semidestructor}{63}
+\contentsline {paragraph}{NP--}{63}
+\contentsline {chapter}{O{\rmfamily \mdseries \\ }}{64}
+\contentsline {paragraph}{old fart}{64}
+\contentsline {paragraph}{operating system}{64}
+\contentsline {paragraph}{OSU}{64}
+\contentsline {paragraph}{overrun screw}{64}
+\contentsline {chapter}{P{\rmfamily \mdseries \\ }}{65}
+\contentsline {paragraph}{Pascal}{65}
+\contentsline {paragraph}{payware}{65}
+\contentsline {paragraph}{PDP-10}{65}
+\contentsline {paragraph}{PHB}{65}
+\contentsline {paragraph}{phreaking}{65}
+\contentsline {paragraph}{ping}{66}
+\contentsline {paragraph}{pistol}{66}
+\contentsline {paragraph}{plugh}{66}
+\contentsline {paragraph}{pointy-haired}{66}
+\contentsline {paragraph}{poser}{66}
+\contentsline {paragraph}{postcardware}{66}
+\contentsline {paragraph}{postmaster}{66}
+\contentsline {paragraph}{precedence lossage}{66}
+\contentsline {paragraph}{priesthood}{66}
+\contentsline {chapter}{Q{\rmfamily \mdseries \\ }}{67}
+\contentsline {chapter}{R{\rmfamily \mdseries \\ }}{68}
+\contentsline {paragraph}{random}{68}
+\contentsline {paragraph}{Random Number God}{68}
+\contentsline {paragraph}{Real World}{68}
+\contentsline {paragraph}{retrocomputing}{68}
+\contentsline {paragraph}{rogue}{68}
+\contentsline {paragraph}{rotary debugger}{68}
+\contentsline {paragraph}{rude}{68}
+\contentsline {chapter}{S{\rmfamily \mdseries \\ }}{69}
+\contentsline {paragraph}{ScumOS}{69}
+\contentsline {paragraph}{September that never ended}{69}
+\contentsline {paragraph}{SEX}{69}
+\contentsline {paragraph}{shareware}{69}
+\contentsline {paragraph}{smash the stack}{69}
+\contentsline {paragraph}{SNAFU principle}{69}
+\contentsline {paragraph}{spam}{69}
+\contentsline {paragraph}{stack}{69}
+\contentsline {paragraph}{stale pointer bug}{69}
+\contentsline {paragraph}{Stupids}{69}
+\contentsline {paragraph}{suit}{69}
+\contentsline {paragraph}{sun-stools}{69}
+\contentsline {paragraph}{sysop}{70}
+\contentsline {paragraph}{system mangler}{70}
+\contentsline {chapter}{T{\rmfamily \mdseries \\ }}{71}
+\contentsline {paragraph}{T}{71}
+\contentsline {paragraph}{talk mode}{71}
+\contentsline {paragraph}{TECO}{71}
+\contentsline {paragraph}{teergrube}{72}
+\contentsline {paragraph}{tenured graduate student}{72}
+\contentsline {paragraph}{TMRC}{72}
+\contentsline {paragraph}{toggle}{72}
+\contentsline {paragraph}{tool}{72}
+\contentsline {paragraph}{TOPS-10}{72}
+\contentsline {paragraph}{troglodyte}{72}
+\contentsline {paragraph}{Trojan horse}{72}
+\contentsline {paragraph}{troll}{72}
+\contentsline {paragraph}{TWENEX}{72}
+\contentsline {chapter}{U{\rmfamily \mdseries \\ }}{74}
+\contentsline {paragraph}{Unix}{74}
+\contentsline {paragraph}{Usenet}{74}
+\contentsline {paragraph}{USG Unix}{74}
+\contentsline {paragraph}{UUCPNET}{74}
+\contentsline {chapter}{V{\rmfamily \mdseries \\ }}{75}
+\contentsline {paragraph}{vadding}{75}
+\contentsline {paragraph}{VAXen}{75}
+\contentsline {paragraph}{vi}{75}
+\contentsline {paragraph}{video toaster}{75}
+\contentsline {paragraph}{virgin}{75}
+\contentsline {paragraph}{virus}{75}
+\contentsline {paragraph}{VMS}{75}
+\contentsline {chapter}{W{\rmfamily \mdseries \\ }}{76}
+\contentsline {paragraph}{WAITS}{76}
+\contentsline {paragraph}{warez d00dz}{76}
+\contentsline {paragraph}{weenie}{76}
+\contentsline {paragraph}{Weenix}{76}
+\contentsline {paragraph}{win}{76}
+\contentsline {paragraph}{wizard}{76}
+\contentsline {paragraph}{worm}{76}
+\contentsline {paragraph}{write-only language}{76}
+\contentsline {paragraph}{wtf}{76}
+\contentsline {chapter}{X{\rmfamily \mdseries \\ }}{77}
+\contentsline {paragraph}{X}{77}
+\contentsline {paragraph}{xyzzy}{77}
+\contentsline {chapter}{Y{\rmfamily \mdseries \\ }}{78}
+\contentsline {chapter}{Z{\rmfamily \mdseries \\ }}{79}
+\contentsline {paragraph}{Zork}{79}
+\contentsline {chapter}{0{\rmfamily \mdseries \\ }}{80}
+\contentsline {paragraph}{--ware}{80}

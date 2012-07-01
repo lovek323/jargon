@@ -1,6 +1,6 @@
 \documentclass{report}
 
-\usepackage{url,paralist,fancyhdr,xcolor,enumitem,textcomp,verbatim,longtable,multicol,scrextend,framed}
+\usepackage{url,paralist,fancyhdr,xcolor,enumitem,textcomp,verbatim,longtable,multicol,framed}
 \usepackage{xstring/xstring}
 \usepackage[margin=1in]{geometry}
 \usepackage[titles]{tocloft}
@@ -15,16 +15,30 @@
     \StrSubstitute{\entrylabel}{`}{}[\entrylabel]%
     \StrSubstitute{\entrylabel}{'}{}[\entrylabel]%
     \StrSubstitute{\entrylabel}{---}{-}[\entrylabel]%
+    \StrSubstitute{\entrylabel}{\&}{-}[\entrylabel]%
     \label{\entrylabel}}
 \newcommand*{\citeentry}[1]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
     \StrSubstitute{\temp}{`}{}[\temp]%
     \StrSubstitute{\temp}{'}{}[\temp]%
     \StrSubstitute{\temp}{---}{-}[\temp]%
+    \StrSubstitute{\temp}{\&}{-}[\temp]%
     {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{\temp}]}}
 \newcommand*{\citesense}[2]{%
     \StrSubstitute{#1-#2}{ }{-}[\temp]%
     {\small\sffamily\bfseries#1 (sense #2)}\superscript{\rmfamily\mdseries[\pageref{\temp}]}}
+\newcommand*{\citeappendix}[1]{%
+    \StrSubstitute{#1}{ }{-}[\temp]%
+    \StrSubstitute{\temp}{`}{}[\temp]%
+    \StrSubstitute{\temp}{'}{}[\temp]%
+    \StrSubstitute{\temp}{---}{-}[\temp]%
+    {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{appendix-\temp}]}}
+\newcommand*{\citechapter}[1]{%
+    \StrSubstitute{#1}{ }{-}[\temp]%
+    \StrSubstitute{\temp}{`}{}[\temp]%
+    \StrSubstitute{\temp}{'}{}[\temp]%
+    \StrSubstitute{\temp}{---}{-}[\temp]%
+    {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{chapter-\temp}]}}
 \newcommand*{\Chapter}[2]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
     \chapter*{#1}\label{chapter-\temp}
@@ -39,14 +53,14 @@
 \newcommand{\citeusenet}[7]
 {\hfill{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}}
 \newcommand{\citeusenetfn}[7]{{\footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
-\newenvironment{usenet}{\begin{addmargin}{0.5in}\raggedright\small\ttfamily}{\rmfamily\end{addmargin}}
+\newenvironment{usenet}{\raggedright\small\ttfamily}{\rmfamily}
 
 \definecolor{shadecolor}{HTML}{DDDDDD}
 \newenvironment{new}{\begin{oframed}{\footnotesize NOT IN THE JARGON FILE
 
 }}{\end{oframed}}
 
-\newenvironment{code}{\begin{addmargin}{0.5in}\raggedright\ttfamily}{\rmfamily\end{addmargin}}
+\newenvironment{code}{\raggedright\ttfamily}{\rmfamily}
 
 \renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
 
@@ -130,6 +144,7 @@
 	\Chapter{N}{}
     \input entries/n
 	\Chapter{O}{}
+	\input entries/o
 	\Chapter{P}{}
     \input entries/p
 	\Chapter{Q}{}
@@ -146,24 +161,26 @@
 	\Chapter{W}{}
 	\input entries/w
 	\Chapter{X}{}
+	\input entries/x
 	\Chapter{Y}{}
 	\Chapter{Z}{}
-
-    \mainentry{old fart}
+	\input entries/z
+	\Chapter{0}{}
+	\input entries/0
 
 
     \pagestyle{plain}
 
     \appendix
 
-    \chapter*{Appendix A}\label{Appendix-A}
+    \chapter*{Appendix A}\label{appendix-Appendix-A}
 	\input appendix-a
 
-    \chapter*{Appendix B}\label{Appendix-B}
+    \chapter*{Appendix B}\label{appendix-Appendix-B}
 
-    \chapter*{Appendix C}\label{Appendix-C}
+    \chapter*{Appendix C}\label{appendix-Appendix-C}
 
-    \chapter*{Bibliography}\label{Bibliography}
+    \chapter*{Bibliography}\label{appendix-Bibliography}
 
 	\chapter*{Some of the Best Usenet}
 
@@ -172,7 +189,7 @@
 		by Marty Knight\\
 		(Reprinted with permission of the Author)
 
-		`Twas the night before Christmas, sounds all through the house,\\
+		'Twas the night before Christmas, sounds all through the house,\\
 		the printer a'buzzing; the clicking of mouse.\\
 		The floppies were stored in their cases with care\\
 		in hopes that St. Wozniak soon would be there.\\
