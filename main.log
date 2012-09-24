@@ -1,15 +1,20 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.12)  1 JUL 2012 19:01
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.6.21)  10 JUL 2012 10:52
 entering extended mode
  %&-line parsing enabled.
 **main
 (./main.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/report.cls
+Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -24,11 +29,11 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+(/usr/share/texmf/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
 )
-(/usr/share/texmf-texlive/tex/latex/paralist/paralist.sty
+(/usr/share/texmf/tex/latex/paralist/paralist.sty
 Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \pltopsep=\skip43
 \plpartopsep=\skip44
@@ -36,7 +41,7 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 \plparsep=\skip46
 \pl@lab=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip47
 \f@ncyO@elh=\skip48
 \f@ncyO@erh=\skip49
@@ -50,15 +55,17 @@ Package: paralist 2002/03/18 v2.3b Extended list environments (BS)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/share/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count88
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
@@ -67,19 +74,17 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texmf-texlive/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2009/05/18 v2.2 Customized lists
-\enit@toks=\toks15
+(/usr/share/texmf/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2005/05/12 v1.1 Customized lists
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks15
 )
 \labelindent=\skip56
 \enit@outerparindent=\dimen103
-\enitdp@desc=\count88
 )
-(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+(/usr/share/texmf/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -94,7 +99,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+(/usr/share/texmf/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 266.
@@ -146,13 +151,13 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 )
-(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+(/usr/share/texmf/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks17
-\verbatim@line=\toks18
+\every@verbatim=\toks16
+\verbatim@line=\toks17
 \verbatim@in@stream=\read1
 )
-(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+(/usr/share/texmf/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip57
 \LTright=\skip58
@@ -168,10 +173,10 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LT@rows=\count91
 \c@LT@tables=\count92
 \c@LT@chunks=\count93
-\LT@p@ftn=\toks19
+\LT@p@ftn=\toks18
 )
-(/usr/share/texmf-texlive/tex/latex/tools/multicol.sty
-Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+(/usr/share/texmf/tex/latex/tools/multicol.sty
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
 \c@tracingmulticols=\count94
 \mult@box=\box30
 \multicol@leftmargin=\dimen105
@@ -217,117 +222,160 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \mult@nat@firstbox=\box54
 \colbreak@box=\box55
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/framed.sty
+(/usr/share/texmf/tex/latex/ltxmisc/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip63
 \fb@frw=\dimen113
 \fb@frh=\dimen114
 \FrameRule=\dimen115
 \FrameSep=\dimen116
+)
+(/usr/share/texmf/tex/latex/tools/calc.sty
+Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count102
+\calc@Bcount=\count103
+\calc@Adimen=\dimen117
+\calc@Bdimen=\dimen118
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count104
+\calc@Cskip=\skip66
+)
+(/usr/share/texmf/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/03/16 v1.6180 publication quality tables
+\heavyrulewidth=\dimen119
+\lightrulewidth=\dimen120
+\cmidrulewidth=\dimen121
+\belowrulesep=\dimen122
+\belowbottomsep=\dimen123
+\aboverulesep=\dimen124
+\abovetopsep=\dimen125
+\cmidrulesep=\dimen126
+\cmidrulekern=\dimen127
+\defaultaddspace=\dimen128
+\@cmidla=\count105
+\@cmidlb=\count106
+\@aboverulesep=\dimen129
+\@belowrulesep=\dimen130
+\@thisruleclass=\count107
+\@lastruleclass=\count108
+\@thisrulewidth=\dimen131
+)
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen132
+\extrarowheight=\dimen133
+\NC@list=\toks19
+\extratabsurround=\skip67
+\backup@length=\skip68
 ) (./xstring/xstring.sty
 (./xstring/xstring.tex
 \@xs@message=\write3
-\integerpart=\count102
-\decimalpart=\count103
+\integerpart=\count109
+\decimalpart=\count110
 )
 
 LaTeX Warning: You have requested package `xstring/xstring',
                but the package provides `xstring'.
 
 Package: xstring 2010/03/28  v1.5d  String manipulations (C Tellechea)
-) (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
-Package: geometry 2008/12/21 v4.2 Page Geometry
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode not detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
-Package ifvtex Info: VTeX not detected.
-)
-\Gm@cnth=\count104
-\Gm@cntv=\count105
-\c@Gm@tempcnt=\count106
-\Gm@bindingoffset=\dimen117
-\Gm@wd@mp=\dimen118
-\Gm@odd@mp=\dimen119
-\Gm@even@mp=\dimen120
+) (/usr/share/texmf/tex/latex/geometry/geometry.sty
+Package: geometry 2002/07/08 v3.2 Page Geometry
+\Gm@cnth=\count111
+\Gm@cntv=\count112
+\c@Gm@tempcnt=\count113
+\Gm@bindingoffset=\dimen134
+\Gm@wd@mp=\dimen135
+\Gm@odd@mp=\dimen136
+\Gm@even@mp=\dimen137
 \Gm@dimlist=\toks20
-)
-(/usr/share/texmf-texlive/tex/latex/tocloft/tocloft.sty
-Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
+
+(/usr/share/texmf/tex/xelatex/xetexconfig/geometry.cfg))
+(/usr/share/texmf/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2003/09/26 v2.3c parameterised ToC, etc., typesetting
 
 
 Package tocloft Note: The document has chapter divisions.
 
-\cftparskip=\skip64
-\cftbeforetoctitleskip=\skip65
-\cftaftertoctitleskip=\skip66
-\cftbeforepartskip=\skip67
-\cftpartnumwidth=\skip68
-\cftpartindent=\skip69
-\cftbeforechapskip=\skip70
-\cftchapindent=\skip71
-\cftchapnumwidth=\skip72
-\cftbeforesecskip=\skip73
-\cftsecindent=\skip74
-\cftsecnumwidth=\skip75
-\cftbeforesubsecskip=\skip76
-\cftsubsecindent=\skip77
-\cftsubsecnumwidth=\skip78
-\cftbeforesubsubsecskip=\skip79
-\cftsubsubsecindent=\skip80
-\cftsubsubsecnumwidth=\skip81
-\cftbeforeparaskip=\skip82
-\cftparaindent=\skip83
-\cftparanumwidth=\skip84
-\cftbeforesubparaskip=\skip85
-\cftsubparaindent=\skip86
-\cftsubparanumwidth=\skip87
-\cftbeforeloftitleskip=\skip88
-\cftafterloftitleskip=\skip89
-\cftbeforefigskip=\skip90
-\cftfigindent=\skip91
-\cftfignumwidth=\skip92
-\c@lofdepth=\count107
-\c@lotdepth=\count108
-\cftbeforelottitleskip=\skip93
-\cftafterlottitleskip=\skip94
-\cftbeforetabskip=\skip95
-\cfttabindent=\skip96
-\cfttabnumwidth=\skip97
-) (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+\cftparskip=\skip69
+\cftbeforetoctitleskip=\skip70
+\cftaftertoctitleskip=\skip71
+\cftbeforepartskip=\skip72
+\cftpartnumwidth=\skip73
+\cftpartindent=\skip74
+\cftbeforechapskip=\skip75
+\cftchapindent=\skip76
+\cftchapnumwidth=\skip77
+\cftbeforesecskip=\skip78
+\cftsecindent=\skip79
+\cftsecnumwidth=\skip80
+\cftbeforesubsecskip=\skip81
+\cftsubsecindent=\skip82
+\cftsubsecnumwidth=\skip83
+\cftbeforesubsubsecskip=\skip84
+\cftsubsubsecindent=\skip85
+\cftsubsubsecnumwidth=\skip86
+\cftbeforeparaskip=\skip87
+\cftparaindent=\skip88
+\cftparanumwidth=\skip89
+\cftbeforesubparaskip=\skip90
+\cftsubparaindent=\skip91
+\cftsubparanumwidth=\skip92
+\cftbeforeloftitleskip=\skip93
+\cftafterloftitleskip=\skip94
+\cftbeforefigskip=\skip95
+\cftfigindent=\skip96
+\cftfignumwidth=\skip97
+\c@lofdepth=\count114
+\c@lotdepth=\count115
+\cftbeforelottitleskip=\skip98
+\cftafterlottitleskip=\skip99
+\cftbeforetabskip=\skip100
+\cfttabindent=\skip101
+\cfttabnumwidth=\skip102
+) (/usr/share/texmf/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+(/usr/share/texmf/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 )) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 84.
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+(/usr/share/texmf/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    ... okay on input line 84.
 
-*geometry auto-detecting driver*
-*geometry detected driver: dvips*
+(/usr/share/texmf/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count116
+\scratchdimen=\dimen138
+\scratchbox=\box56
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen139
+\MPnumerator=\count120
+\everyMPtoPDFconversion=\toks21
+)
 -------------------- Geometry parameters
 paper: class default
 landscape: --
@@ -345,7 +393,7 @@ truedimen: --
 includehead: --
 includefoot: --
 includemp: --
-driver: dvips
+driver: pdftex
 -------------------- Page layout dimensions and switches
 \paperwidth  614.295pt
 \paperheight 794.96999pt
@@ -367,9 +415,9 @@ driver: dvips
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-(./preamble.tex
+ (./preamble.tex
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+ (/usr/share/texmf/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -378,452 +426,1291 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 22.
 ) [1
 
-]
-(./main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 4.
- [2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 44--44
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--115
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--193
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--201
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--207
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--220
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--231
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--253
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--254
- []  
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--279
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 307--307
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--317
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 320--320
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 321--321
- []  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--323
- []  
- []
-
-)
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [4] (./introduction.tex
+ [2
+
+] (./introduction.tex
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 12.
- (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
+
+(/usr/share/texmf/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-[5
 
-]) [6] (./a-few-terms.tex [7
+LaTeX Warning: Reference `suit' on page 3 undefined on input line 12.
 
-]) [8] (./revision-history.tex [9
 
-] [10] [11])
-[12] [13
+LaTeX Warning: Reference `kludge' on page 3 undefined on input line 20.
 
-] (./jargon-construction.tex [14
 
-] [15] [16] [17]) [18]
-(./hacker-writing-style.tex [19
+LaTeX Warning: Reference `elegant' on page 3 undefined on input line 20.
 
-] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 181--185
-[]\T1/cmtt/m/n/9 I'm now employed, but I'm responsible for my employer's opinio
-ns, not vice versa.
- []
-
-[22]) [23] (./email-quotes.tex [24
-
-]) [25] (./hacker-speech-style.tex) [26
+[3
 
 ]
-(./international-style.tex) [27
 
-] (./lamer-speak.tex [28
+LaTeX Warning: Reference `appendix-Appendix-A' on page 4 undefined on input lin
+e 60.
 
-]) [29] [30
+
+LaTeX Warning: Reference `appendix-Appendix-B' on page 4 undefined on input lin
+e 61.
+
+
+LaTeX Warning: Reference `appendix-Bibliography' on page 4 undefined on input l
+ine 61.
+
+) [4] (./a-few-terms.tex [5
 
 ]
-(./pronunciation-guide.tex [31
 
-]) [32] (./other-lexicon-conventions.tex [33
+LaTeX Warning: Reference `kluge' on page 6 undefined on input line 43.
+
+
+LaTeX Warning: Reference `cruft' on page 6 undefined on input line 43.
+
+
+LaTeX Warning: Reference `foo' on page 6 undefined on input line 43.
+
+) [6] (./revision-history.tex
+
+LaTeX Warning: Reference `frob' on page 7 undefined on input line 7.
+
+
+LaTeX Warning: Reference `moby' on page 7 undefined on input line 7.
+
+
+LaTeX Warning: Reference `FTP' on page 7 undefined on input line 11.
+
+
+LaTeX Warning: Reference `TWENEX' on page 7 undefined on input line 41.
+
+
+LaTeX Warning: Reference `ITS' on page 7 undefined on input line 41.
+
+[7
 
 ]
-[34]) [35] (./format-for-new-entries.tex) [36
 
-] [37
+LaTeX Warning: Reference `TWENEX' on page 8 undefined on input line 44.
+
+
+LaTeX Warning: Reference `appendix-Some-AI-Koans' on page 8 undefined on input 
+line 54.
+
+
+LaTeX Warning: Reference `appendix-Appendix-A' on page 8 undefined on input lin
+e 54.
+
+
+LaTeX Warning: Reference `Usenet' on page 8 undefined on input line 70.
+
+[8] [9]) [10] [11
+
+] (./jargon-construction.tex
+
+LaTeX Warning: Reference `win' on page 12 undefined on input line 25.
+
+
+LaTeX Warning: Reference `lose' on page 12 undefined on input line 25.
+
+
+LaTeX Warning: Reference `hack' on page 12 undefined on input line 25.
+
+
+LaTeX Warning: Reference `flame' on page 12 undefined on input line 25.
+
+
+LaTeX Warning: Reference `barf' on page 12 undefined on input line 26.
+
+
+LaTeX Warning: Reference `chomp' on page 12 undefined on input line 26.
+
+
+LaTeX Warning: Reference `Usenet' on page 12 undefined on input line 37.
+
+[12
+
+]
+
+LaTeX Warning: Reference `flavorful' on page 13 undefined on input line 53.
+
+
+LaTeX Warning: Reference `T' on page 13 undefined on input line 84.
+
+
+LaTeX Warning: Reference `NIL' on page 13 undefined on input line 85.
+
+[13]
+
+LaTeX Warning: Reference `Gosperism' on page 14 undefined on input line 113.
+
+
+LaTeX Warning: Reference `grep' on page 14 undefined on input line 121.
+
+[14]
+
+LaTeX Warning: Reference `meeces' on page 15 undefined on input line 182.
+
+
+LaTeX Warning: Reference `VAXen' on page 15 undefined on input line 185.
+
+
+LaTeX Warning: Reference `boxen' on page 15 undefined on input line 186.
+
+
+LaTeX Warning: Reference `frobnitz' on page 15 undefined on input line 187.
+
+
+LaTeX Warning: Reference `Unix' on page 15 undefined on input line 188.
+
+
+LaTeX Warning: Reference `TWENEX' on page 15 undefined on input line 188.
+
+[15]
+
+LaTeX Warning: Reference `lossage' on page 16 undefined on input line 242.
+
+) [16] (./hacker-writing-style.tex
+
+LaTeX Warning: Reference `vi' on page 17 undefined on input line 16.
+
+[17
+
+]
+
+LaTeX Warning: Reference `email' on page 18 undefined on input line 47.
+
+
+LaTeX Warning: Reference `lossage' on page 18 undefined on input line 51.
+
+
+LaTeX Warning: Reference `talk-mode' on page 18 undefined on input line 64.
+
+
+LaTeX Warning: Reference `BNF' on page 18 undefined on input line 81.
+
+
+LaTeX Warning: Reference `random' on page 18 undefined on input line 84.
+
+
+LaTeX Warning: Reference `BNF' on page 18 undefined on input line 85.
+
+[18]
+
+LaTeX Warning: Reference `MUD' on page 19 undefined on input line 133.
+
+[19]
+
+LaTeX Warning: Reference `flame' on page 20 undefined on input line 170.
+
+
+LaTeX Warning: Reference `random' on page 20 undefined on input line 213.
+
+[20]) [21] (./email-quotes.tex
+
+LaTeX Warning: Reference `holy-wars' on page 22 undefined on input line 27.
+
+[22
+
+]) [23] (./hacker-speech-style.tex
+
+LaTeX Warning: Reference `mu' on page 24 undefined on input line 26.
+
+) [24
+
+] (./international-style.tex
+
+LaTeX Warning: Reference `Commonwealth-Hackish' on page 25 undefined on input l
+ine 7.
+
+) [25
+
+] (./lamer-speak.tex
+
+LaTeX Warning: Reference `cracker' on page 26 undefined on input line 2.
+
+
+LaTeX Warning: Reference `warez-d00dz' on page 26 undefined on input line 3.
+
+
+LaTeX Warning: Reference `warez-d00dz' on page 26 undefined on input line 10.
+
+
+LaTeX Warning: Reference `B1FF' on page 26 undefined on input line 29.
+
+
+LaTeX Warning: Reference `BBS' on page 26 undefined on input line 29.
+
+
+LaTeX Warning: Reference `lamer' on page 26 undefined on input line 41.
+
+
+LaTeX Warning: Reference `elite' on page 26 undefined on input line 41.
+
+
+LaTeX Warning: Reference `leech' on page 26 undefined on input line 41.
+
+
+LaTeX Warning: Reference `poser' on page 26 undefined on input line 41.
+
+
+LaTeX Warning: Reference `cracker' on page 26 undefined on input line 42.
+
+
+LaTeX Warning: Reference `warez-d00dz' on page 26 undefined on input line 42.
+
+[26
+
+]) [27] [28
+
+] (./pronunciation-guide.tex [29
+
+]) [30]
+(./other-lexicon-conventions.tex [31
+
+]
+
+LaTeX Warning: Reference `FidoNet' on page 32 undefined on input line 102.
+
+
+LaTeX Warning: Reference `Usenet' on page 32 undefined on input line 132.
+
+
+LaTeX Warning: Reference `Unix' on page 32 undefined on input line 143.
+
+
+LaTeX Warning: Reference `PDP-10' on page 32 undefined on input line 143.
+
+[32]) [33] (./format-for-new-entries.tex) [34
 
 ] (./entries/a.tex
 (./entries/a/abbrev.tex) (./entries/a/abend.tex
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
-[]\T1/cmtt/m/n/9 We have the IBM 370 C compiler written by Bell Labs. When runn
-ing under "MVS" it works fine.
+
+LaTeX Warning: Reference `crash' on page 35 undefined on input line 5.
+
+
+LaTeX Warning: Reference `lossage' on page 35 undefined on input line 5.
+
+
+LaTeX Warning: Reference `code-grinder' on page 35 undefined on input line 6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+ []\T1/cmtt/m/n/9 We have the IBM 370 C compiler written by Bell Labs. When run
+ning under "MVS" it works fine. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--22
-\T1/cmtt/m/n/9 We wrote and compiled a program under "MVS". This took a second 
-to compile ,link and run ...
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
+ \T1/cmtt/m/n/9 We wrote and compiled a program under "MVS". This took a second
+ to compile ,link and run ... 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--31
-[]\T1/cmtt/m/n/9 As I said in my response to Douglas Reay, having realized that
- I've offended people through my
+Underfull \hbox (badness 10000) in paragraph at lines 24--29
+ []\T1/cmtt/m/n/9 As I said in my response to Douglas Reay, having realized tha
+t I've offended people through my 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--31
-\T1/cmtt/m/n/9 deliberate obnoxiousness, I am going to take myself out of the s
-ituation. If I were less of
+Underfull \hbox (badness 10000) in paragraph at lines 24--29
+ \T1/cmtt/m/n/9 deliberate obnoxiousness, I am going to take myself out of the 
+situation. If I were less of 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--31
-\T1/cmtt/m/n/9 a hypocrite, I'd resolve to stay away forever, but I don't have 
-the strength of character to
+Underfull \hbox (badness 10000) in paragraph at lines 24--29
+ \T1/cmtt/m/n/9 a hypocrite, I'd resolve to stay away forever, but I don't have
+ the strength of character to 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--31
-\T1/cmtt/m/n/9 do that. Instead, I'll resolve to remain silent at least through
- the end of August, except to
+Underfull \hbox (badness 10000) in paragraph at lines 24--29
+ \T1/cmtt/m/n/9 do that. Instead, I'll resolve to remain silent at least throug
+h the end of August, except to 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--40
-[]\T1/cmtt/m/n/9 I have just seen the character demo of TRITON's new game "Into
- the Shadows". Now I understand
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+ []\T1/cmtt/m/n/9 I have just seen the character demo of TRITON's new game "Int
+o the Shadows". Now I understand 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--40
-\T1/cmtt/m/n/9 why Triton has been absend so long. I am not that much into role
- playing games, so I don't
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+ \T1/cmtt/m/n/9 why Triton has been absend so long. I am not that much into rol
+e playing games, so I don't 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--40
-\T1/cmtt/m/n/9 know what the standards are today, but the movement and animatio
-n of the characters in the demo
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+ \T1/cmtt/m/n/9 know what the standards are today, but the movement and animati
+on of the characters in the demo 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--40
-\T1/cmtt/m/n/9 are fantastic. That's what I call realistic. So Triton spent the
-ir time well the last, well,
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+ \T1/cmtt/m/n/9 are fantastic. That's what I call realistic. So Triton spent th
+eir time well the last, well, 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--40
-\T1/cmtt/m/n/9 two years. For all of you who haven't seen it yet: Don't waste a
-ny more time and download it
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+ \T1/cmtt/m/n/9 two years. For all of you who haven't seen it yet: Don't waste 
+any more time and download it 
  []
 
-) (./entries/a/accumulator.tex [38
+) (./entries/a/accumulator.tex [35
 
-]) (./entries/a/ack.tex)
-(./entries/a/acme.tex) (./entries/a/acolyte.tex) (./entries/a/ad-hockery.tex)
-(./entries/a/ada.tex [39]) (./entries/a/address harvester.tex)
-(./entries/a/adger.tex) (./entries/a/admin.tex) (./entries/a/advent.tex)
-(./entries/a/afaik.tex) (./entries/a/afj.tex) (./entries/a/afk.tex [40])
-(./entries/a/ai.tex) (./entries/a/ai koans.tex) (./entries/a/ai-complete.tex)
-(./entries/a/aids.tex) (./entries/a/aidx.tex) (./entries/a/airplane rule.tex)
-(./entries/a/alderson loop.tex [41]) (./entries/a/aliasing bug.tex)
-(./entries/a/alice and bob.tex) (./entries/a/all-elbows.tex)
-(./entries/a/alpha geek.tex) (./entries/a/alpha particles.tex [42])
-(./entries/a/alt.tex) (./entries/a/alt bit.tex) (./entries/a/aluminium book.tex
-) (./entries/a/ambimouseterous.tex) (./entries/a/amiga.tex)
-(./entries/a/amiga persecution complex.tex [43]) (./entries/a/amoeba.tex)
-(./entries/a/amp off.tex) (./entries/a/amper.tex) (./entries/a/angband.tex)
-(./entries/a/angle brackets.tex) (./entries/a/angry fruit salad.tex)
-(./entries/a/annoybot.tex) (./entries/a/ansi.tex [44])
-(./entries/a/ansi standard.tex) (./entries/a/ansi standard pizza.tex)
-(./entries/a/aol!.tex) (./entries/a/app.tex) (./entries/a/arena.tex)
-(./entries/a/arg.tex [45]) (./entries/a/armm.tex) (./entries/a/ascii.tex))
-[46] (./entries/b.tex (./entries/b/b1ff.tex) (./entries/b/background.tex)
-(./entries/b/barf.tex) (./entries/b/bboard.tex) (./entries/b/bbs.tex)
-(./entries/b/beam.tex) (./entries/b/bignum.tex) (./entries/b/bigot.tex)
-(./entries/b/bit rot.tex) (./entries/b/blaze humor viewer.tex)
-(./entries/b/bnf.tex) (./entries/b/book titles.tex) (./entries/b/bot.tex)
-(./entries/b/boxen.tex) (./entries/b/brain-damaged.tex) (./entries/b/broket.tex
-) (./entries/b/bsd.tex) (./entries/b/bucky bits.tex [47
+]
 
-]) (./entries/b/bug.tex) (./entries/b/burble.tex)) [48] (./entries/c.tex (./ent
-ries/c/cancelbot.tex)
+LaTeX Warning: Reference `stack' on page 36 undefined on input line 13.
+
+) (./entries/a/ack.tex
+
+LaTeX Warning: Reference `ping' on page 36 undefined on input line 5.
+
+
+LaTeX Warning: Reference `ENQ' on page 36 undefined on input line 5.
+
+
+LaTeX Warning: Reference `NAK' on page 36 undefined on input line 8.
+
+
+LaTeX Warning: Reference `talk-mode' on page 36 undefined on input line 13.
+
+
+LaTeX Warning: Reference `NAK-2' on page 36 undefined on input line 13.
+
+) (./entries/a/acme.tex
+
+LaTeX Warning: Reference `insanely-great' on page 36 undefined on input line 6.
+
+
+
+LaTeX Warning: Reference `insanely-great' on page 36 undefined on input line 6.
+
+
+
+LaTeX Warning: Reference `pistol' on page 36 undefined on input line 7.
+
+) (./entries/a/acolyte.tex
+
+LaTeX Warning: Reference `OSU' on page 36 undefined on input line 3.
+
+
+LaTeX Warning: Reference `priesthood' on page 36 undefined on input line 3.
+
+) (./entries/a/ad-hockery.tex
+
+LaTeX Warning: Reference `choke' on page 36 undefined on input line 8.
+
+
+LaTeX Warning: Reference `ELIZA-effect' on page 36 undefined on input line 10.
+
+) (./entries/a/ada.tex
+
+LaTeX Warning: Reference `Pascal' on page 36 undefined on input line 3.
+
+
+LaTeX Warning: Reference `elephantine' on page 36 undefined on input line 9.
+
+[36]) (./entries/a/address harvester.tex
+
+LaTeX Warning: Reference `spam' on page 37 undefined on input line 4.
+
+
+LaTeX Warning: Reference `teergrube' on page 37 undefined on input line 5.
+
+) (./entries/a/adger.tex
+
+LaTeX Warning: Reference `nadger' on page 37 undefined on input line 3.
+
+
+LaTeX Warning: Reference `tenured-graduate-student' on page 37 undefined on inp
+ut line 3.
+
+
+LaTeX Warning: Reference `dumbass-attack' on page 37 undefined on input line 5.
+
+
+) (./entries/a/admin.tex
+
+LaTeX Warning: Reference `postmaster' on page 37 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sysop' on page 37 undefined on input line 5.
+
+
+LaTeX Warning: Reference `system-mangler' on page 37 undefined on input line 5.
+
+
+) (./entries/a/advent.tex
+
+LaTeX Warning: Reference `PDP-10' on page 37 undefined on input line 3.
+
+
+LaTeX Warning: Reference `INTERCAL' on page 37 undefined on input line 5.
+
+
+LaTeX Warning: Reference `TOPS-10' on page 37 undefined on input line 5.
+
+
+LaTeX Warning: Reference `vadding' on page 37 undefined on input line 6.
+
+
+LaTeX Warning: Reference `Zork' on page 37 undefined on input line 6.
+
+
+LaTeX Warning: Reference `Infocom' on page 37 undefined on input line 6.
+
+
+LaTeX Warning: Reference `xyzzy' on page 37 undefined on input line 10.
+
+
+LaTeX Warning: Reference `plugh' on page 37 undefined on input line 11.
+
+) (./entries/a/afaik.tex) (./entries/a/afj.tex [37]
+
+LaTeX Warning: Reference `kremvax' on page 38 undefined on input line 3.
+
+) (./entries/a/afk.tex) (./entries/a/ai.tex) (./entries/a/ai koans.tex
+
+LaTeX Warning: Reference `appendix-Some-AI-Koans' on page 38 undefined on input
+ line 4.
+
+
+LaTeX Warning: Reference `ha-ha-only-serious' on page 38 undefined on input lin
+e 4.
+
+
+LaTeX Warning: Reference `mu' on page 38 undefined on input line 4.
+
+
+LaTeX Warning: Reference `hacker-humor' on page 38 undefined on input line 5.
+
+) (./entries/a/ai-complete.tex
+
+LaTeX Warning: Reference `NP--' on page 38 undefined on input line 3.
+
+
+LaTeX Warning: Reference `gedanken' on page 38 undefined on input line 9.
+
+) (./entries/a/aids.tex
+
+LaTeX Warning: Reference `glob' on page 38 undefined on input line 3.
+
+
+LaTeX Warning: Reference `SEX' on page 38 undefined on input line 4.
+
+
+LaTeX Warning: Reference `virus' on page 38 undefined on input line 4.
+
+
+LaTeX Warning: Reference `worm' on page 38 undefined on input line 4.
+
+
+LaTeX Warning: Reference `Trojan-horse' on page 38 undefined on input line 4.
+
+
+LaTeX Warning: Reference `virgin' on page 38 undefined on input line 5.
+
+) (./entries/a/aidx.tex
+
+LaTeX Warning: Reference `BSD' on page 38 undefined on input line 5.
+
+
+LaTeX Warning: Reference `USG-Unix' on page 38 undefined on input line 5.
+
+
+LaTeX Warning: Reference `monstrosity' on page 38 undefined on input line 5.
+
+
+LaTeX Warning: Reference `HP-SUX' on page 38 undefined on input line 7.
+
+
+LaTeX Warning: Reference `Macintrash' on page 38 undefined on input line 7.
+
+
+LaTeX Warning: Reference `Nominal-Semidestructor' on page 38 undefined on input
+ line 8.
+
+
+LaTeX Warning: Reference `ScumOS' on page 38 undefined on input line 8.
+
+
+LaTeX Warning: Reference `sun-stools' on page 38 undefined on input line 8.
+
+) (./entries/a/airplane rule.tex
+
+LaTeX Warning: Reference `KISS-Principle' on page 38 undefined on input line 6.
+
+
+
+LaTeX Warning: Reference `elegant' on page 38 undefined on input line 6.
+
+[38]) (./entries/a/alderson loop.tex
+
+LaTeX Warning: Reference `infinite-loop' on page 39 undefined on input line 3.
+
+) (./entries/a/aliasing bug.tex
+
+LaTeX Warning: Reference `arena' on page 39 undefined on input line 6.
+
+
+LaTeX Warning: Reference `LISP' on page 39 undefined on input line 7.
+
+
+LaTeX Warning: Reference `GC' on page 39 undefined on input line 7.
+
+
+LaTeX Warning: Reference `stale-pointer-bug' on page 39 undefined on input line
+ 8.
+
+
+LaTeX Warning: Reference `precedence-lossage' on page 39 undefined on input lin
+e 8.
+
+
+LaTeX Warning: Reference `smash-the-stack' on page 39 undefined on input line 8
+.
+
+
+LaTeX Warning: Reference `fandango-on-core' on page 39 undefined on input line 
+8.
+
+
+LaTeX Warning: Reference `memory-leak' on page 39 undefined on input line 8.
+
+
+LaTeX Warning: Reference `memory-smash' on page 39 undefined on input line 9.
+
+
+LaTeX Warning: Reference `overrun-screw' on page 39 undefined on input line 9.
+
+
+LaTeX Warning: Reference `spam' on page 39 undefined on input line 9.
+
+) (./entries/a/alice and bob.tex) (./entries/a/all-elbows.tex
+
+LaTeX Warning: Reference `BBS' on page 39 undefined on input line 4.
+
+
+LaTeX Warning: Reference `rude' on page 39 undefined on input line 6.
+
+
+LaTeX Warning: Reference `mess-dos' on page 39 undefined on input line 6.
+
+) (./entries/a/alpha geek.tex [39]) (./entries/a/alpha particles.tex
+
+LaTeX Warning: Reference `bit-rot' on page 40 undefined on input line 3.
+
+) (./entries/a/alt.tex
+
+LaTeX Warning: Reference `clone' on page 40 undefined on input line 4.
+
+
+LaTeX Warning: Reference `bucky-bits-2' on page 40 undefined on input line 4.
+
+
+LaTeX Warning: Reference `feature-key' on page 40 undefined on input line 7.
+
+
+LaTeX Warning: Reference `TECO' on page 40 undefined on input line 10.
+
+) (./entries/a/alt bit.tex
+
+LaTeX Warning: Reference `meta-bit' on page 40 undefined on input line 3.
+
+) (./entries/a/aluminium book.tex
+
+LaTeX Warning: Reference `book-titles' on page 40 undefined on input line 5.
+
+) (./entries/a/ambimouseterous.tex) (./entries/a/amiga.tex
+
+LaTeX Warning: Reference `Amiga-Persecution-Complex' on page 40 undefined on in
+put line 8.
+
+
+LaTeX Warning: Reference `The-BLAZE-Humor-Viewer' on page 40 undefined on input
+ line 9.
+
+
+LaTeX Warning: Reference `video-toaster' on page 40 undefined on input line 11.
+
+
+) (./entries/a/amiga persecution complex.tex [40]
+
+LaTeX Warning: Reference `bigot' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Reference `flame-war' on page 41 undefined on input line 6.
+
+
+LaTeX Warning: Reference `LISP' on page 41 undefined on input line 7.
+
+
+LaTeX Warning: Reference `GNU' on page 41 undefined on input line 8.
+
+
+LaTeX Warning: Reference `GNU/Linux' on page 41 undefined on input line 8.
+
+
+LaTeX Warning: Reference `newbie' on page 41 undefined on input line 9.
+
+
+LaTeX Warning: Reference `troll' on page 41 undefined on input line 9.
+
+
+LaTeX Warning: Reference `holy-wars' on page 41 undefined on input line 9.
+
+
+LaTeX Warning: Reference `weenie' on page 41 undefined on input line 9.
+
+
+LaTeX Warning: Reference `Get-a-life!' on page 41 undefined on input line 9.
+
+) (./entries/a/amoeba.tex) (./entries/a/amp off.tex
+
+LaTeX Warning: Reference `background' on page 41 undefined on input line 3.
+
+) (./entries/a/amper.tex
+
+LaTeX Warning: Reference `ASCII' on page 41 undefined on input line 3.
+
+) (./entries/a/angband.tex
+
+LaTeX Warning: Reference `nethack' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Reference `moria' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Reference `rogue' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Reference `elder-days' on page 41 undefined on input line 5.
+
+
+LaTeX Warning: Reference `elvish' on page 41 undefined on input line 5.
+
+
+LaTeX Warning: Reference `Random-Number-God' on page 41 undefined on input line
+ 12.
+
+) (./entries/a/angle brackets.tex
+
+LaTeX Warning: Reference `Real-World' on page 41 undefined on input line 2.
+
+
+LaTeX Warning: Reference `broket' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Reference `ASCII' on page 41 undefined on input line 3.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 9.
+[41]) (./entries/a/angry fruit salad.tex
+
+LaTeX Warning: Reference `X' on page 42 undefined on input line 4.
+
+) (./entries/a/annoybot.tex
+
+LaTeX Warning: Reference `bot' on page 42 undefined on input line 3.
+
+) (./entries/a/ansi.tex
+
+LaTeX Warning: Reference `K-R' on page 42 undefined on input line 5.
+
+
+LaTeX Warning: Reference `Classic-C' on page 42 undefined on input line 5.
+
+) (./entries/a/ansi standard.tex) (./entries/a/ansi standard pizza.tex
+
+LaTeX Warning: Reference `rotary-debugger' on page 42 undefined on input line 4
+.
+
+
+LaTeX Warning: Reference `ISO-standard-cup-of-tea' on page 42 undefined on inpu
+t line 4.
+
+) (./entries/a/aol!.tex
+
+LaTeX Warning: Reference `September-that-never-ended' on page 42 undefined on i
+nput line 10.
+
+) (./entries/a/app.tex [42]
+
+LaTeX Warning: Reference `killer-app' on page 43 undefined on input line 7.
+
+
+LaTeX Warning: Reference `tool' on page 43 undefined on input line 7.
+
+
+LaTeX Warning: Reference `operating-system' on page 43 undefined on input line 
+7.
+
+) (./entries/a/arena.tex) (./entries/a/arg.tex
+
+LaTeX Warning: Reference `param' on page 43 undefined on input line 2.
+
+
+LaTeX Warning: Reference `parm' on page 43 undefined on input line 2.
+
+
+LaTeX Warning: Reference `var' on page 43 undefined on input line 3.
+
+) (./entries/a/armm.tex
+
+LaTeX Warning: Reference `cancelbot' on page 43 undefined on input line 3.
+
+
+LaTeX Warning: Reference `spam' on page 43 undefined on input line 6.
+
+
+LaTeX Warning: Reference `cascade' on page 43 undefined on input line 9.
+
+
+LaTeX Warning: Reference `despew' on page 43 undefined on input line 14.
+
+
+LaTeX Warning: Reference `Great-Worm' on page 43 undefined on input line 16.
+
+
+LaTeX Warning: Reference `sorcerers-apprentice-mode' on page 43 undefined on in
+put line 16.
+
+
+LaTeX Warning: Reference `software-laser' on page 43 undefined on input line 16
+.
+
+
+LaTeX Warning: Reference `network-meltdown' on page 43 undefined on input line 
+17.
+
+) (./entries/a/armor-plated.tex
+
+LaTeX Warning: Reference `bulletproof' on page 43 undefined on input line 3.
+
+) (./entries/a/asbestos.tex
+
+LaTeX Warning: Reference `flame' on page 43 undefined on input line 3.
+
+
+LaTeX Warning: Reference `flame' on page 43 undefined on input line 3.
+
+
+LaTeX Warning: Reference `asbestos-longjohns' on page 43 undefined on input lin
+e 4.
+
+
+LaTeX Warning: Reference `asbestos-cork-award' on page 43 undefined on input li
+ne 4.
+
+) (./entries/a/asbestos cork award.tex
+
+LaTeX Warning: Reference `flamer' on page 43 undefined on input line 3.
+
+
+LaTeX Warning: Reference `flame' on page 43 undefined on input line 5.
+
+) (./entries/a/asbestos longjohns.tex [43]
+
+LaTeX Warning: Reference `Usenet' on page 44 undefined on input line 3.
+
+
+LaTeX Warning: Reference `asbestos' on page 44 undefined on input line 4.
+
+) (./entries/a/ascii.tex
+
+LaTeX Warning: Reference `win' on page 44 undefined on input line 5.
+
+
+LaTeX Warning: Reference `EBCDIC' on page 44 undefined on input line 7.
+
+
+LaTeX Warning: Reference `bang' on page 44 undefined on input line 12.
+
+
+LaTeX Warning: Reference `excl' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `open' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `ques' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `semi' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `shriek' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `splat' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `twiddle' on page 44 undefined on input line 13.
+
+
+LaTeX Warning: Reference `Yu-Shiang-Whole-Fish' on page 44 undefined on input l
+ine 14.
+
+
+LaTeX Warning: Reference `INTERCAL' on page 44 undefined on input line 19.
+
+
+LaTeX Warning: Reference `bang' on page 44 undefined on input line 29.
+
+
+LaTeX Warning: Reference `crunch' on page 44 undefined on input line 33.
+
+
+LaTeX Warning: Reference `splat' on page 44 undefined on input line 42.
+
+
+LaTeX Warning: Reference `glob' on page 44 undefined on input line 42.
+
+
+LaTeX Warning: Reference `Nathan-Hale' on page 44 undefined on input line 43.
+
+
+LaTeX Warning: Reference `ques' on page 44 undefined on input line 54.
+
+
+Underfull \vbox (badness 10000) detected at line 57
+ []
+
+[44]
+
+LaTeX Warning: Reference `Commonwealth-Hackish' on page 45 undefined on input l
+ine 73.
+
+
+LaTeX Warning: Reference `ha-ha-only-serious' on page 45 undefined on input lin
+e 77.
+
+
+LaTeX Warning: Reference `angle-brackets' on page 45 undefined on input line 84
+.
+
+[45]
+
+LaTeX Warning: Reference `splat' on page 46 undefined on input line 97.
+
+
+LaTeX Warning: Reference `misfeature' on page 46 undefined on input line 100.
+
+
+LaTeX Warning: Reference `software-rot' on page 46 undefined on input line 101.
+
+
+) (./entries/a/ascii art.tex
+
+LaTeX Warning: Reference `boxology' on page 46 undefined on input line 4.
+
+[46]
+
+LaTeX Warning: Reference `warlording' on page 47 undefined on input line 100.
+
+) (./entries/a/asciibetical order.tex [47]) (./entries/a/astroturfing.tex)
+(./entries/a/atomic.tex) (./entries/a/attoparsec.tex
+
+LaTeX Warning: Reference `microfortnight' on page 48 undefined on input line 4.
+
+
+
+LaTeX Warning: Reference `micro--' on page 48 undefined on input line 5.
+
+) (./entries/a/aup.tex) (./entries/a/autobogotiphobia.tex
+
+LaTeX Warning: Reference `bogotify' on page 48 undefined on input line 3.
+
+) (./entries/a/automagically.tex
+
+LaTeX Warning: Reference `magic' on page 48 undefined on input line 4.
+
+) (./entries/a/avatar.tex [48]
+
+LaTeX Warning: Reference `cyberspace' on page 49 undefined on input line 5.
+
+
+LaTeX Warning: Reference `MUD' on page 49 undefined on input line 6.
+
+
+LaTeX Warning: Reference `root' on page 49 undefined on input line 7.
+
+
+LaTeX Warning: Reference `superuser' on page 49 undefined on input line 7.
+
+) (./entries/a/awk.tex
+
+LaTeX Warning: Reference `Perl' on page 49 undefined on input line 6.
+
+
+LaTeX Warning: Reference `regexp' on page 49 undefined on input line 7.
+
+
+LaTeX Warning: Reference `newline' on page 49 undefined on input line 8.
+
+)) (./entries/b.tex (./entries/b/b1ff.tex) (./entries/b/background.tex)
+(./entries/b/bang.tex) (./entries/b/barf.tex) (./entries/b/bboard.tex)
+(./entries/b/bbs.tex) (./entries/b/beam.tex) (./entries/b/bignum.tex)
+(./entries/b/bigot.tex) (./entries/b/bit rot.tex)
+(./entries/b/blaze humor viewer.tex) (./entries/b/bnf.tex)
+(./entries/b/bogotify.tex) (./entries/b/book titles.tex [49])
+(./entries/b/bot.tex) (./entries/b/boxen.tex) (./entries/b/boxology.tex)
+(./entries/b/brain-damaged.tex) (./entries/b/broket.tex) (./entries/b/bsd.tex)
+(./entries/b/bucky bits.tex) (./entries/b/bug.tex) (./entries/b/bulletproof.tex
+) (./entries/b/burble.tex)) (./entries/c.tex (./entries/c/cancelbot.tex)
 (./entries/c/careware.tex) (./entries/c/cascade.tex)
 (./entries/c/charityware.tex) (./entries/c/choke.tex) (./entries/c/chomp.tex)
 (./entries/c/classic c.tex) (./entries/c/clone.tex)
-(./entries/c/code grinder.tex) (./entries/c/commonwealth-hackish.tex)
+(./entries/c/code grinder.tex [50]) (./entries/c/commonwealth-hackish.tex)
 (./entries/c/core.tex) (./entries/c/cracker.tex) (./entries/c/cracking.tex)
 (./entries/c/crash.tex) (./entries/c/crippleware.tex) (./entries/c/crock.tex)
-(./entries/c/cruft.tex) (./entries/c/cuspy.tex [49
+(./entries/c/cruft.tex) (./entries/c/crunch.tex) (./entries/c/cuspy.tex)
+(./entries/c/cyberspace.tex)) (./entries/d.tex (./entries/d/datamation.tex)
+(./entries/d/dec.tex) (./entries/d/despew.tex) (./entries/d/droid.tex)
+(./entries/d/dumbass attack.tex)) (./entries/e.tex (./entries/e/ebcdic.tex
+[51]) (./entries/e/elder days.tex) (./entries/e/elegant.tex
 
-])) [50] (./entries/d.tex
-(./entries/d/datamation.tex) (./entries/d/dec.tex) (./entries/d/despew.tex)
-(./entries/d/droid.tex) (./entries/d/dumbass attack.tex)) [51
+LaTeX Warning: Reference `cuspy' on page 52 undefined on input line 4.
 
-] (./entries/e.tex (./entries/e/elder days.tex) (./entries/e/elegant.tex)
-(./entries/e/elephantine.tex) (./entries/e/elite.tex)
-(./entries/e/eliza effect.tex) (./entries/e/emacs.tex) (./entries/e/email.tex)
-(./entries/e/enq.tex) (./entries/e/elvish.tex)) [52
+) (./entries/e/elephantine.tex) (./entries/e/elite.tex)
+(./entries/e/eliza effect.tex) (./entries/e/elvish.tex) (./entries/e/emacs.tex)
+(./entries/e/email.tex) (./entries/e/enq.tex) (./entries/e/excl.tex))
+(./entries/f.tex (./entries/f/fandango on core.tex)
+(./entries/f/feature key.tex) (./entries/f/fidonet.tex)
+(./entries/f/flamage.tex) (./entries/f/flame.tex [52])
+(./entries/f/flame war.tex) (./entries/f/flamer.tex) (./entries/f/flavorful.tex
+) (./entries/f/foo.tex) (./entries/f/foobar.tex) (./entries/f/freeware.tex)
+(./entries/f/frob.tex
 
-] (./entries/f.tex
-(./entries/f/fandango on core.tex) (./entries/f/feature key.tex)
-(./entries/f/fidonet.tex) (./entries/f/flamage.tex) (./entries/f/flame.tex)
-(./entries/f/flame war.tex) (./entries/f/flavorful.tex) (./entries/f/foo.tex)
-(./entries/f/foobar.tex) (./entries/f/freeware.tex) (./entries/f/frob.tex)
-(./entries/f/frobnicate.tex) (./entries/f/frobnitz.tex) (./entries/f/frs.tex)
-(./entries/f/ftp.tex [53
+LaTeX Warning: Reference `TMRC' on page 53 undefined on input line 6.
 
-])) [54] (./entries/g.tex (./entries/g/gc.tex)
-(./entries/g/gedanken.tex) (./entries/g/get a life-.tex) (./entries/g/glob.tex)
-(./entries/g/gnu.tex) (./entries/g/gnu-linux.tex) (./entries/g/gosperism.tex)
+
+LaTeX Warning: Reference `frobnitz' on page 53 undefined on input line 8.
+
+
+LaTeX Warning: Reference `frobnicate' on page 53 undefined on input line 9.
+
+
+LaTeX Warning: Reference `MUD' on page 53 undefined on input line 10.
+
+
+LaTeX Warning: Reference `wizard' on page 53 undefined on input line 11.
+
+) (./entries/f/frobnicate.tex) (./entries/f/frobnitz.tex) (./entries/f/frs.tex)
+(./entries/f/ftp.tex
+
+LaTeX Warning: Reference `beam' on page 53 undefined on input line 5.
+
+
+LaTeX Warning: Reference `FTP' on page 53 undefined on input line 6.
+
+)) (./entries/g.tex (./entries/g/gc.tex) (./entries/g/gedanken.tex)
+(./entries/g/get a life-.tex [53]) (./entries/g/glob.tex) (./entries/g/gnu.tex)
+(./entries/g/gnu-linux.tex) (./entries/g/gosperism.tex)
 (./entries/g/great worm.tex) (./entries/g/grep.tex) (./entries/g/guiltware.tex)
-) [55
+) (./entries/h.tex (./entries/h/ha ha only serious.tex) (./entries/h/hack.tex)
+(./entries/h/hacker humor.tex) (./entries/h/hcf.tex
 
-] (./entries/h.tex (./entries/h/ha ha only serious.tex)
-(./entries/h/hack.tex) (./entries/h/hacker humor.tex) (./entries/h/hcf.tex)
-(./entries/h/high-moby.tex) (./entries/h/holy wars.tex) (./entries/h/hp-sux.tex
-)) [56
+LaTeX Warning: Reference `toggle' on page 54 undefined on input line 5.
 
-] (./entries/i.tex (./entries/i/iso standard cup of tea.tex)
-(./entries/i/infinite loop.tex) (./entries/i/infocom.tex)
-(./entries/i/insanely great.tex) (./entries/i/intercal.tex)
-(./entries/i/its.tex)) [57
 
-] [58
+LaTeX Warning: Reference `killer-poke' on page 54 undefined on input line 6.
 
-] (./entries/k.tex (./entries/k/k&r.tex)
-(./entries/k/killer app.tex) (./entries/k/killer poke.tex)
-(./entries/k/kiss principle.tex) (./entries/k/kludge.tex)
-(./entries/k/kluge.tex [59
+[54]) (./entries/h/high-moby.tex) (./entries/h/holy wars.tex)
+(./entries/h/hp-sux.tex)) (./entries/i.tex
+(./entries/i/iso standard cup of tea.tex) (./entries/i/infinite loop.tex)
+(./entries/i/infocom.tex) (./entries/i/insanely great.tex)
+(./entries/i/intercal.tex) (./entries/i/its.tex
 
-]) (./entries/k/kremvax.tex)) [60] (./entries/l.tex
-(./entries/l/lamer.tex) (./entries/l/leech.tex) (./entries/l/lisp.tex)
-(./entries/l/lose.tex) (./entries/l/lossage.tex)) [61
+LaTeX Warning: Reference `high-moby' on page 55 undefined on input line 9.
 
-] (./entries/m.tex
-(./entries/m/macintrash.tex) (./entries/m/management.tex)
+
+LaTeX Warning: Reference `troglodyte-2' on page 55 undefined on input line 11.
+
+
+LaTeX Warning: Reference `Unix' on page 55 undefined on input line 13.
+
+
+LaTeX Warning: Reference `holy-wars' on page 55 undefined on input line 13.
+
+
+LaTeX Warning: Reference `Weenix' on page 55 undefined on input line 13.
+
+[55])) (./entries/k.tex (./entries/k/k&r.tex) (./entries/k/killer app.tex)
+(./entries/k/killer poke.tex) (./entries/k/kiss principle.tex)
+(./entries/k/kludge.tex) (./entries/k/kluge.tex
+
+LaTeX Warning: Reference `ad-hockery' on page 56 undefined on input line 6.
+
+
+LaTeX Warning: Reference `crock' on page 56 undefined on input line 6.
+
+
+LaTeX Warning: Reference `rude' on page 56 undefined on input line 9.
+
+
+LaTeX Warning: Reference `old-fart' on page 56 undefined on input line 12.
+
+[56]
+
+LaTeX Warning: Reference `TMRC' on page 57 undefined on input line 18.
+
+
+LaTeX Warning: Reference `foobar' on page 57 undefined on input line 18.
+
+
+LaTeX Warning: Reference `TMRC' on page 57 undefined on input line 18.
+
+
+LaTeX Warning: Reference `Datamation' on page 57 undefined on input line 20.
+
+
+LaTeX Warning: Reference `kludge' on page 57 undefined on input line 20.
+
+
+LaTeX Warning: Reference `kludge' on page 57 undefined on input line 20.
+
+
+LaTeX Warning: Reference `kluge' on page 57 undefined on input line 20.
+
+) (./entries/k/kremvax.tex)) (./entries/l.tex (./entries/l/lamer.tex)
+(./entries/l/leech.tex) (./entries/l/lisp.tex) (./entries/l/lose.tex)
+(./entries/l/lossage.tex)) (./entries/m.tex (./entries/m/macintrash.tex
+[57]) (./entries/m/magic.tex) (./entries/m/management.tex)
 (./entries/m/meeces.tex) (./entries/m/memory leak.tex)
 (./entries/m/memory smash.tex) (./entries/m/mess-dos.tex)
-(./entries/m/meta bit.tex) (./entries/m/moby.tex [62
+(./entries/m/meta bit.tex) (./entries/m/micro--.tex)
+(./entries/m/microfortnight.tex) (./entries/m/misfeature.tex)
+(./entries/m/moby.tex
 
-])
-(./entries/m/monstrosity.tex) (./entries/m/moria.tex) (./entries/m/mu.tex)
-(./entries/m/mud.tex)) [63] (./entries/n.tex (./entries/n/nadger.tex)
-(./entries/n/nak.tex) (./entries/n/nethack.tex) (./entries/n/netiquette.tex)
-(./entries/n/network meltdown.tex) (./entries/n/newbie.tex)
-(./entries/n/newsgroup.tex) (./entries/n/nil.tex)
-(./entries/n/nominal semidestructor.tex) (./entries/n/np--.tex)) [64
+LaTeX Warning: Reference `appendix-Appendix-A' on page 58 undefined on input li
+ne 9.
 
-]
-(./entries/o.tex (./entries/o/old fart.tex) (./entries/o/operating system.tex)
-(./entries/o/osu.tex) (./entries/o/overrun screw.tex)) [65
 
-] (./entries/p.tex
-(./entries/p/param.tex) (./entries/p/parm.tex) (./entries/p/pascal.tex)
-(./entries/p/payware.tex) (./entries/p/pdp-10.tex) (./entries/p/phb.tex)
-(./entries/p/phreaking.tex [66
+LaTeX Warning: Reference `bignum-3' on page 58 undefined on input line 15.
 
-]) (./entries/p/ping.tex) (./entries/p/pistol.tex) (./entries/p/plugh.tex) (./e
-ntries/p/pointy-haired.tex)
-(./entries/p/poser.tex) (./entries/p/postcardware.tex)
-(./entries/p/postmaster.tex) (./entries/p/precedence lossage.tex)
-(./entries/p/priesthood.tex)) [67] [68
+[58]
 
-] (./entries/r.tex
+LaTeX Warning: Reference `core' on page 59 undefined on input line 31.
+
+
+LaTeX Warning: Reference `brain-damaged' on page 59 undefined on input line 33.
+
+
+) (./entries/m/monstrosity.tex) (./entries/m/moria.tex) (./entries/m/mu.tex)
+(./entries/m/mud.tex)) (./entries/n.tex (./entries/n/nadger.tex)
+(./entries/n/nak.tex) (./entries/n/nathan hale.tex) (./entries/n/nethack.tex)
+(./entries/n/netiquette.tex) (./entries/n/network meltdown.tex)
+(./entries/n/newbie.tex) (./entries/n/newline.tex) (./entries/n/newsgroup.tex)
+(./entries/n/nil.tex) (./entries/n/nominal semidestructor.tex)
+(./entries/n/np--.tex)) [59] (./entries/o.tex (./entries/o/old fart.tex)
+(./entries/o/open.tex) (./entries/o/operating system.tex) (./entries/o/osu.tex)
+(./entries/o/overrun screw.tex)) (./entries/p.tex (./entries/p/param.tex)
+(./entries/p/parm.tex) (./entries/p/pascal.tex) (./entries/p/payware.tex)
+(./entries/p/pdp-10.tex) (./entries/p/perl.tex) (./entries/p/phb.tex)
+(./entries/p/phreaking.tex
+
+LaTeX Warning: Reference `cracking' on page 60 undefined on input line 5.
+
+
+LaTeX Warning: Reference `cracking' on page 60 undefined on input line 7.
+
+[60]) (./entries/p/ping.tex) (./entries/p/pistol.tex) (./entries/p/plugh.tex)
+(./entries/p/pointy-haired.tex) (./entries/p/poser.tex)
+(./entries/p/postcardware.tex) (./entries/p/postmaster.tex)
+(./entries/p/precedence lossage.tex) (./entries/p/priesthood.tex)) [61]
+(./entries/q.tex (./entries/q/ques.tex)) (./entries/r.tex
 (./entries/r/random.tex) (./entries/r/random number god.tex)
-(./entries/r/real world.tex) (./entries/r/retrocomputing.tex)
-(./entries/r/rogue.tex) (./entries/r/rotary debugger.tex) (./entries/r/rude.tex
-)) [69
+(./entries/r/real world.tex) (./entries/r/regexp.tex)
+(./entries/r/retrocomputing.tex) (./entries/r/rogue.tex) (./entries/r/root.tex)
+(./entries/r/rotary debugger.tex) (./entries/r/rude.tex)) (./entries/s.tex
+(./entries/s/scumos.tex) (./entries/s/semi.tex)
+(./entries/s/september that never ended.tex
 
-] (./entries/s.tex (./entries/s/scumos.tex)
-(./entries/s/september that never ended.tex) (./entries/s/sex.tex)
-(./entries/s/shareware.tex) (./entries/s/smash the stack.tex)
-(./entries/s/snafu principle.tex) (./entries/s/software laser.tex)
+LaTeX Warning: Reference `netiquette' on page 62 undefined on input line 4.
+
+
+LaTeX Warning: Reference `AOL!' on page 62 undefined on input line 8.
+
+[62]) (./entries/s/sex.tex) (./entries/s/shareware.tex) (./entries/s/shriek.tex
+) (./entries/s/smash the stack.tex) (./entries/s/snafu principle.tex)
+(./entries/s/software laser.tex) (./entries/s/software rot.tex)
 (./entries/s/sorcerer's apprentice mode.tex) (./entries/s/spam.tex)
-(./entries/s/stack.tex) (./entries/s/stale pointer bug.tex)
-(./entries/s/stupids.tex) (./entries/s/suit.tex [70
+(./entries/s/splat.tex) (./entries/s/stack.tex)
+(./entries/s/stale pointer bug.tex) (./entries/s/stupids.tex)
+(./entries/s/suit.tex
 
-])
-(./entries/s/sun-stools.tex) (./entries/s/sysop.tex)
-(./entries/s/system mangler.tex)) [71] (./entries/t.tex (./entries/t/t.tex)
-(./entries/t/talk-mode.tex) (./entries/t/teco.tex [72
+LaTeX Warning: Reference `droid' on page 63 undefined on input line 6.
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 56--60
-[]\T1/cmtt/m/n/9 After having teco as my only editor for about 1.5 years (on a 
-PDP-11 running RSTS/E), I
+
+LaTeX Warning: Reference `pointy-haired' on page 63 undefined on input line 7.
+
+
+LaTeX Warning: Reference `burble' on page 63 undefined on input line 7.
+
+
+LaTeX Warning: Reference `management' on page 63 undefined on input line 8.
+
+
+LaTeX Warning: Reference `Stupids' on page 63 undefined on input line 8.
+
+
+LaTeX Warning: Reference `SNAFU-principle' on page 63 undefined on input line 8
+.
+
+
+LaTeX Warning: Reference `PHB' on page 63 undefined on input line 8.
+
+
+LaTeX Warning: Reference `brain-damaged' on page 63 undefined on input line 8.
+
+) (./entries/s/sun-stools.tex) (./entries/s/superuser.tex)
+(./entries/s/sysop.tex [63]) (./entries/s/system mangler.tex)) (./entries/t.tex
+(./entries/t/t.tex) (./entries/t/talk-mode.tex) (./entries/t/teco.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 6.
+
+
+LaTeX Warning: Reference `EMACS' on page 64 undefined on input line 8.
+
+
+LaTeX Warning: Reference `alt' on page 64 undefined on input line 38.
+
+
+LaTeX Warning: Reference `bug' on page 64 undefined on input line 40.
+
+
+LaTeX Warning: Reference `Wrong-Thing' on page 64 undefined on input line 41.
+
+
+LaTeX Warning: Reference `EMACS' on page 64 undefined on input line 45.
+
+
+LaTeX Warning: Reference `retrocomputing' on page 64 undefined on input line 48
+.
+
+
+LaTeX Warning: Reference `write-only-language' on page 64 undefined on input li
+ne 48.
+
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+ []\T1/cmtt/m/n/9 After having teco as my only editor for about 1.5 years (on a
+ PDP-11 running RSTS/E), I 
  []
 
 ) (./entries/t/teergrube.tex) (./entries/t/tenured graduate student.tex)
 (./entries/t/tmrc.tex) (./entries/t/toggle.tex) (./entries/t/tool.tex)
 (./entries/t/tops-10.tex) (./entries/t/troglodyte.tex)
 (./entries/t/trojan horse.tex) (./entries/t/troll.tex) (./entries/t/twenex.tex
-[73])) [74] (./entries/u.tex (./entries/u/unix.tex) (./entries/u/usenet.tex)
-(./entries/u/usg unix.tex) (./entries/u/uucpnet.tex)) [75
 
-] (./entries/v.tex
+LaTeX Warning: Reference `DEC' on page 65 undefined on input line 3.
+
+
+LaTeX Warning: Reference `ITS' on page 65 undefined on input line 4.
+
+
+LaTeX Warning: Reference `WAITS' on page 65 undefined on input line 4.
+
+
+LaTeX Warning: Reference `VMS' on page 65 undefined on input line 17.
+
+[65]) (./entries/t/twiddle.tex)) (./entries/u.tex (./entries/u/unix.tex)
+(./entries/u/usenet.tex
+
+LaTeX Warning: Reference `bboard' on page 66 undefined on input line 3.
+
+
+LaTeX Warning: Reference `newsgroup' on page 66 undefined on input line 6.
+
+
+LaTeX Warning: Reference `flamage' on page 66 undefined on input line 7.
+
+
+LaTeX Warning: Reference `UUCPNET' on page 66 undefined on input line 10.
+
+) (./entries/u/usg unix.tex) (./entries/u/uucpnet.tex)) (./entries/v.tex
 (./entries/v/vadding.tex) (./entries/v/var.tex) (./entries/v/vaxen.tex)
-(./entries/v/vi.tex) (./entries/v/video toaster.tex) (./entries/v/virgin.tex)
-(./entries/v/virus.tex) (./entries/v/vms.tex)) [76
+(./entries/v/vi.tex [66]) (./entries/v/video toaster.tex)
+(./entries/v/virgin.tex) (./entries/v/virus.tex) (./entries/v/vms.tex))
+(./entries/w.tex (./entries/w/waits.tex) (./entries/w/warez-d00dz.tex)
+(./entries/w/warlording.tex) (./entries/w/weenie.tex) (./entries/w/weenix.tex)
+(./entries/w/win.tex) (./entries/w/wizard.tex) (./entries/w/worm.tex)
+(./entries/w/write-only language.tex) (./entries/w/wrong thing.tex)
+(./entries/w/wtf.tex [67])) (./entries/x.tex (./entries/x/x.tex)
+(./entries/x/xyzzy.tex)) (./entries/y.tex (./entries/y/yu-shiang whole fish.tex
+)) (./entries/z.tex (./entries/z/zork.tex)) (./entries/0.tex
+(./entries/0/-ware.tex)) [68] (./appendix-a.tex [69
 
-] (./entries/w.tex
-(./entries/w/waits.tex) (./entries/w/warez-d00dz.tex) (./entries/w/weenie.tex)
-(./entries/w/weenix.tex) (./entries/w/win.tex) (./entries/w/wizard.tex)
-(./entries/w/worm.tex) (./entries/w/write-only language.tex)
-(./entries/w/wrong thing.tex) (./entries/w/wtf.tex)) [77
+]) [70] [71
 
-] (./entries/x.tex
-(./entries/x/x.tex) (./entries/x/xyzzy.tex)) [78
+] [72
 
-] [79
-
-] (./entries/z.tex
-(./entries/z/zork.tex)) [80
-
-] (./entries/0.tex (./entries/0/-ware.tex)) [81
+] [73
 
 ]
-(./appendix-a.tex [82
+[74
 
-]) [83] [84
+] [75] (./main.aux)
 
-] [85
+LaTeX Warning: There were undefined references.
 
-] [86
 
-] [87
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-] [88] (./main.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 4465 strings out of 495062
- 61912 string characters out of 1182644
- 113034 words of memory out of 3000000
- 6711 multiletter control sequences out of 15000+50000
- 24007 words of font info for 48 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 25i,12n,43p,890b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 5077 strings out of 256216
+ 69797 string characters out of 1917072
+ 116723 words of memory out of 1500000
+ 7288 multiletter control sequences out of 10000+200000
+ 25418 words of font info for 54 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 25i,12n,43p,890b,416s stack positions out of 5000i,500n,6000p,200000b,15000s
+ </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0800.600
+pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.60
+0pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.6
+00pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.
+600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488
+.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm248
+8.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss10
+00.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss0
+800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
+x0800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+tt0900.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm0800.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecbx1440.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecbx2074.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/e
+c/tcrm1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx0700.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecrm0700.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecsx0900.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecti1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecbx2488.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecrm1000.600pk> </home/jason/.texlive2007/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ectt1000.600pk></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></u
+sr/share/texmf/fonts/type1/bluesky/cm/cmmi12.pfb></usr/share/texmf/fonts/type1/
+bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/sh
+are/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/blues
+ky/cm/cmsy7.pfb>
+Output written on main.pdf (75 pages, 456079 bytes).
+PDF statistics:
+ 1090 PDF objects out of 1200 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on main.dvi (88 pages, 201892 bytes).
