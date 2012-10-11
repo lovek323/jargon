@@ -1,0 +1,21 @@
+\mainentry{bang path} n.
+
+[now historical] An old-style UUCP electronic-mail address specifying hops to
+get from some assumed-reachable location to the addressee, so called because
+each \citeentry{hop} is signified by a \citeentry{bang} sign. Thus, for example,
+the path \texttt{...!bigsite!foovax!barbox!me} directs people to route their
+mail to machine bigsite (presumably a well-known location accessible to
+everybody) and from there through the machine foovax to the account of user me
+on barbox.
+
+In the bad old days of not so long ago, before autorouting mailers became
+commonplace, people often published compound bang addresses using the
+\texttt{\{ \}} convention (see \citeentry{glob}) to give paths from several big
+machines, in the hopes that one's correspondent might be able to get mail to one
+of them reliably (example: \texttt{...!\{seismo, ut-sally,
+ihnp4\}!rice!beta!gamma!me}).  Bang paths of 8 to 10 hops were not uncommon in
+1981. Late-night dial-up UUCP links would cause week-long transmission times.
+Bang paths were often selected by both transmission time and reliability, as
+messages would often get lost. See \citeentry{Internet address},
+\citeentry{the network}, and \citeentry{sitename}.
+
