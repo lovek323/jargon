@@ -27,6 +27,7 @@
 *.ps
 *.snm
 *.synctex.gz
+*.temp
 *.toc
 *.toc.make
 *.vrb
