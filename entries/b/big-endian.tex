@@ -1,0 +1,65 @@
+\mainentry{big-endian} adj.
+
+[common; From Swift's \worktitle{Gulliver's Travels} via the famous paper ``On
+Holy Wars and a Plea for Peace'' by Danny Cohen, USC/ISI IEN 137, dated April 1,
+1980].
+\begin{inparaenum}
+    \item Describes a computer architecture in which, within a given
+        multi-byte numeric representation, the most significant byte has
+        the lowest address (the word is stored `big-end-first'). Most
+        processors, including the IBM 370 family, the
+        \citeentry{PDP-10}, the Motorola microprocessor families, and
+        most of the various RISC designs are big-endian. Big-endian byte
+        order is also sometimes called `network order'. See
+        \citeentry{little-endian}, \citeentry{middle-endian},
+        \citeentry{NUXI problem}, \citeentry{swab}.
+    \item An \citeentry{Internet address} the wrong way round. Most of
+        the world follows the Internet standard and writes email
+        addresses starting with the name of the computer and ending up
+        with the name of the country. In the U.K., the Joint Networking
+        Team had decided to do it the other way round before the
+        Internet domain standard was established. Most gateway sites
+        have \citeentry{ad-hockery} in their mailers to handle this, but
+        can still be confused. In particular, the address
+        me@uk.ac.bris.pys.as could be interpreted in JANET's big-endian
+        way as one in the U.K. (domain uk) or in the standard
+        little-endian way as one in the domain as (American Samoa) on
+        the opposite side of the world.
+\end{inparaenum}
+
+\begin{new}
+    \begin{quote}
+        `` `That the said Quinbus Flestrin, having brought the imperial fleet of
+        Blefuscu into the royal port, and being afterwards commanded by his
+        imperial majesty to seize all the other ships of the said empire of
+        Blefuscu, and reduce that empire to a province, to be governed by a
+        viceroy from hence, and to destroy and put to death, not only all the
+        Big-endian exiles, but likewise all the people of that empire who would
+        not immediately forsake the Big-endian heresy, he, the said Flestrin,
+        like a false traitor against his most auspicious, serene, imperial
+        majesty, did petition to be excused from the said service, upon pretence
+        of unwillingness to force the consciences, or destroy the liberties and
+        lives of an innocent people. \dots
+
+        \begin{flushright}
+            Jonathan Swift, \worktitle{Gulliver's Travels}
+            \url{http://www.gutenberg.org/files/829/829-0.txt}
+        \end{flushright}
+    \end{quote}
+
+    \begin{quote}
+        The root of the conflict lies much deeper than that. It is the question
+        of which bit should travel first, the bit from the little end of the
+        word, or the bit from the big end of the word? The followers of the
+        former approach are called the Little-Endians, and the followers of the
+        latter are called the Big-Endians. The details of the holy war between
+        the Little-Endians and the Big-Endians are documented in
+        \worktitle{Gulliver's Travel} \dots
+
+        \begin{flushright}
+            Danny Cohen, \worktitle{On Holy Wars and a Plea for Peace (USC/ISI
+            IEN 137), 1 April 1980 \url{http://www.ietf.org/rfc/ien/ien137.txt}}
+        \end{flushright}
+    \end{quote}
+\end{new}
+
