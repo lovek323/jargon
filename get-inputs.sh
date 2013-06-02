@@ -10,7 +10,7 @@ for letter in $letters; do
             echo "\\input \"$file\"" >> "${letter}.tex"
         done < <(find ${letter} -type f -name "*.tex" -print0)
         # http://stackoverflow.com/questions/1116992/capturing-output-of-find-print0-into-a-bash-array
-        # Note that teh redirection construct used here (cmd < <(cmd2)) is
+        # Note that the redirection construct used here (cmd < <(cmd2)) is
         # similar to, but not quote the same as the more usual pipeline
         # (cmd2 | cmd 1) -- if the commands are shell builtins (e.g., while),
         # the pipeline version executes them in subshells, and any variables
