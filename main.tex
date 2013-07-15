@@ -1,23 +1,23 @@
 \documentclass{report}
 
 \usepackage{
-	array,
-	booktabs,
-	calc,
-	fancyhdr,
-	fixmarks,
-	framed,
+    array,
+    booktabs,
+    calc,
+    fancyhdr,
+    fixmarks,
+    framed,
     graphicx,
-	longtable,
-	longtable,
-	multicol,
-	paralist,
-	textcomp,
-	url,
-	verbatim,
-	xcolor,
-	xstring/xstring,
-	enumitem % must be included after an unknown package, so I'm putting it last
+    longtable,
+    longtable,
+    multicol,
+    paralist,
+    textcomp,
+    url,
+    verbatim,
+    xcolor,
+    xstring/xstring,
+    enumitem % must be included after an unknown package, so I'm putting it last
 }
 \usepackage[margin=1in]{geometry}
 \usepackage[titles]{tocloft}
@@ -66,12 +66,12 @@
 \newcommand*{\Letter}[2]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
 
-	\begin{center}
-		{\Huge\bfseries#1}\label{chapter-\temp}
-	\end{center}
-	\addcontentsline{toc}{chapter}{#1\protect{\rmfamily\mdseries\\ #2}}}
+    \begin{center}
+        {\Huge\bfseries#1}\label{chapter-\temp}
+    \end{center}
+    \addcontentsline{toc}{chapter}{#1\protect{\rmfamily\mdseries\\ #2}}}
 \newcommand{\inlinequote}[1]{%
-	{$\cdot$\ \small``#1''}}
+    {$\cdot$\ \small``#1''}}
 \newcommand{\superscript}[1]{{\scriptsize#1}}
 \newcommand{\worktitle}[1]{\textit{#1}}
 \newcommand{\Tilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
@@ -94,7 +94,7 @@
 \renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
 
 \begin{document}
-	\sloppy
+    \sloppy
 
     \title{The New Hacker's Dictionary}
     \author{Edited by Yash Tulsyan}
@@ -107,33 +107,33 @@
     \tableofcontents
 
     \Chapter{Introduction}{The purpose and scope of this File}
-	\input introduction
+    \input introduction
     \Chapter{A Few Terms}{Of slang, Jargon and Techspeak}
-	\input a-few-terms
+    \input a-few-terms
     \Chapter{Revision History}{How the File came to be}
-	\input revision-history
+    \input revision-history
 
     \part{How Jargon Works}
     \Chapter{Jargon Construction}{How hackers invent jargon}
-	\input jargon-construction
+    \input jargon-construction
     \Chapter{Hacker Writing Style}{How they write}
-	\input hacker-writing-style
+    \input hacker-writing-style
     \Chapter{Email Quotes}{And the Inclusion Problem}
-	\input email-quotes
+    \input email-quotes
     \Chapter{Hacker Speech Style}{How hackers talk}
-	\input hacker-speech-style
+    \input hacker-speech-style
     \Chapter{International Style}{Some notes on usage outside the U.S.}
-	\input international-style
+    \input international-style
     \Chapter{Lamer-speak}{Crackers, Phreaks, and Lamers}
-	\input lamer-speak
+    \input lamer-speak
 
     \part{How to Use the Lexicon}
     \Chapter{Pronunciation Guide}{How to read the pronunciation keys}
-	\input pronunciation-guide
+    \input pronunciation-guide
     \Chapter{Other Lexicon Conventions}{How to read lexicon entries}
-	\input other-lexicon-conventions
+    \input other-lexicon-conventions
     \Chapter{Format for New Entries}{How to submit new entries for the File}
-	\input format-for-new-entries
+    \input format-for-new-entries
 
     \part{The Jargon Lexicon}
 
@@ -144,68 +144,68 @@
     \fancyhead[R]{\sffamily\bfseries\leftmark}
     \renewcommand{\headrulewidth}{0.1em}
 
-	\begin{multicols}{2}
-		\Letter{A}{}
-		\input entries/a
-		\Letter{B}{}
-		\input entries/b
-		\Letter{C}{}
-		\input entries/c
-		\Letter{D}{}
-		\input entries/d
-		\Letter{E}{}
-		\input entries/e
-		\Letter{F}{}
-		\input entries/f
-		\Letter{G}{}
-		\input entries/g
-		\Letter{H}{}
-		\input entries/h
-		\Letter{I}{}
-		\input entries/i
-		\Letter{J}{}
-		\Letter{K}{}
-		\input entries/k
-		\Letter{L}{}
-		\input entries/l
-		\Letter{M}{}
-		\input entries/m
-		\Letter{N}{}
-		\input entries/n
-		\Letter{O}{}
-		\input entries/o
-		\Letter{P}{}
-		\input entries/p
-		\Letter{Q}{}
-		\input entries/q
-		\Letter{R}{}
-		\input entries/r
-		\Letter{S}{}
-		\input entries/s
-		\Letter{T}{}
-		\input entries/t
-		\Letter{U}{}
-		\input entries/u
-		\Letter{V}{}
-		\input entries/v
-		\Letter{W}{}
-		\input entries/w
-		\Letter{X}{}
-		\input entries/x
-		\Letter{Y}{}
-		\input entries/y
-		\Letter{Z}{}
-		\input entries/z
-		\Letter{0}{}
-		\input entries/0
-	\end{multicols}
+    \begin{multicols}{2}
+        \Letter{A}{}
+        \input entries/a
+        \Letter{B}{}
+        \input entries/b
+        \Letter{C}{}
+        \input entries/c
+        \Letter{D}{}
+        \input entries/d
+        \Letter{E}{}
+        \input entries/e
+        \Letter{F}{}
+        \input entries/f
+        \Letter{G}{}
+        \input entries/g
+        \Letter{H}{}
+        \input entries/h
+        \Letter{I}{}
+        \input entries/i
+        \Letter{J}{}
+        \Letter{K}{}
+        \input entries/k
+        \Letter{L}{}
+        \input entries/l
+        \Letter{M}{}
+        \input entries/m
+        \Letter{N}{}
+        \input entries/n
+        \Letter{O}{}
+        \input entries/o
+        \Letter{P}{}
+        \input entries/p
+        \Letter{Q}{}
+        \input entries/q
+        \Letter{R}{}
+        \input entries/r
+        \Letter{S}{}
+        \input entries/s
+        \Letter{T}{}
+        \input entries/t
+        \Letter{U}{}
+        \input entries/u
+        \Letter{V}{}
+        \input entries/v
+        \Letter{W}{}
+        \input entries/w
+        \Letter{X}{}
+        \input entries/x
+        \Letter{Y}{}
+        \input entries/y
+        \Letter{Z}{}
+        \input entries/z
+        \Letter{0}{}
+        \input entries/0
+    \end{multicols}
 
     \pagestyle{plain}
 
     \appendix
 
     \chapter*{Appendix A}\label{appendix-Appendix-A}
-	\input appendix-a
+    \input appendix-a
 
     \chapter*{Appendix B}\label{appendix-Appendix-B}
 
@@ -213,72 +213,72 @@
 
     \chapter*{Bibliography}\label{appendix-Bibliography}
 
-	\chapter*{Some of the Best Usenet}
+    \chapter*{Some of the Best Usenet}
 
-	\begin{usenet}
-		A VISIT FROM SAINT WOZ\\
-		by Marty Knight\\
-		(Reprinted with permission of the Author)
+    \begin{usenet}
+        A VISIT FROM SAINT WOZ\\
+        by Marty Knight\\
+        (Reprinted with permission of the Author)
 
-		'Twas the night before Christmas, sounds all through the house,\\
-		the printer a'buzzing; the clicking of mouse.\\
-		The floppies were stored in their cases with care\\
-		in hopes that St. Wozniak soon would be there.\\
-		The children were nestled, all snug in their beds,\\
-		while TransWarp GS's danced in their head\\
-		I need 3 megs more, but RAM costs a min\\
-		I'm nodding off, waiting for my printer to prin\\
-		When out on the lawn there arose such a clatter,\\
-		I woke with a start, ``Now what's the matter?''\\
-		Awakened from slumber I jumped up to see,\\
-		tripped over the dog and fell on my knee.\\
-		The moon shining onto the new fallen snow\\
-		formed a non-standard pallette with objects below.\\
-		When what to my poor bloodshot eyes should appear\\
-		but SHR graphics! Stereo sound do I hear!\\
-		With a sixteen bit chip and new bug-free GSOS,\\
-		I knew right away that it must be Saint Woz.\\
-		More rapid than Transwarp, his menus they came.\\
-		He clicked and he dragged and he called them by name.\\
-		"Now Pulldowns, now Buttons, now Dialogs, too.\\
-		On Finder, Mac Interface, we're faster than Mac II!\\
-		Blue slips for marketing! DTS better not scoff!\\
-		ProDOS format for Technotes or I'll lay you all off!\\
-		You know lame excuses make customers sad;\\
-		well Macs in the schools make Applers mad."\\
-		So up to the housetop his menus they flew\\
-		with a sack full of RAM chips and Saint Wozniak, too.\\
-		I listened intently with my two little ears\\
-		to true stereo sound spreading holiday cheer.\\
-		As I was scratching head and was turning around\\
-		down the chimney Saint Wozniak came with a bound.\\
-		He wore sneakers, a t-shirt, and blue jeans\\
-		stained with some soda (I think it was cream).\\
-		A bundle of chips he had slung on his back\\
-		and he looked like a hacker there searching his pack.\\
-		His eyes twinkled brightly, his dimples so merry,\\
-		his cheeks like twin apples, his nose like a cherry.\\
-		His droll little mouth smiled a smile O so grand,\\
-		a full bearded chin, AppleLink in his hand.\\
-		A thick slice of pizza he held tight with his teeth\\
-		while the steam from it circled his head like a wreath.\\
-		A plump little face and a round little belly;\\
-		he laughed and it shook like a bowl full of jelly.\\
-		He was chubby and plump; a right jolly old elf.\\
-		I laughed when I saw him - he resembled myself.\\
-		He winked his left eye and he twisted his head,\\
-		so I knew deep inside I had nothing to dread.\\
-		He said not a word, just went right to work.\\
-		He soldered and programmed, then turned with a jerk.\\
-		Then placing his finger on top of that mess,\\
-		and giving a nod - POOF! fast GS!\\
-		He leaped to his ship as it rose from the ground,\\
-		up into the sky, and as he turned 'round\\
-		I heard him exclaim, ere he flew out of sight,\\
-		``GS plusses for all, and to all a good night!''
+        'Twas the night before Christmas, sounds all through the house,\\
+        the printer a'buzzing; the clicking of mouse.\\
+        The floppies were stored in their cases with care\\
+        in hopes that St. Wozniak soon would be there.\\
+        The children were nestled, all snug in their beds,\\
+        while TransWarp GS's danced in their head\\
+        I need 3 megs more, but RAM costs a min\\
+        I'm nodding off, waiting for my printer to prin\\
+        When out on the lawn there arose such a clatter,\\
+        I woke with a start, ``Now what's the matter?''\\
+        Awakened from slumber I jumped up to see,\\
+        tripped over the dog and fell on my knee.\\
+        The moon shining onto the new fallen snow\\
+        formed a non-standard pallette with objects below.\\
+        When what to my poor bloodshot eyes should appear\\
+        but SHR graphics! Stereo sound do I hear!\\
+        With a sixteen bit chip and new bug-free GSOS,\\
+        I knew right away that it must be Saint Woz.\\
+        More rapid than Transwarp, his menus they came.\\
+        He clicked and he dragged and he called them by name.\\
+        "Now Pulldowns, now Buttons, now Dialogs, too.\\
+        On Finder, Mac Interface, we're faster than Mac II!\\
+        Blue slips for marketing! DTS better not scoff!\\
+        ProDOS format for Technotes or I'll lay you all off!\\
+        You know lame excuses make customers sad;\\
+        well Macs in the schools make Applers mad."\\
+        So up to the housetop his menus they flew\\
+        with a sack full of RAM chips and Saint Wozniak, too.\\
+        I listened intently with my two little ears\\
+        to true stereo sound spreading holiday cheer.\\
+        As I was scratching head and was turning around\\
+        down the chimney Saint Wozniak came with a bound.\\
+        He wore sneakers, a t-shirt, and blue jeans\\
+        stained with some soda (I think it was cream).\\
+        A bundle of chips he had slung on his back\\
+        and he looked like a hacker there searching his pack.\\
+        His eyes twinkled brightly, his dimples so merry,\\
+        his cheeks like twin apples, his nose like a cherry.\\
+        His droll little mouth smiled a smile O so grand,\\
+        a full bearded chin, AppleLink in his hand.\\
+        A thick slice of pizza he held tight with his teeth\\
+        while the steam from it circled his head like a wreath.\\
+        A plump little face and a round little belly;\\
+        he laughed and it shook like a bowl full of jelly.\\
+        He was chubby and plump; a right jolly old elf.\\
+        I laughed when I saw him - he resembled myself.\\
+        He winked his left eye and he twisted his head,\\
+        so I knew deep inside I had nothing to dread.\\
+        He said not a word, just went right to work.\\
+        He soldered and programmed, then turned with a jerk.\\
+        Then placing his finger on top of that mess,\\
+        and giving a nod - POOF! fast GS!\\
+        He leaped to his ship as it rose from the ground,\\
+        up into the sky, and as he turned 'round\\
+        I heard him exclaim, ere he flew out of sight,\\
+        ``GS plusses for all, and to all a good night!''
 
-		\citeusenet{The Unknown User}{unknown@ucscb.ucsc.edu}{1989}{A Visit from Saint Woz}{alt.folklore.computers}{\_mXEGBQNF\_A}
-			{15 December}
-	\end{usenet}
+        \citeusenet{The Unknown User}{unknown@ucscb.ucsc.edu}{1989}{A Visit from Saint Woz}{alt.folklore.computers}{\_mXEGBQNF\_A}
+            {15 December}
+    \end{usenet}
 \end{document}
 
