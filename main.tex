@@ -1,7 +1,22 @@
 \documentclass{report}
 
-\usepackage{url,paralist,fancyhdr,xcolor,enumitem,textcomp,verbatim,longtable,multicol,framed,calc,booktabs,array,longtable,verbatim}
-\usepackage{xstring/xstring}
+\usepackage{
+	array,
+	booktabs,
+	calc,
+	fancyhdr,
+	framed,
+	longtable,
+	longtable,
+	multicol,
+	paralist,
+	textcomp,
+	url,
+	verbatim,
+	xcolor,
+	xstring/xstring,
+	enumitem % must be included after an unknown package, so I'm putting it last
+}
 \usepackage[margin=1in]{geometry}
 \usepackage[titles]{tocloft}
 \usepackage[T1]{fontenc}
@@ -61,7 +76,7 @@
   \leftskip=0ptplus1fil\rightskip=-\leftskip\parfillskip=\leftskip
   \hfill \phantom{ } \mbox{#1}\par}}
 \newcommand{\citeusenet}[7]
-{\Right{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}}
+{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}
 \newcommand{\citeusenetfn}[7]{{\footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
 \newenvironment{usenet}{\raggedright\small\ttfamily}{\rmfamily}
 
@@ -75,6 +90,8 @@
 \renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
 
 \begin{document}
+	\sloppy
+
     \title{The New Hacker's Dictionary}
     \author{Edited by Yash Tulsyan}
 
@@ -126,60 +143,61 @@
     \fancyhead[L]{\sffamily\thepage}
     \renewcommand{\headrulewidth}{0.1em}
 
-	\Letter{A}{}
-	\input entries/a
-	\Letter{B}{}
-	\input entries/b
-	\Letter{C}{}
-	\input entries/c
-	\Letter{D}{}
-	\input entries/d
-	\Letter{E}{}
-	\input entries/e
-	\Letter{F}{}
-	\input entries/f
-	\Letter{G}{}
-	\input entries/g
-	\Letter{H}{}
-	\input entries/h
-	\Letter{I}{}
-	\input entries/i
-	\Letter{J}{}
-	\Letter{K}{}
-	\input entries/k
-	\Letter{L}{}
-	\input entries/l
-	\Letter{M}{}
-    \input entries/m
-	\Letter{N}{}
-    \input entries/n
-	\Letter{O}{}
-	\input entries/o
-	\Letter{P}{}
-    \input entries/p
-	\Letter{Q}{}
-    \input entries/q
-	\Letter{R}{}
-	\input entries/r
-	\Letter{S}{}
-	\input entries/s
-	\Letter{T}{}
-	\input entries/t
-	\Letter{U}{}
-	\input entries/u
-	\Letter{V}{}
-	\input entries/v
-	\Letter{W}{}
-	\input entries/w
-	\Letter{X}{}
-	\input entries/x
-	\Letter{Y}{}
-	\input entries/y
-	\Letter{Z}{}
-	\input entries/z
-	\Letter{0}{}
-	\input entries/0
-
+	\begin{twocolumn}
+		\Letter{A}{}
+		\input entries/a
+		\Letter{B}{}
+		\input entries/b
+		\Letter{C}{}
+		\input entries/c
+		\Letter{D}{}
+		\input entries/d
+		\Letter{E}{}
+		\input entries/e
+		\Letter{F}{}
+		\input entries/f
+		\Letter{G}{}
+		\input entries/g
+		\Letter{H}{}
+		\input entries/h
+		\Letter{I}{}
+		\input entries/i
+		\Letter{J}{}
+		\Letter{K}{}
+		\input entries/k
+		\Letter{L}{}
+		\input entries/l
+		\Letter{M}{}
+		\input entries/m
+		\Letter{N}{}
+		\input entries/n
+		\Letter{O}{}
+		\input entries/o
+		\Letter{P}{}
+		\input entries/p
+		\Letter{Q}{}
+		\input entries/q
+		\Letter{R}{}
+		\input entries/r
+		\Letter{S}{}
+		\input entries/s
+		\Letter{T}{}
+		\input entries/t
+		\Letter{U}{}
+		\input entries/u
+		\Letter{V}{}
+		\input entries/v
+		\Letter{W}{}
+		\input entries/w
+		\Letter{X}{}
+		\input entries/x
+		\Letter{Y}{}
+		\input entries/y
+		\Letter{Z}{}
+		\input entries/z
+		\Letter{0}{}
+		\input entries/0
+	\end{twocolumn}
 
     \pagestyle{plain}
 
