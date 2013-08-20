@@ -20,12 +20,13 @@
     xstring/xstring,
     enumitem % must be included after an unknown package, so I'm putting it last
 }
-\usepackage[margin=1in]{geometry}
-\usepackage[titles]{tocloft}
 \usepackage[T1]{fontenc}
-% change `changes' to `none' to hide changes (or vv)
-\usepackage[none]{optional}
+\usepackage[margin=1in]{geometry}
 \usepackage[linkbordercolor={1 1 1}]{hyperref}
+\usepackage[para]{manyfoot}
+% change `changes' to `none' to hide changes (or v.v.)
+\usepackage[none]{optional}
+\usepackage[titles]{tocloft}
 
 \setlength{\cftbeforechapskip}{6pt}
 
@@ -93,6 +94,10 @@
 \newenvironment{code}{\raggedright\ttfamily}{\rmfamily}
 
 \renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
+
+\SetFootnoteHook{\noindent\textsc{changes}\ }
+\DeclareNewFootnote[para]{Changes}[roman]
+\newcommand{\Changes}[1]{\opt{changes}{\footnoteChanges{#1}}}
 
 \begin{document}
     \sloppy
