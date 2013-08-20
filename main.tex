@@ -5,6 +5,7 @@
 	booktabs,
 	calc,
 	fancyhdr,
+	fixmarks,
 	framed,
 	longtable,
 	longtable,
@@ -137,10 +138,8 @@
     \pagestyle{fancy}
     \fancyhead{}
     \fancyfoot{}
-    \fancyhead[L,R]{%
-        \sffamily\bfseries\rightmark--\leftmark}
-    \fancyhead[R]{\sffamily\thepage}
-    \fancyhead[L]{\sffamily\thepage}
+    \fancyhead[L]{\sffamily\bfseries\rightmark}
+    \fancyhead[R]{\sffamily\bfseries\leftmark}
     \renewcommand{\headrulewidth}{0.1em}
 
 	\begin{twocolumn}
