@@ -17,6 +17,7 @@
 *.lot
 *.maf
 *.make
+*.md
 *.mtc
 *.mtc0
 *.nav
