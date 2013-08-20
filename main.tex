@@ -35,10 +35,11 @@
 \newcommand{\worktitle}[1]{\textit{#1}}
 \newcommand{\Tilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
 
-%\citeusenet{Name, Poster}{poster@email}{YYYY}{Post subject}{alt.group.name}{googleid}{D Month}
-\newcommand{\citeusenet}[7]{%
-	\begin{flushright}{\footnotesize\rmfamily{#1 \url{<#2>}, #3: #4 \textit{#5}, \textbf{#6}, #7}}\end{flushright}}
-\newenvironment{usenet}{\begin{quote}\ttfamily}{\rmfamily\end{quote}}
+%\citeusenet{Name, Poster}{poster@email}{YYYY}{Post subject}{group.name}{googleid}{D Month}
+\newcommand{\citeusenet}[7]
+{\hfill{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}}
+\newcommand{\citeusenetfn}[7]{{\footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
+\newenvironment{usenet}{\begin{addmargin}{0.5in}\raggedright\small\ttfamily}{\rmfamily\end{addmargin}}
 
 \definecolor{grey1}{HTML}{CCCCCC}
 \renewcommand{\labelenumi}{\colorbox{grey1}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
