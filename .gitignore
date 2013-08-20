@@ -32,3 +32,4 @@
 *.toc
 *.toc.make
 *.vrb
+entries/*.tex
