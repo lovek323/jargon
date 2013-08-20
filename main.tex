@@ -15,16 +15,30 @@
     \StrSubstitute{\entrylabel}{`}{}[\entrylabel]%
     \StrSubstitute{\entrylabel}{'}{}[\entrylabel]%
     \StrSubstitute{\entrylabel}{---}{-}[\entrylabel]%
+    \StrSubstitute{\entrylabel}{\&}{-}[\entrylabel]%
     \label{\entrylabel}}
 \newcommand*{\citeentry}[1]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
     \StrSubstitute{\temp}{`}{}[\temp]%
     \StrSubstitute{\temp}{'}{}[\temp]%
     \StrSubstitute{\temp}{---}{-}[\temp]%
+    \StrSubstitute{\temp}{\&}{-}[\temp]%
     {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{\temp}]}}
 \newcommand*{\citesense}[2]{%
     \StrSubstitute{#1-#2}{ }{-}[\temp]%
     {\small\sffamily\bfseries#1 (sense #2)}\superscript{\rmfamily\mdseries[\pageref{\temp}]}}
+\newcommand*{\citeappendix}[1]{%
+    \StrSubstitute{#1}{ }{-}[\temp]%
+    \StrSubstitute{\temp}{`}{}[\temp]%
+    \StrSubstitute{\temp}{'}{}[\temp]%
+    \StrSubstitute{\temp}{---}{-}[\temp]%
+    {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{appendix-\temp}]}}
+\newcommand*{\citechapter}[1]{%
+    \StrSubstitute{#1}{ }{-}[\temp]%
+    \StrSubstitute{\temp}{`}{}[\temp]%
+    \StrSubstitute{\temp}{'}{}[\temp]%
+    \StrSubstitute{\temp}{---}{-}[\temp]%
+    {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{chapter-\temp}]}}
 \newcommand*{\Chapter}[2]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
     \chapter*{#1}\label{chapter-\temp}
@@ -39,14 +53,14 @@
 \newcommand{\citeusenet}[7]
 {\hfill{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}}
 \newcommand{\citeusenetfn}[7]{{\footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
-\newenvironment{usenet}{\begin{addmargin}{0.5in}\raggedright\small\ttfamily}{\rmfamily\end{addmargin}}
+\newenvironment{usenet}{\raggedright\small\ttfamily}{\rmfamily}
 
 \definecolor{shadecolor}{HTML}{DDDDDD}
 \newenvironment{new}{\begin{oframed}{\footnotesize NOT IN THE JARGON FILE
 
 }}{\end{oframed}}
 
-\newenvironment{code}{\begin{addmargin}{0.5in}\raggedright\ttfamily}{\rmfamily\end{addmargin}}
+\newenvironment{code}{\raggedright\ttfamily}{\rmfamily}
 
 \renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
 
