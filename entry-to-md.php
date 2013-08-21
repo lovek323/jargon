@@ -80,8 +80,9 @@ class Parser
 
         /*** CITED ENTRY LINKS ***/
         foreach ($links as $text) {
-            $linkId  = getId($text);
-            $output .= "[$linkId]: /$linkId.html\n";
+            $linkId     = getId($text);
+            $linkLetter = $linkId[0];
+            $output    .= "[$linkId]: ../$linkLetter/$linkId.html\n";
         }
 
         /*** CHANGES TEXT ***/
@@ -93,6 +94,7 @@ class Parser
                 '</div>'."\n";
         }
 
+        /*** FOOTER ***/
         if (file_exists('footer.md')) {
             $output .= "\n".file_get_contents('footer.md');
         };
