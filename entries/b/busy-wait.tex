@@ -1,0 +1,13 @@
+\mainentry{busy-wait} vi.
+
+Used of human behavior, conveys that the subject is busy waiting for someone or
+something, intends to move instantly as soon as it shows up, and thus cannot do
+anything else at the moment. ``Can't talk now, I'm busy-waiting till Bill gets
+off the phone.''
+
+Technically, `busy-wait' means to wait on an event by \citeentry{spin}ning
+through a tight or time-delay loop that polls for the event on each pass, as
+opposed to setting up an interrupt handler and continuing execution on another
+part of the task. This is a wasteful technique, best avoided on time-sharing
+systems where a busy-waiting program may \citeentry{hog} the processor.
+
