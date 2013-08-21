@@ -1,10 +1,13 @@
 default: clean main.tex entries/*.tex entries/*/*.tex
-	pdflatex "\def\UseOption{changes}\input{main}"
-	mv main.pdf main-changes.pdf
-	pdflatex main
+	pdflatex -jobname changes "\def\UseOption{changes}\input{main}"
+	pdflatex -jobname changes "\def\UseOption{changes}\input{main}"
 
-entries/*.tex:
+entries/*.tex: entries/*/*.tex
 	./get-inputs.sh
+
+no-changes: clean main.tex entries/*.tex entries/*/*.tex
+	pdflatex main
+	pdflatex main
 
 clean:
 	rm -f *.pdf
