@@ -27,11 +27,22 @@ class Parser
 
         /*** HTML SPECIAL CHARACTERS ***/
         $output = str_replace(
-            array('<',    '>',    '``',      '\'\'',    '`',       '\''),
-            array('&lt;', '&gt;', '&#8220;', '&#8221;', '&lsquo;', '&rsquo;'),
+            array(
+                '<', '>', '``', '\'\'', '`', '\'', '\\dots', '{[}',
+                '\\begin{inparaenum}', '\\end{inparaenum}',
+            ),
+            array(
+                '&lt;', '&gt;', '&#8220;', '&#8221;', '&lsquo;', '&rsquo;',
+                '&hellip;', '[', '', '',
+            ),
             $output
         );
+
+        /*** ENTRY HEADERS ***/
         $output = preg_replace('/\\\\mainentry\\{(.*?)\\}/s', "**\\1**", $output);
+
+        /*** ITALICISED TEXT ***/
+        $output = preg_replace('/\\\\textit\\{(.*?)\\}/s', '*\\1*', $output);
 
         /*** CITATIONS ***/
         $output = preg_replace_callback(
@@ -78,12 +89,8 @@ class Parser
             $output .= ($index+1).'. '.$text."\n";
         }
 
-        /*** CITED ENTRY LINKS ***/
-        foreach ($links as $text) {
-            $linkId     = getId($text);
-            $linkLetter = $linkId[0];
-            $output    .= "[$linkId]: ../$linkLetter/$linkId.html\n";
-        }
+        /*** PARAGRAPH ENUM ITEMS ***/
+        $output = str_replace('\\item', '1. ', $output);
 
         /*** CHANGES TEXT ***/
         if (count($changes)) {
@@ -98,6 +105,13 @@ class Parser
         if (file_exists('footer.md')) {
             $output .= "\n".file_get_contents('footer.md');
         };
+
+        /*** CITED ENTRY LINKS ***/
+        foreach ($links as $text) {
+            $linkId     = getId($text);
+            $linkLetter = $linkId[0];
+            $output    .= "[$linkId]: ../$linkLetter/$linkId.html\n";
+        }
 
         file_put_contents($this->mdFilename, $output);
 
