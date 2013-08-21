@@ -1,2 +1,8 @@
 \mainentry{arena}
 
+[common; Unix] The area of memory attached to a process by brk(2) and sbrk(2)
+and used by malloc(3) as dynamic storage. So named from a malloc: corrupt arena
+message emitted when some early versions detected an impossible value in the
+free block list. See \citeentry{overrun screw}, \citeentry{aliasing bug},
+\citeentry{memory leak}, \citeentry{memory smash}, \citeentry{smash the stack}.
+
