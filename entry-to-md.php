@@ -1,71 +1,124 @@
 <?php
 
-$entry        = $argv[1];
-$baseFilename = 'entries/'.$entry[0].'/'.$entry;
-$texFilename  = $baseFilename.'.tex';
-$mdFilename   = $baseFilename.'.md';
-$contents     = file_get_contents($texFilename);
-$output       = $contents;
-$citedEntries = array();
-$footnotes    = array();
+class Parser
+{
+    private $baseFilename = '';
+    private $texFilename  = '';
+    private $mdFilename   = '';
+    private $htmlFilename = '';
+    private $contents     = '';
+    private $output       = '';
 
-$output = str_replace(
-    array('<',    '>',    '``',      '\'\'',    '`',       '\''),
-    array('&lt;', '&gt;', '&#8220;', '&#8221;', '&lsquo;', '&rsquo;'),
-    $output
-);
-$output = preg_replace('/\\\\mainentry\\{(.*?)\\}/s', "**\\1**", $output);
+    public function __construct($entry)
+    {
+        $this->baseFilename = 'entries/'.$entry[0].'/'.$entry;
+        $this->texFilename  = $this->baseFilename.'.tex';
+        $this->mdFilename   = $this->baseFilename.'.md';
+        $this->htmlFilename = $this->baseFilename.'.html';
+        $this->contents     = file_get_contents($this->texFilename);
+    }
 
-$output = preg_replace_callback(
-    '/\\\\citeentry\\{(?<entry>.*?)\\}/s',
-    function ($matches) {
-        global $citedEntries;
+    public function parse()
+    {
+        $output    = $this->contents;
+        $links     = array();
+        $footnotes = array();
+        $changes   = array();
 
-        $entry   = $matches['entry'];
-        $entryId = getEntryId($entry);
+        /*** HTML SPECIAL CHARACTERS ***/
+        $output = str_replace(
+            array('<',    '>',    '``',      '\'\'',    '`',       '\''),
+            array('&lt;', '&gt;', '&#8220;', '&#8221;', '&lsquo;', '&rsquo;'),
+            $output
+        );
+        $output = preg_replace('/\\\\mainentry\\{(.*?)\\}/s', "**\\1**", $output);
 
-        $citedEntries[$entryId] = $entry;
+        /*** CITATIONS ***/
+        $output = preg_replace_callback(
+            '/\\\\cite(?:entry|appendix)\\{(?<text>.*?)\\}/s',
+            function ($matches) use (&$links) {
+                $text       = $matches['text'];
+                $id         = getId($text);
+                $links[$id] = $text;
 
-        return "[$entry][$entryId]";
-    },
-    $output
-);
+                return "[$text][$id]";
+            },
+            $output
+        );
 
-$output = preg_replace_callback(
-    '/\\\\footnote\\{(?<text>.*?)\\}/s',
-    function ($matches) {
-        global $footnotes;
+        /*** CHANGES ***/
+        $output = preg_replace_callback(
+            '/\\\\Changes\\{(?<text>.*?)\\}/s',
+            function ($matches) use (&$changes) {
+                $id        = count($changes);
+                $changes[] = $matches['text'];
+                $output    = ' <span class="changes" data-id="'.$id.'">Changes'.
+                    '</span>';
 
-        $footnotes[] = $matches['text'];
-        $output      = '<sup>'.count($footnotes).'</sup>';
+                return $output;
+            },
+            $output
+        );
+
+        /*** FOOTNOTES ***/
+        $output = preg_replace_callback(
+            '/\\\\footnote\\{(?<text>.*?)\\}/s',
+            function ($matches) use (&$footnotes) {
+                $footnotes[] = $matches['text'];
+                $output      = '<sup>'.count($footnotes).'</sup>';
+
+                return $output;
+            },
+            $output
+        );
+        if (count($footnotes)) {
+            $output .= "\n";
+        }
+        foreach ($footnotes as $index => $text) {
+            $output .= ($index+1).'. '.$text."\n";
+        }
+
+        /*** CITED ENTRY LINKS ***/
+        foreach ($links as $text) {
+            $linkId  = getId($text);
+            $output .= "[$linkId]: /$linkId.html\n";
+        }
+
+        /*** CHANGES TEXT ***/
+        if (count($changes)) {
+            $output .= "\n";
+        }
+        foreach ($changes as $index => $text) {
+            $output .= '<div class="changes-text" data-id="'.$index.'">'.$text.
+                '</div>'."\n";
+        }
+
+        if (file_exists('footer.md')) {
+            $output .= "\n".file_get_contents('footer.md');
+        };
+
+        file_put_contents($this->mdFilename, $output);
+
+        exec(
+            'perl Markdown.pl '.escapeshellarg($this->mdFilename).' > '.
+            escapeshellarg($this->htmlFilename)
+        );
 
         return $output;
-    },
-    $output
-);
-
-$output .= "\n";
-
-foreach ($footnotes as $index => $text) {
-    $output .= ($index+1).'. '.$text."\n";
+    }
 }
 
-$output .= "\n\n";
-
-foreach ($citedEntries as $entry) {
-    $entryId = getEntryId($entry);
-    $output .= "[$entryId]: /$entryId.html\n";
-}
+$entry  = $argv[1];
+$parser = new Parser($entry);
+$output = $parser->parse();
 
 print "$output\n";
 
-file_put_contents($mdFilename, $output);
-
-function getEntryId($entry)
+function getId($entry)
 {
     return strtolower(str_replace(
-        array(' '),
-        array('-'),
+        array(' ', "\n"),
+        array('-', '-'),
         $entry
     ));
 }
