@@ -28,8 +28,11 @@
 \usepackage[none]{optional}
 \usepackage[titles]{tocloft}
 
+%%% DEFINITIONS %%%
 \setlength{\cftbeforechapskip}{6pt}
+\definecolor{shadecolor}{HTML}{DDDDDD}
 
+%%% ENTRY COMMANDS %%%
 \newcommand*{\mainentry}[1]{%
     \paragraph{#1}%
     \markboth{#1}{#1}%
@@ -39,6 +42,8 @@
     \StrSubstitute{\entrylabel}{---}{-}[\entrylabel]%
     \StrSubstitute{\entrylabel}{\&}{-}[\entrylabel]%
     \label{\entrylabel}}
+
+%%% CITATION COMMANDS %%%
 \newcommand*{\citeentry}[1]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
     \StrSubstitute{\temp}{`}{}[\temp]%
@@ -61,6 +66,12 @@
     \StrSubstitute{\temp}{'}{}[\temp]%
     \StrSubstitute{\temp}{---}{-}[\temp]%
     {\small\sffamily\bfseries#1}\superscript{\rmfamily\mdseries[\pageref{chapter-\temp}]}}
+\newcommand{\citeusenet}[7]{%
+    \rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}
+\newcommand{\citeusenetfn}[7]{{%
+    \footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
+
+%%% SECTION COMMANDS %%%
 \newcommand*{\Chapter}[2]{%
     \StrSubstitute{#1}{ }{-}[\temp]%
     \chapter*{#1}\label{chapter-\temp}
@@ -72,29 +83,33 @@
         {\Huge\bfseries#1}\label{chapter-\temp}
     \end{center}
     \addcontentsline{toc}{chapter}{#1\protect{\rmfamily\mdseries\\ #2}}}
+
+%%% TEXT COMMANDS %%%
 \newcommand{\inlinequote}[1]{%
     {$\cdot$\ \small``#1''}}
 \newcommand{\superscript}[1]{{\scriptsize#1}}
 \newcommand{\worktitle}[1]{\textit{#1}}
 \newcommand{\Tilde}{{\raise.17ex\hbox{$\scriptstyle\sim$}}}
+\renewcommand{\labelenumi}{%
+    \colorbox{shadecolor}{{%
+        \sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
 
+%%% LAYOUT COMMANDS %%%
 \newcommand\Right[1]{{%
   \leftskip=0ptplus1fil\rightskip=-\leftskip\parfillskip=\leftskip
   \hfill \phantom{ } \mbox{#1}\par}}
-\newcommand{\citeusenet}[7]
-{\rmfamily\footnotesize[\mbox{#1} (#3): #4, {\bfseries#5}, \mbox{#7 #3}]}
-\newcommand{\citeusenetfn}[7]{{\footnotesize\rmfamily{(#1, #3: #4 \textit{#5}, #7})}}
-\newenvironment{usenet}{\raggedright\small\ttfamily}{\rmfamily}
 
-\definecolor{shadecolor}{HTML}{DDDDDD}
-\newenvironment{new}{\begin{oframed}{\footnotesize NOT IN THE JARGON FILE
+%%% ENVIRONMENTS %%%
+\newenvironment{usenet}{\raggedright\small\ttfamily}{\rmfamily}
+\newenvironment{new}{\begin{oframed}{\footnotesize NEW TO THE JARGON FILE
 
 }}{\end{oframed}}
+\newenvironment{editor}[1]{\begin{oframed}{\footnotesize FROM THE EDITOR\hfill#1
 
+}}{\end{oframed}}
 \newenvironment{code}{\raggedright\ttfamily}{\rmfamily}
 
-\renewcommand{\labelenumi}{\colorbox{shadecolor}{{\sffamily\footnotesize\arabic{enumi}\label{\entrylabel-\theenumi}}}}
-
+%%% FOOTNOTES %%%
 \SetFootnoteHook{\noindent\textsc{changes}\ }
 \DeclareNewFootnote[para]{Changes}[roman]
 \newcommand{\Changes}[1]{\opt{changes}{\footnoteChanges{#1 --JDO}}}
