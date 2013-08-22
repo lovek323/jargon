@@ -1,4 +1,4 @@
-default: clean main.tex entries/*.tex entries/*/*.tex
+default: clean entries/*.tex entries/*/*.tex main.tex
 	pdflatex -jobname changes "\def\UseOption{changes}\input{main}"
 	pdflatex -jobname changes "\def\UseOption{changes}\input{main}"
 
